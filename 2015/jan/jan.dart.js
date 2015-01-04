@@ -7404,8 +7404,8 @@ var $$ = Object.create(null);
   main_closure: {
     "^": "Closure:11;headingDiv_0,speedDiv_1",
     call$1: function(data) {
-      J.set$innerHtml$x(this.headingDiv_0, C.JSString_methods.$add("Heading: ", J.get$heading$x(J.get$coords$x(data))));
-      J.set$innerHtml$x(this.speedDiv_1, C.JSString_methods.$add("Speed", J.get$speed$x(J.get$coords$x(data))));
+      J.set$innerHtml$x(this.headingDiv_0, "Heading: " + H.S(J.get$heading$x(J.get$coords$x(data))));
+      J.set$innerHtml$x(this.speedDiv_1, "Speed " + H.S(J.get$speed$x(J.get$coords$x(data))));
     }
   },
   main_closure0: {

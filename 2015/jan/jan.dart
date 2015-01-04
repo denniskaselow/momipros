@@ -7,8 +7,8 @@ void main() {
 
   try {
     window.navigator.geolocation.watchPosition(enableHighAccuracy: true, timeout: new Duration(seconds: 10)).listen((data) {
-      headingDiv.innerHtml = 'Heading: ' + data.coords.heading;
-      speedDiv.innerHtml = 'Speed' + data.coords.speed;
+      headingDiv.innerHtml = 'Heading: ${data.coords.heading}';
+      speedDiv.innerHtml = 'Speed ${data.coords.speed}';
     })..onDone(() {
       errorDiv.innerHtml = 'erledigt';
     })..onError((e){
