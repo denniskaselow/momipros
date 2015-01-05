@@ -6,6 +6,8 @@ import 'dart:math';
 const int fftSize = 512;
 const int frequencyBinCount = fftSize ~/ 2;
 
+const String webPDataUrlHeader = 'data:image/webp;base64,';
+
 void main() {
   var ctx = new AudioContext();
 
@@ -33,6 +35,7 @@ void main() {
     var floatTimeDomainData = new Float32List(fftSize);
     var byteFrequencyData = new Uint8List(frequencyBinCount);
     var byteTimeDomainData = new Uint8List(fftSize);
+
 
     void analyzeAndRender(num time) {
       analyzer.getFloatFrequencyData(floatFrequencyData);
@@ -71,10 +74,42 @@ void main() {
                           ..restore()
                           ..restore();
 
+      var dataUrlWebP = headCanvas.toDataUrl('image/webp');
+      String decodedImage = window.atob(dataUrlWebP.substring(webPDataUrlHeader.length));
+      var riff = parseRiff(decodedImage);
+      print(riff.length);
+      print(riff.riff.length);
+      print(riff.riff.data);
+      print(decodedImage.length);
+      print(decodedImage.substring(0, 30));
+      print(decodedImage.substring(0, 30).split('').map((char) => char.codeUnitAt(0).toRadixString(16)).join(' '));
+
       window.requestAnimationFrame(analyzeAndRender);
     }
     analyzeAndRender(0);
   });
+}
+
+// parse RIFF according to https://en.wikipedia.org/wiki/Resource_Interchange_File_Format#Explanation
+RiffChunk parseRiff(String webPImage) {
+  RiffChunk result;
+  var dataStart = 8;
+  var id = webPImage.substring(0, 4);
+  int chunkLength = webPImage.substring(4, 8)
+                             .split('')
+                             .reversed
+                             .map((char) => char.codeUnitAt(0))
+                             .fold(0, (int result, int current) => (result << 3) + current);
+  result = new RiffChunk(id, chunkLength, webPImage.substring(dataStart));
+  if (id == 'RIFF' || id == 'LIST') {
+    var tmp = parseRiff(webPImage.substring(dataStart + 4));
+    if (id == 'RIFF') {
+      result.riff = tmp;
+    } else {
+      result.list = tmp;
+    }
+  }
+  return result;
 }
 
 void visualize(CanvasElement canvas, List<num> data, int width, int max) {
@@ -85,4 +120,13 @@ void visualize(CanvasElement canvas, List<num> data, int width, int max) {
   for (int i = 0; i < data.length; i++) {
     canvas.context2D.fillRect(i * width, 256, width, 256 * data[i] / max);
   }
+}
+
+class RiffChunk {
+  String id;
+  int length;
+  String data;
+  RiffChunk riff;
+  RiffChunk list;
+  RiffChunk(this.id, this.length, this.data);
 }
