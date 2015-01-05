@@ -4607,7 +4607,9 @@ J.P(t,"Speed "+H.d(x.gLC(z))+" m/s")
 y=x.gLC(z)
 if(typeof y!=="number")return y.R()
 s=y*0.0005
-r=x.gSm(z)
+y=x.gSm(z)
+if(typeof y!=="number")return y.G()
+r=-y*3.141592653589793/180
 y=J.Tf($.cM(),"Object")
 y=P.uw(y,[])
 w=J.w1(y)
@@ -4627,7 +4629,6 @@ q=J.w1(w)
 q.q(w,"icons",A.Pe([new Z.AH(t)]))
 q.q(w,"map",v)
 y=x.gV1(z)
-if(typeof r!=="number")return r.T()
 v=r-1.5707963267948966
 t=Math.sin(H.E0(v))
 if(typeof y!=="number")return y.g()
