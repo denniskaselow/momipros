@@ -1,4 +1,4 @@
-name: scheduler_base
+name: scheduler
 description: A starting point for Dart libraries or applications.
 version: 0.0.1
 #author: Your Name <email@example.com>
