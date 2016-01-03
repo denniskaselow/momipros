@@ -53,6 +53,10 @@ packages:
     description: dart_style
     source: hosted
     version: "0.2.1"
+  dart_to_js_script_rewriter:
+    description: dart_to_js_script_rewriter
+    source: hosted
+    version: "0.1.0+4"
   fixnum:
     description: fixnum
     source: hosted
@@ -109,6 +113,12 @@ packages:
     description: quiver
     source: hosted
     version: "0.21.4"
+  scheduler:
+    description:
+      path: "..\\scheduler"
+      relative: true
+    source: path
+    version: "0.0.1"
   smoke:
     description: smoke
     source: hosted

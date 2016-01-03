@@ -57,6 +57,12 @@ packages:
     description: react
     source: hosted
     version: "0.8.4"
+  scheduler:
+    description:
+      path: "..\\scheduler"
+      relative: true
+    source: path
+    version: "0.0.1"
   source_span:
     description: source_span
     source: hosted
