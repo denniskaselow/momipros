@@ -15,5 +15,6 @@ class AppComponent {
 
   AppComponent(SchedulerService schedulerService) {
     days = schedulerService.getDays();
+    schedulerService.optimizeHeights(days, 40);
   }
 }

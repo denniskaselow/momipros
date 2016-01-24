@@ -9,7 +9,11 @@ import 'package:scheduler/scheduler.dart';
     selector: 'schedule-day',
     template: '''
 <h2>{{ day.label }}</h2>
-<schedule-time-slot *ngFor="#timeSlot of day.timeSlots" [timeSlot]="timeSlot"></schedule-time-slot>
+<schedule-time-slot
+          *ngFor="#timeSlot of day.timeSlots"
+          [timeSlot]="timeSlot"
+          [style.height.px]='timeSlot.height'>
+</schedule-time-slot>
     ''',
     styles: const [
       '''

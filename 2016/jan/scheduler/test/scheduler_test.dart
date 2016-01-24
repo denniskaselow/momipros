@@ -8,7 +8,8 @@ void main() {
     TimeSlot timeSlot;
 
     setUp(() {
-      timeSlot = new TimeSlot('testing', new DateTime.utc(2016, 1, 3, 13, 37), new DateTime.utc(2016, 1, 3, 14, 00));
+      timeSlot = new TimeSlot('testing', new DateTime.utc(2016, 1, 3, 13, 37),
+          new DateTime.utc(2016, 1, 3, 14, 00));
     });
 
     test('returns corret duration', () {
@@ -40,6 +41,61 @@ void main() {
       expect(days[2].date.year, equals(tomorrow.year));
       expect(days[2].date.month, equals(tomorrow.month));
       expect(days[2].date.day, equals(tomorrow.day));
+    });
+
+    test('fills missing TimeSlots in Day', () {
+      var timeSlots = service.getTimeSlots(new DateTime(2016, 01, 24));
+
+      expect(timeSlots.first.start, equals(new DateTime(2016, 01, 24)));
+      expect(timeSlots.last.end, equals(new DateTime(2016, 01, 25)));
+
+      for (int i = 1; i < timeSlots.length; i++) {
+        expect((timeSlots[i - 1].end), equals(timeSlots[i].start));
+      }
+    });
+
+    test('reduces height of big TimeSlots in Day', () {
+      var day1 = new Day(new DateTime(2016, 01, 25, 10), [
+        new TimeSlot(
+            '', new DateTime(2016, 01, 24), new DateTime(2016, 01, 24, 10)),
+        new TimeSlot(
+            '', new DateTime(2016, 01, 24, 10), new DateTime(2016, 01, 25))
+      ]);
+      var day2 = new Day(new DateTime(2016, 01, 25, 10), [
+        new TimeSlot(
+            '', new DateTime(2016, 01, 25), new DateTime(2016, 01, 25, 14)),
+        new TimeSlot(
+            '', new DateTime(2016, 01, 25, 14), new DateTime(2016, 01, 26))
+      ]);
+
+      service.optimizeHeights([day1, day2], 100);
+
+      expect(day1.timeSlots[0].height, equals(100));
+      expect(day1.timeSlots[1].height, equals(200));
+      expect(day2.timeSlots[0].height, equals(200));
+      expect(day2.timeSlots[1].height, equals(100));
+    });
+
+    test('increases height of short TimeSlots in Day', () {
+      var day1 = new Day(new DateTime(2016, 01, 25, 10), [
+        new TimeSlot(
+            '', new DateTime(2016, 01, 24), new DateTime(2016, 01, 24, 1)),
+        new TimeSlot(
+            '', new DateTime(2016, 01, 24, 1), new DateTime(2016, 01, 25))
+      ]);
+      var day2 = new Day(new DateTime(2016, 01, 25, 10), [
+        new TimeSlot(
+            '', new DateTime(2016, 01, 25), new DateTime(2016, 01, 25, 23)),
+        new TimeSlot(
+            '', new DateTime(2016, 01, 25, 23), new DateTime(2016, 01, 26))
+      ]);
+
+      service.optimizeHeights([day1, day2], 100);
+
+      expect(day1.timeSlots[0].height, equals(100));
+      expect(day1.timeSlots[1].height, equals(200));
+      expect(day2.timeSlots[0].height, equals(200));
+      expect(day2.timeSlots[1].height, equals(100));
     });
   });
 }
