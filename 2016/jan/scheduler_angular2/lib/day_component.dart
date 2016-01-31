@@ -19,8 +19,14 @@ import 'package:scheduler/scheduler.dart';
       '''
 :host {
   margin: 0px 5px 0px 5px;
-  min-width: 150px;
-}'''
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 180px;
+}
+h2 {
+  text-align: center;
+}
+'''
     ],
     directives: const [
       TimeSlotComponent,

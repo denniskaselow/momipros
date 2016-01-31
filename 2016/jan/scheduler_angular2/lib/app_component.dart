@@ -20,7 +20,7 @@ class AppComponent {
   AppComponent(RbtvSchedulerService schedulerService) {
     schedulerService.getRbtvDays().then((days) {
       this.days = days;
-      schedulerService.optimizeHeights(days, 40);
+      schedulerService.optimizeHeights(days, 20);
     });
   }
 }

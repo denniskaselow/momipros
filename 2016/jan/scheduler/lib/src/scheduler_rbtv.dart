@@ -62,7 +62,7 @@ class RbtvSchedulerService extends SchedulerService {
           } else {
             if (!(startTime.hour == 0 && startTime.minute == 0) && scheduleDay.previousElementSibling != null) {
               var lastShowOfPreviousDay = scheduleDay.previousElementSibling.querySelectorAll('.show').last.querySelector('.showDetails');
-              show = new TimeSlot(lastShowOfPreviousDay.querySelector('h4').text + " cont'd", date, startTime);
+              show = new TimeSlot(lastShowOfPreviousDay.querySelector('h4').text + " (cont'd)", date, startTime);
               shows.add(show);
             }
           }
