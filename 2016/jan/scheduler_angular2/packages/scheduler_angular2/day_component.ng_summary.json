@@ -32,7 +32,7 @@
               },
               {
                 "1": "styles",
-                "2": "const ['''\r\n:host {\r\n  margin: 0px 5px 0px 5px;\r\n  min-width: 150px;\r\n}''']"
+                "2": "const ['''\r\n:host {\r\n  margin: 0px 5px 0px 5px;\r\n  flex-basis: 0;\r\n  flex-grow: 1;\r\n  min-width: 180px;\r\n}\r\nh2 {\r\n  text-align: center;\r\n}\r\n''']"
               },
               {
                 "1": "directives",
@@ -103,7 +103,7 @@
         "template": "<h2>{{ day.label }}</h2>\r\n<schedule-time-slot\r\n          *ngFor=\"#timeSlot of day.timeSlots\"\r\n          [timeSlot]=\"timeSlot\"\r\n          [style.height.px]='timeSlot.height'>\r\n</schedule-time-slot>\r\n    ",
         "templateUrl": "asset:scheduler_angular2/lib/day_component.dart",
         "styles": [
-          ":host {\r\n  margin: 0px 5px 0px 5px;\r\n  min-width: 150px;\r\n}"
+          ":host {\r\n  margin: 0px 5px 0px 5px;\r\n  flex-basis: 0;\r\n  flex-grow: 1;\r\n  min-width: 180px;\r\n}\r\nh2 {\r\n  text-align: center;\r\n}\r\n"
         ],
         "styleUrls": [],
         "ngContentSelectors": []
