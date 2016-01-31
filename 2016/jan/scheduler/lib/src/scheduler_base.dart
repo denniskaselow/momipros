@@ -7,10 +7,9 @@ import 'package:intl/intl.dart';
 class TimeSlot extends Object with HeightMixin {
   String name, description;
   DateTime start, end;
-  Duration duration;
-  TimeSlot(this.name, this.start, this.end, {this.description: ''}) {
-    duration = end.difference(start);
-  }
+  TimeSlot(this.name, this.start, this.end, {this.description: ''});
+
+  Duration get duration => end.difference(start);
   String get startLabel => timeFormat.format(start);
   String get durationLabel => '${duration.inMinutes} min';
 }
@@ -53,6 +52,7 @@ class SchedulerService {
   }
 
   void fillTimeSlots(List<TimeSlot> timeSlots) {
+    if (timeSlots.length == 0) return;
     var current = timeSlots.first;
     var emptySlot = new EmptyTimeSlot(
         new DateTime(
@@ -63,10 +63,11 @@ class SchedulerService {
       timeSlots.insert(0, emptySlot);
     }
 
+    current = timeSlots.last;
     emptySlot = new EmptyTimeSlot(
         new DateTime(current.end.year, current.end.month, current.end.day,
             current.end.hour, current.end.minute),
-        new DateTime(current.end.year, current.end.month, current.end.day)
+        new DateTime(current.start.year, current.start.month, current.start.day)
             .add(new Duration(days: 1)));
     if (emptySlot.duration.inMinutes > 0) {
       timeSlots.add(emptySlot);
@@ -83,6 +84,39 @@ class SchedulerService {
         }
       }
     }
+    compressTimeSlots(days, minHeight);
+    increaseToMinHeight(shortSlots, minHeight, days);
+  }
+
+  void increaseToMinHeight(List<TimeSlot> shortSlots, int minHeight, List<Day> days) {
+    for (var shortSlot in shortSlots) {
+      if (shortSlot.height >= minHeight) continue;
+      var startTime =
+          _getStartTimeHM(shortSlot.start.hour, shortSlot.start.minute);
+      var endTime = _getEndTime(shortSlot);
+      var missingHeight = minHeight - shortSlot.height;
+      for (var day in days) {
+        if (shortSlot.start.day == day.date.day &&
+            shortSlot.start.month == day.date.month) continue;
+        for (var timeSlot in day.timeSlots) {
+          var otherStartTime = _getStartTime(timeSlot);
+          if (otherStartTime.isAfter(endTime)) break;
+          var otherEndTime = _getEndTime(timeSlot);
+          if (otherEndTime.isBefore(startTime)) continue;
+          var jointStartTime =
+              otherStartTime.isBefore(startTime) ? startTime : otherStartTime;
+          var jointEndTime =
+              otherEndTime.isAfter(endTime) ? endTime : otherEndTime;
+          var jointDuration = jointEndTime.difference(jointStartTime);
+          var share = jointDuration.inMinutes / shortSlot.duration.inMinutes;
+          timeSlot.height += (missingHeight * share).round();
+        }
+      }
+      shortSlot.height = minHeight;
+    }
+  }
+
+  void compressTimeSlots(List<Day> days, int minHeight) {
     var startTime = _getStartTimeHM(0, 0);
     var shortestSlot;
     var diffOfShortestSlot;
@@ -111,20 +145,6 @@ class SchedulerService {
       shortestSlot = null;
       slots = [];
     } while (!(startTime.hour == 0 && startTime.minute == 0));
-
-    for (var shortSlot in shortSlots) {
-      var startTime =
-          _getStartTimeHM(shortSlot.start.hour, shortSlot.start.minute);
-      var endTime = _getEndTime(shortSlot);
-      for (var day in days) {
-        if (shortSlot.start.day == day.date.day &&
-            shortSlot.start.month == day.date.month) continue;
-        for (var timeSlot in day.timeSlots) {
-          var otherStartTime = _getStartTime(timeSlot);
-          var otherEndTime = _getEndTime(timeSlot);
-        }
-      }
-    }
   }
 
   DateTime _getEndTime(TimeSlot timeSlot) {
@@ -139,8 +159,8 @@ class SchedulerService {
   DateTime _getStartTimeHM(hour, minute) =>
       new DateTime(_today.year, _today.month, _today.day, hour, minute);
 
-  DateTime _getStartTime(TimeSlot timeSlot) => new DateTime(
-      _today.year, _today.month, _today.day, timeSlot.start.hour, timeSlot.start.minute);
+  DateTime _getStartTime(TimeSlot timeSlot) => new DateTime(_today.year,
+      _today.month, _today.day, timeSlot.start.hour, timeSlot.start.minute);
 }
 
 class HeightMixin {

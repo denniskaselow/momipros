@@ -13,7 +13,7 @@ import 'package:scheduler/scheduler.dart';
       '''
 :host {
   display: flex;
-  border: 1px solid black;
+  outline: 1px solid black;
   height: {{timeSlot.height}}px;
 }
 :host > .name {

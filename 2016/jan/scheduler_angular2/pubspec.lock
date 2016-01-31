@@ -16,7 +16,7 @@ packages:
   async:
     description: async
     source: hosted
-    version: "1.7.0"
+    version: "1.8.0"
   barback:
     description: barback
     source: hosted
@@ -40,7 +40,7 @@ packages:
   collection:
     description: collection
     source: hosted
-    version: "1.2.0"
+    version: "1.4.0"
   crypto:
     description: crypto
     source: hosted
