@@ -1,0 +1,113 @@
+{
+  "ngDeps": {
+    "1": "scheduler_angular2.app_component",
+    "3": [
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:scheduler_angular2/time_slot_component.dart",
+        "5": false
+      },
+      {
+        "1": "package:scheduler/scheduler.dart",
+        "5": false
+      }
+    ],
+    "5": [
+      {
+        "1": "DayComponent",
+        "4": [
+          {
+            "1": "Component",
+            "3": [
+              {
+                "1": "selector",
+                "2": "'schedule-day'"
+              },
+              {
+                "1": "template",
+                "2": "'''\r\n<h2>{{ day.label }}</h2>\r\n<schedule-time-slot\r\n          *ngFor=\"#timeSlot of day.timeSlots\"\r\n          [timeSlot]=\"timeSlot\"\r\n          [style.height.px]='timeSlot.height'>\r\n</schedule-time-slot>\r\n    '''"
+              },
+              {
+                "1": "styles",
+                "2": "const ['''\r\n:host {\r\n  margin: 0px 5px 0px 5px;\r\n  min-width: 150px;\r\n}''']"
+              },
+              {
+                "1": "directives",
+                "2": "const [TimeSlotComponent, NgFor, NgIf]"
+              }
+            ],
+            "4": false,
+            "5": true,
+            "6": true,
+            "7": true,
+            "8": false
+          }
+        ],
+        "7": [
+          {
+            "1": "day",
+            "2": [
+              {
+                "1": "Input",
+                "4": false,
+                "5": false,
+                "6": false,
+                "7": false,
+                "8": false
+              }
+            ]
+          }
+        ],
+        "8": [
+          {
+            "2": "TimeSlotComponent"
+          },
+          {
+            "2": "NgFor"
+          },
+          {
+            "2": "NgIf"
+          }
+        ]
+      }
+    ],
+    "6": "day_component.dart"
+  },
+  "DayComponent": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": true,
+      "dynamicLoadable": true,
+      "selector": "schedule-day",
+      "exportAs": null,
+      "type": {
+        "name": "DayComponent",
+        "moduleUrl": "asset:scheduler_angular2/lib/day_component.dart",
+        "isHost": false
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "day": "day"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": {
+        "encapsulation": 0,
+        "template": "<h2>{{ day.label }}</h2>\r\n<schedule-time-slot\r\n          *ngFor=\"#timeSlot of day.timeSlots\"\r\n          [timeSlot]=\"timeSlot\"\r\n          [style.height.px]='timeSlot.height'>\r\n</schedule-time-slot>\r\n    ",
+        "templateUrl": "asset:scheduler_angular2/lib/day_component.dart",
+        "styles": [
+          ":host {\r\n  margin: 0px 5px 0px 5px;\r\n  min-width: 150px;\r\n}"
+        ],
+        "styleUrls": [],
+        "ngContentSelectors": []
+      }
+    }
+  }
+}

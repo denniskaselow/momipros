@@ -1,0 +1,38 @@
+{
+  "ngDeps": {
+    "1": "scheduler_angular2.web",
+    "3": [
+      {
+        "1": "package:angular2/bootstrap_static.dart",
+        "5": false
+      },
+      {
+        "1": "package:angular2/angular2.dart",
+        "5": false
+      },
+      {
+        "1": "package:scheduler_angular2/app_component.dart",
+        "5": false
+      },
+      {
+        "1": "package:scheduler/scheduler.dart",
+        "5": false
+      }
+    ],
+    "6": "main.dart",
+    "10": [
+      {
+        "1": "package:angular2/bootstrap_static.ng_deps.dart",
+        "4": "i0"
+      },
+      {
+        "1": "package:angular2/angular2.ng_deps.dart",
+        "4": "i1"
+      },
+      {
+        "1": "package:scheduler_angular2/app_component.ng_deps.dart",
+        "4": "i2"
+      }
+    ]
+  }
+}
