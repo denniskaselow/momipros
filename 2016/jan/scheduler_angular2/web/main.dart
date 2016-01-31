@@ -8,5 +8,8 @@ import 'package:scheduler_angular2/app_component.dart';
 import 'package:scheduler/scheduler.dart';
 
 main() {
-  bootstrap(AppComponent, [provide(SchedulerService, useValue: new SchedulerService())]);
+  bootstrap(AppComponent, [
+    provide(SchedulerService, useValue: new SchedulerService()),
+    provide(RbtvSchedulerService, useValue: new RbtvSchedulerService())
+  ]);
 }

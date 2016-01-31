@@ -5,3 +5,4 @@ library scheduler;
 
 
 export 'src/scheduler_base.dart';
+export 'src/scheduler_rbtv.dart';

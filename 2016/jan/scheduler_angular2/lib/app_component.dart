@@ -13,8 +13,10 @@ import 'package:scheduler/scheduler.dart';
 class AppComponent {
   List<Day> days;
 
-  AppComponent(SchedulerService schedulerService) {
-    days = schedulerService.getDays();
-    schedulerService.optimizeHeights(days, 40);
+  AppComponent(RbtvSchedulerService schedulerService) {
+    schedulerService.getRbtvDays().then((days) {
+      this.days = days;
+      schedulerService.optimizeHeights(days, 40);
+    });
   }
 }
