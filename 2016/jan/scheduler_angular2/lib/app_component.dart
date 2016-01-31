@@ -8,7 +8,11 @@ import 'package:scheduler/scheduler.dart';
 
 @Component(
     selector: 'my-app',
-    templateUrl: 'app_component.html',
+    template: '''
+<div id="schedule">
+  <schedule-day *ngFor="#day of days" [day]="day"></schedule-day>
+</div>
+    ''',
     directives: const [NgFor, DayComponent])
 class AppComponent {
   List<Day> days;
