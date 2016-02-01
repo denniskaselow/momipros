@@ -28,7 +28,11 @@
               },
               {
                 "1": "template",
-                "2": "'''\n<div id=\"schedule\">\n  <schedule-day *ngFor=\"#day of days\" [day]=\"day\"></schedule-day>\n</div>\n    '''"
+                "2": "'''\n<div id=\"schedule\">\n  <i class=\"fa fa-arrow-circle-left\" (click)='move(-1)'></i>\n  <schedule-day *ngFor=\"#day of days\" [day]=\"day\"></schedule-day>\n  <i class=\"fa fa-arrow-circle-right\" (click)='move(1)'></i>\n</div>\n    '''"
+              },
+              {
+                "1": "styles",
+                "2": "const ['''\n      #schedule {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n      }\n      .fa-arrow-circle-right, .fa-arrow-circle-left {\n        font-size: 40px;\n        text-align: center;\n        cursor: pointer;\n      }\n''']"
               },
               {
                 "1": "directives",
@@ -91,10 +95,12 @@
       "hostAttributes": {},
       "lifecycleHooks": [],
       "template": {
-        "encapsulation": 2,
-        "template": "<div id=\"schedule\">\n  <schedule-day *ngFor=\"#day of days\" [day]=\"day\"></schedule-day>\n</div>\n    ",
+        "encapsulation": 0,
+        "template": "<div id=\"schedule\">\n  <i class=\"fa fa-arrow-circle-left\" (click)='move(-1)'></i>\n  <schedule-day *ngFor=\"#day of days\" [day]=\"day\"></schedule-day>\n  <i class=\"fa fa-arrow-circle-right\" (click)='move(1)'></i>\n</div>\n    ",
         "templateUrl": "asset:scheduler_angular2/lib/app_component.dart",
-        "styles": [],
+        "styles": [
+          "      #schedule {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n      }\n      .fa-arrow-circle-right, .fa-arrow-circle-left {\n        font-size: 40px;\n        text-align: center;\n        cursor: pointer;\n      }\n"
+        ],
         "styleUrls": [],
         "ngContentSelectors": []
       }

@@ -3,6 +3,12 @@
     "1": "angular2.core",
     "4": [
       {
+        "1": "./src/core/angular_entrypoint.dart",
+        "2": [
+          "AngularEntrypoint"
+        ]
+      },
+      {
         "1": "./src/core/metadata.dart"
       },
       {

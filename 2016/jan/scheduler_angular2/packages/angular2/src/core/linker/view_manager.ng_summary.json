@@ -68,6 +68,7 @@
           "HostViewFactoryRef_",
           "EmbeddedViewRef",
           "HostViewRef",
+          "ViewRef",
           "ViewRef_"
         ],
         "5": false
