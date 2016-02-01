@@ -9,8 +9,9 @@ import 'package:dson/dson.dart';
 class RbtvSchedulerService extends SchedulerService {
   Map<String, List<TimeSlot>> showCache = <String, List<TimeSlot>>{};
 
-  Future<List<Day>> getRbtvDays() async {
+  Future<List<Day>> getRbtvDays([int offset = 0]) async {
     var today = new DateTime.now();
+    today = today.add(new Duration(days: offset));
     var days = <Day>[];
     for (int i = -3; i <= 3; i++) {
       var day = today.add(new Duration(days: i));
