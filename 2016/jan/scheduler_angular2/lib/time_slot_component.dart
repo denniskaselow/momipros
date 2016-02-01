@@ -6,9 +6,9 @@ import 'package:scheduler/scheduler.dart';
 @Component(
     selector: 'schedule-time-slot',
     template: '''
-<div class='time'>{{ timeSlot.startLabel }}</div>
-<div class='name'>{{timeSlot.name}}</div>
-<div class='duration'>{{timeSlot.durationLabel}}</div>
+<div class='time'>{{ timeSlot.getStartLabel() }}</div>
+<div class='name'>{{ timeSlot.name }}</div>
+<div class='duration'>{{ timeSlot.getDurationLabel() }}</div>
 ''',
     styles: const [
       '''

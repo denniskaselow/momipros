@@ -13,7 +13,7 @@ void main() {
     });
 
     test('returns corret duration', () {
-      expect(timeSlot.duration, equals(new Duration(minutes: 23)));
+      expect(timeSlot.getDuration(), equals(new Duration(minutes: 23)));
     });
   });
   group('SchedulerService', () {

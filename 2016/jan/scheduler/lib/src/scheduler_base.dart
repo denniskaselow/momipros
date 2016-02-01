@@ -3,15 +3,17 @@ library scheduler.base;
 import 'dart:math';
 
 import 'package:intl/intl.dart';
+import 'package:dson/dson.dart';
 
+@serializable
 class TimeSlot extends Object with HeightMixin {
   String name, description;
   DateTime start, end;
-  TimeSlot(this.name, this.start, this.end, {this.description: ''});
+  TimeSlot([this.name, this.start, this.end, this.description = '']);
 
-  Duration get duration => end.difference(start);
-  String get startLabel => timeFormat.format(start);
-  String get durationLabel => '${duration.inMinutes} min';
+  Duration getDuration() => end.difference(start);
+  String getStartLabel() => timeFormat.format(start);
+  String getDurationLabel() => '${getDuration().inMinutes} min';
 }
 
 class EmptyTimeSlot extends TimeSlot {
@@ -47,19 +49,26 @@ class SchedulerService {
     var end = start.add(new Duration(minutes: 5 + random.nextInt(180)));
     var timeSlot = new TimeSlot('Testing', start, end);
     var timeSlots = [timeSlot];
-    fillTimeSlots(timeSlots);
+    fillTimeSlots(timeSlots, date);
     return timeSlots;
   }
 
-  void fillTimeSlots(List<TimeSlot> timeSlots) {
-    if (timeSlots.length == 0) return;
+  void fillTimeSlots(List<TimeSlot> timeSlots, DateTime date) {
+    if (timeSlots.length == 0) {
+      var nextDay = date.add(new Duration(days: 1));
+      timeSlots.add(new EmptyTimeSlot(
+          new DateTime(date.year, date.month, date.day),
+          new DateTime(nextDay.year, nextDay.month, nextDay.day)));
+      return;
+    }
+
     var current = timeSlots.first;
     var emptySlot = new EmptyTimeSlot(
         new DateTime(
             current.start.year, current.start.month, current.start.day),
         new DateTime(current.start.year, current.start.month, current.start.day,
             current.start.hour, current.start.minute));
-    if (emptySlot.duration.inMinutes > 0) {
+    if (emptySlot.getDuration().inMinutes > 0) {
       timeSlots.insert(0, emptySlot);
     }
 
@@ -69,7 +78,7 @@ class SchedulerService {
             current.end.hour, current.end.minute),
         new DateTime(current.start.year, current.start.month, current.start.day)
             .add(new Duration(days: 1)));
-    if (emptySlot.duration.inMinutes > 0) {
+    if (emptySlot.getDuration().inMinutes > 0) {
       timeSlots.add(emptySlot);
     }
   }
@@ -78,7 +87,7 @@ class SchedulerService {
     var shortSlots = <TimeSlot>[];
     for (var day in days) {
       for (var timeSlot in day.timeSlots) {
-        timeSlot.height = timeSlot.duration.inMinutes;
+        timeSlot.height = timeSlot.getDuration().inMinutes;
         if (timeSlot.height < minHeight) {
           shortSlots.add(timeSlot);
         }
@@ -88,7 +97,8 @@ class SchedulerService {
     increaseToMinHeight(shortSlots, minHeight, days);
   }
 
-  void increaseToMinHeight(List<TimeSlot> shortSlots, int minHeight, List<Day> days) {
+  void increaseToMinHeight(
+      List<TimeSlot> shortSlots, int minHeight, List<Day> days) {
     for (var shortSlot in shortSlots) {
       if (shortSlot.height >= minHeight) continue;
       var startTime =
@@ -108,7 +118,8 @@ class SchedulerService {
           var jointEndTime =
               otherEndTime.isAfter(endTime) ? endTime : otherEndTime;
           var jointDuration = jointEndTime.difference(jointStartTime);
-          var share = jointDuration.inMinutes / shortSlot.duration.inMinutes;
+          var share =
+              jointDuration.inMinutes / shortSlot.getDuration().inMinutes;
           timeSlot.height += (missingHeight * share).round();
         }
       }
