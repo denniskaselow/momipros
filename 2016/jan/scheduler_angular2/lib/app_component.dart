@@ -41,7 +41,7 @@ class AppComponent {
   AppComponent(this.schedulerService) {
     schedulerService.getRbtvDays().then((days) {
       this.days = days;
-      schedulerService.optimizeHeights(days, 20);
+      schedulerService.optimizeHeights(days, 15);
     });
   }
 
@@ -49,7 +49,7 @@ class AppComponent {
     offset += change;
     schedulerService.getRbtvDays(offset).then((days) {
       this.days = days;
-      schedulerService.optimizeHeights(days, 20);
+      schedulerService.optimizeHeights(days, 15);
     });
   }
 }
