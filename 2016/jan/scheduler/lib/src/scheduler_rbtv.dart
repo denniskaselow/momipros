@@ -48,9 +48,22 @@ class RbtvSchedulerService extends SchedulerService {
       } catch (e) {
         shows = [];
       }
+      _modifySpecialShows(shows);
       fillTimeSlots(shows, date);
       showCache[dateId] = shows;
     }
     return shows;
+  }
+
+  void _modifySpecialShows(List<TimeSlot> shows) {
+    shows.forEach((show) {
+      if (show.name == "Let’s Play") {
+        show.name = show.description;
+        show.description = "Let’s Play";
+      } else if (show.name == "Knallhart Durchgenommen") {
+        show.name = show.description;
+        show.description = "Knallhart Durchgenommen";
+      }
+    });
   }
 }

@@ -25,6 +25,7 @@ class Day extends Object with HeightMixin {
   List<TimeSlot> timeSlots;
   Day(this.date, [this.timeSlots = const []]);
   String get label => dateFormat.format(date);
+  String get dayName => dayNameFormat.format(date);
 }
 
 class SchedulerService {
@@ -180,3 +181,4 @@ class HeightMixin {
 
 final DateFormat dateFormat = new DateFormat.yMEd();
 final DateFormat timeFormat = new DateFormat.Hm();
+final DateFormat dayNameFormat = new DateFormat.E("en_US");
