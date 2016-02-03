@@ -3,6 +3,10 @@
     "1": "scheduler_angular2.app_component",
     "3": [
       {
+        "1": "dart:html",
+        "5": false
+      },
+      {
         "1": "package:angular2/angular2.dart",
         "5": false
       },
@@ -28,15 +32,19 @@
               },
               {
                 "1": "template",
-                "2": "'''\r\n<div [ngClass]='day.dayName' [class.today]='isToday'>\r\n  <h2>{{ day.label }}</h2>\r\n  <div class=\"shows\">\r\n    <schedule-time-slot\r\n              *ngFor=\"#timeSlot of day.timeSlots\"\r\n              [timeSlot]=\"timeSlot\"\r\n              [style.flex-grow]='timeSlot.height'\r\n              [class.current]='isCurrent(timeSlot)'>\r\n    </schedule-time-slot>\r\n  </div>\r\n</div>\r\n    '''"
+                "2": "'''\r\n<h2>{{ day.label }}</h2>\r\n<div class=\"shows\">\r\n  <schedule-time-slot\r\n            *ngFor=\"#timeSlot of day.timeSlots\"\r\n            [timeSlot]=\"timeSlot\"\r\n            [style.flex-grow]='timeSlot.height'\r\n            [class.current]='isCurrent(timeSlot)'>\r\n  </schedule-time-slot>\r\n</div>\r\n'''"
+              },
+              {
+                "1": "host",
+                "2": "const {'(mouseenter)' : r'expand($event.target)', '(mouseleave)' : r'shrink($event.target)'}"
               },
               {
                 "1": "styles",
-                "2": "const ['''\r\n:host {\r\n  flex-basis: 0;\r\n  flex-grow: 1;\r\n  min-width: 180px;\r\n}\r\n:host > div {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100vh;\r\n}\r\n.Mon {\r\n  background-color: hsla(0, 30%, 60%, 0.5);\r\n}\r\n.Mon schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(0, 20%, 70%, 0.5);\r\n}\r\n.Tue {\r\n  background-color: hsla(50, 30%, 60%, 0.5);\r\n}\r\n.Tue schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(50, 20%, 70%, 0.5);\r\n}\r\n.Wed {\r\n  background-color: hsla(100, 30%, 60%, 0.5);\r\n}\r\n.Wed schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(100, 20%, 70%, 0.5);\r\n}\r\n.Thu {\r\n  background-color: hsla(150, 30%, 60%, 0.5);\r\n}\r\n.Thu schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(150, 20%, 70%, 0.5);\r\n}\r\n.Fri {\r\n  background-color: hsla(200, 30%, 60%, 0.5);\r\n}\r\n.Fri schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(200, 20%, 70%, 0.5);\r\n}\r\n.Sat {\r\n  background-color: hsla(250, 30%, 60%, 0.5);\r\n}\r\n.Sat schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(250, 20%, 70%, 0.5);\r\n}\r\n.Sun {\r\n  background-color: hsla(300, 30%, 60%, 0.5);\r\n}\r\n.Sun schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(300, 20%, 70%, 0.5);\r\n}\r\nh2 {\r\n  text-align: center;\r\n  font-size: 16px;\r\n  flex-grow: 0;\r\n  margin: 0;\r\n  padding: 7px 0 2px 0;\r\n  background-color: hsla(0, 0%, 50%, 0.3);\r\n}\r\n.shows {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n}\r\nschedule-time-slot {\r\n  flex-basis: 0;\r\n}\r\nschedule-time-slot.current {\r\n  outline: 2px ridge #C2185B;\r\n  outline-offset: -1px;\r\n}\r\n.today {\r\n  outline: 2px ridge #C2185B;\r\n  outline-offset: -2px;\r\n}\r\n''']"
+                "2": "const ['''\r\n:host {\r\n  flex-basis: 0;\r\n  flex-grow: 1;\r\n  min-width: 180px;\r\n  transition: flex-grow 0.25s cubic-bezier(.7, .25, .25, .7);\r\n}\r\n:host.today {\r\n  flex-grow: 1.5;\r\n}\r\n:host {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100vh;\r\n}\r\n:host.Mon {\r\n  background-color: hsla(0, 30%, 60%, 0.5);\r\n}\r\n:host.Mon schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(0, 20%, 70%, 0.5);\r\n}\r\n:host.Tue {\r\n  background-color: hsla(50, 30%, 60%, 0.5);\r\n}\r\n:host.Tue schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(50, 20%, 70%, 0.5);\r\n}\r\n:host.Wed {\r\n  background-color: hsla(100, 30%, 60%, 0.5);\r\n}\r\n:host.Wed schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(100, 20%, 70%, 0.5);\r\n}\r\n:host.Thu {\r\n  background-color: hsla(150, 30%, 60%, 0.5);\r\n}\r\n:host.Thu schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(150, 20%, 70%, 0.5);\r\n}\r\n:host.Fri {\r\n  background-color: hsla(200, 30%, 60%, 0.5);\r\n}\r\n:host.Fri schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(200, 20%, 70%, 0.5);\r\n}\r\n:host.Sat {\r\n  background-color: hsla(250, 30%, 60%, 0.5);\r\n}\r\n:host.Sat schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(250, 20%, 70%, 0.5);\r\n}\r\n:host.Sun {\r\n  background-color: hsla(300, 30%, 60%, 0.5);\r\n}\r\n:host.Sun schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(300, 20%, 70%, 0.5);\r\n}\r\nh2 {\r\n  text-align: center;\r\n  font-size: 16px;\r\n  flex-grow: 0;\r\n  margin: 0;\r\n  padding: 7px 0 2px 0;\r\n  background-color: hsla(0, 0%, 50%, 0.3);\r\n}\r\n.shows {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n}\r\nschedule-time-slot {\r\n  flex-basis: 0;\r\n}\r\nschedule-time-slot.current {\r\n  outline: 2px ridge #C2185B;\r\n  outline-offset: -1px;\r\n}\r\n''']"
               },
               {
                 "1": "directives",
-                "2": "const [TimeSlotComponent, NgFor, NgIf, NgClass]"
+                "2": "const [TimeSlotComponent, NgFor, NgIf]"
               }
             ],
             "4": false,
@@ -70,9 +78,6 @@
           },
           {
             "2": "NgIf"
-          },
-          {
-            "2": "NgClass"
           }
         ]
       }
@@ -107,16 +112,19 @@
         "day": "day"
       },
       "outputs": {},
-      "hostListeners": {},
+      "hostListeners": {
+        "mouseenter": "expand($event.target)",
+        "mouseleave": "shrink($event.target)"
+      },
       "hostProperties": {},
       "hostAttributes": {},
       "lifecycleHooks": [],
       "template": {
         "encapsulation": 0,
-        "template": "<div [ngClass]='day.dayName' [class.today]='isToday'>\r\n  <h2>{{ day.label }}</h2>\r\n  <div class=\"shows\">\r\n    <schedule-time-slot\r\n              *ngFor=\"#timeSlot of day.timeSlots\"\r\n              [timeSlot]=\"timeSlot\"\r\n              [style.flex-grow]='timeSlot.height'\r\n              [class.current]='isCurrent(timeSlot)'>\r\n    </schedule-time-slot>\r\n  </div>\r\n</div>\r\n    ",
+        "template": "<h2>{{ day.label }}</h2>\r\n<div class=\"shows\">\r\n  <schedule-time-slot\r\n            *ngFor=\"#timeSlot of day.timeSlots\"\r\n            [timeSlot]=\"timeSlot\"\r\n            [style.flex-grow]='timeSlot.height'\r\n            [class.current]='isCurrent(timeSlot)'>\r\n  </schedule-time-slot>\r\n</div>\r\n",
         "templateUrl": "asset:scheduler_angular2/lib/day_component.dart",
         "styles": [
-          ":host {\r\n  flex-basis: 0;\r\n  flex-grow: 1;\r\n  min-width: 180px;\r\n}\r\n:host > div {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100vh;\r\n}\r\n.Mon {\r\n  background-color: hsla(0, 30%, 60%, 0.5);\r\n}\r\n.Mon schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(0, 20%, 70%, 0.5);\r\n}\r\n.Tue {\r\n  background-color: hsla(50, 30%, 60%, 0.5);\r\n}\r\n.Tue schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(50, 20%, 70%, 0.5);\r\n}\r\n.Wed {\r\n  background-color: hsla(100, 30%, 60%, 0.5);\r\n}\r\n.Wed schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(100, 20%, 70%, 0.5);\r\n}\r\n.Thu {\r\n  background-color: hsla(150, 30%, 60%, 0.5);\r\n}\r\n.Thu schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(150, 20%, 70%, 0.5);\r\n}\r\n.Fri {\r\n  background-color: hsla(200, 30%, 60%, 0.5);\r\n}\r\n.Fri schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(200, 20%, 70%, 0.5);\r\n}\r\n.Sat {\r\n  background-color: hsla(250, 30%, 60%, 0.5);\r\n}\r\n.Sat schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(250, 20%, 70%, 0.5);\r\n}\r\n.Sun {\r\n  background-color: hsla(300, 30%, 60%, 0.5);\r\n}\r\n.Sun schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(300, 20%, 70%, 0.5);\r\n}\r\nh2 {\r\n  text-align: center;\r\n  font-size: 16px;\r\n  flex-grow: 0;\r\n  margin: 0;\r\n  padding: 7px 0 2px 0;\r\n  background-color: hsla(0, 0%, 50%, 0.3);\r\n}\r\n.shows {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n}\r\nschedule-time-slot {\r\n  flex-basis: 0;\r\n}\r\nschedule-time-slot.current {\r\n  outline: 2px ridge #C2185B;\r\n  outline-offset: -1px;\r\n}\r\n.today {\r\n  outline: 2px ridge #C2185B;\r\n  outline-offset: -2px;\r\n}\r\n"
+          ":host {\r\n  flex-basis: 0;\r\n  flex-grow: 1;\r\n  min-width: 180px;\r\n  transition: flex-grow 0.25s cubic-bezier(.7, .25, .25, .7);\r\n}\r\n:host.today {\r\n  flex-grow: 1.5;\r\n}\r\n:host {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100vh;\r\n}\r\n:host.Mon {\r\n  background-color: hsla(0, 30%, 60%, 0.5);\r\n}\r\n:host.Mon schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(0, 20%, 70%, 0.5);\r\n}\r\n:host.Tue {\r\n  background-color: hsla(50, 30%, 60%, 0.5);\r\n}\r\n:host.Tue schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(50, 20%, 70%, 0.5);\r\n}\r\n:host.Wed {\r\n  background-color: hsla(100, 30%, 60%, 0.5);\r\n}\r\n:host.Wed schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(100, 20%, 70%, 0.5);\r\n}\r\n:host.Thu {\r\n  background-color: hsla(150, 30%, 60%, 0.5);\r\n}\r\n:host.Thu schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(150, 20%, 70%, 0.5);\r\n}\r\n:host.Fri {\r\n  background-color: hsla(200, 30%, 60%, 0.5);\r\n}\r\n:host.Fri schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(200, 20%, 70%, 0.5);\r\n}\r\n:host.Sat {\r\n  background-color: hsla(250, 30%, 60%, 0.5);\r\n}\r\n:host.Sat schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(250, 20%, 70%, 0.5);\r\n}\r\n:host.Sun {\r\n  background-color: hsla(300, 30%, 60%, 0.5);\r\n}\r\n:host.Sun schedule-time-slot:nth-child(2n) {\r\n  background-color: hsla(300, 20%, 70%, 0.5);\r\n}\r\nh2 {\r\n  text-align: center;\r\n  font-size: 16px;\r\n  flex-grow: 0;\r\n  margin: 0;\r\n  padding: 7px 0 2px 0;\r\n  background-color: hsla(0, 0%, 50%, 0.3);\r\n}\r\n.shows {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-grow: 1;\r\n}\r\nschedule-time-slot {\r\n  flex-basis: 0;\r\n}\r\nschedule-time-slot.current {\r\n  outline: 2px ridge #C2185B;\r\n  outline-offset: -1px;\r\n}\r\n"
         ],
         "styleUrls": [],
         "ngContentSelectors": []

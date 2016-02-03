@@ -9,6 +9,14 @@
       {
         "1": "package:scheduler/scheduler.dart",
         "5": false
+      },
+      {
+        "1": "dart:html",
+        "5": false
+      },
+      {
+        "1": "dart:async",
+        "5": false
       }
     ],
     "5": [
@@ -24,11 +32,15 @@
               },
               {
                 "1": "template",
-                "2": "'''\r\n<div class='time'>{{ timeSlot.getStartLabel() }}</div>\r\n<div class='content'>\r\n  <div class='name'>\r\n    {{ timeSlot.name }}\r\n  </div>\r\n  <div class='description'>\r\n    {{ timeSlot.description }}\r\n  </div>\r\n</div>\r\n<div class='duration'>{{ timeSlot.getDurationLabel() }}</div>\r\n'''"
+                "2": "'''\r\n<div class='time'>{{ timeSlot.getStartLabel() }}</div>\r\n<div class='content'>\r\n  <div class='name'>\r\n    {{ timeSlot.name }}\r\n  </div>\r\n  <div class='description'>\r\n    {{ timeSlot.description }}\r\n  </div>\r\n</div>\r\n<div class='duration'>{{ timeSlot.getDurationLabel() }}</div>\r\n<div class='progress' [style.width]='0'></div>\r\n'''"
+              },
+              {
+                "1": "host",
+                "2": "const {'(mouseenter)' : r'expand($event.target)', '(mouseleave)' : r'shrink($event.target)'}"
               },
               {
                 "1": "styles",
-                "2": "const ['''\r\n:host {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  position: relative;\r\n  overflow: hidden;\r\n  font-size: 14px;\r\n  padding: 0px 5px 0px 5px;\r\n  margin-top: 2px;\r\n}\r\n.time {\r\n  min-width: 40px;\r\n  text-align: center;\r\n}\r\n.content {\r\n  font-weight: bold;\r\n  margin-left: 5px;\r\n  flex-grow: 1;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n.content > .name {\r\n  min-height: 20px;\r\n}\r\n.content > .description {\r\n  font-weight: normal;\r\n  font-size: 12px;\r\n}\r\n.duration {\r\n  align-self: flex-end;\r\n  font-size: 12px;\r\n  min-width: 40px;\r\n  text-align: right;\r\n  min-height: 20px;\r\n}\r\n''']"
+                "2": "const ['''\r\n:host {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  position: relative;\r\n  overflow: hidden;\r\n  font-size: 14px;\r\n  padding: 0px 5px 0px 5px;\r\n  margin-top: 2px;\r\n}\r\n.time {\r\n  min-width: 40px;\r\n  text-align: center;\r\n}\r\n.progress {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background-color: hsla(0, 0%, 75%, 0.2);\r\n}\r\n.content {\r\n  font-weight: bold;\r\n  margin-left: 5px;\r\n  flex-grow: 1;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n.content > .description {\r\n  font-weight: normal;\r\n  font-size: 12px;\r\n}\r\n.duration {\r\n  align-self: flex-end;\r\n  font-size: 12px;\r\n  min-width: 40px;\r\n  text-align: right;\r\n  min-height: 20px;\r\n}\r\n''']"
               }
             ],
             "4": false,
@@ -37,6 +49,15 @@
             "7": true,
             "8": false
           }
+        ],
+        "5": [
+          {
+            "1": "ElementRef",
+            "4": "element"
+          }
+        ],
+        "6": [
+          "AfterViewInit"
         ],
         "7": [
           {
@@ -75,16 +96,21 @@
         "timeSlot": "timeSlot"
       },
       "outputs": {},
-      "hostListeners": {},
+      "hostListeners": {
+        "mouseenter": "expand($event.target)",
+        "mouseleave": "shrink($event.target)"
+      },
       "hostProperties": {},
       "hostAttributes": {},
-      "lifecycleHooks": [],
+      "lifecycleHooks": [
+        6
+      ],
       "template": {
         "encapsulation": 0,
-        "template": "<div class='time'>{{ timeSlot.getStartLabel() }}</div>\r\n<div class='content'>\r\n  <div class='name'>\r\n    {{ timeSlot.name }}\r\n  </div>\r\n  <div class='description'>\r\n    {{ timeSlot.description }}\r\n  </div>\r\n</div>\r\n<div class='duration'>{{ timeSlot.getDurationLabel() }}</div>\r\n",
+        "template": "<div class='time'>{{ timeSlot.getStartLabel() }}</div>\r\n<div class='content'>\r\n  <div class='name'>\r\n    {{ timeSlot.name }}\r\n  </div>\r\n  <div class='description'>\r\n    {{ timeSlot.description }}\r\n  </div>\r\n</div>\r\n<div class='duration'>{{ timeSlot.getDurationLabel() }}</div>\r\n<div class='progress' [style.width]='0'></div>\r\n",
         "templateUrl": "asset:scheduler_angular2/lib/time_slot_component.dart",
         "styles": [
-          ":host {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  position: relative;\r\n  overflow: hidden;\r\n  font-size: 14px;\r\n  padding: 0px 5px 0px 5px;\r\n  margin-top: 2px;\r\n}\r\n.time {\r\n  min-width: 40px;\r\n  text-align: center;\r\n}\r\n.content {\r\n  font-weight: bold;\r\n  margin-left: 5px;\r\n  flex-grow: 1;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n.content > .name {\r\n  min-height: 20px;\r\n}\r\n.content > .description {\r\n  font-weight: normal;\r\n  font-size: 12px;\r\n}\r\n.duration {\r\n  align-self: flex-end;\r\n  font-size: 12px;\r\n  min-width: 40px;\r\n  text-align: right;\r\n  min-height: 20px;\r\n}\r\n"
+          ":host {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  position: relative;\r\n  overflow: hidden;\r\n  font-size: 14px;\r\n  padding: 0px 5px 0px 5px;\r\n  margin-top: 2px;\r\n}\r\n.time {\r\n  min-width: 40px;\r\n  text-align: center;\r\n}\r\n.progress {\r\n  position: absolute;\r\n  top: 0;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n  background-color: hsla(0, 0%, 75%, 0.2);\r\n}\r\n.content {\r\n  font-weight: bold;\r\n  margin-left: 5px;\r\n  flex-grow: 1;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n.content > .description {\r\n  font-weight: normal;\r\n  font-size: 12px;\r\n}\r\n.duration {\r\n  align-self: flex-end;\r\n  font-size: 12px;\r\n  min-width: 40px;\r\n  text-align: right;\r\n  min-height: 20px;\r\n}\r\n"
         ],
         "styleUrls": [],
         "ngContentSelectors": []
