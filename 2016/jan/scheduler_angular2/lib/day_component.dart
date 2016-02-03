@@ -1,5 +1,7 @@
 library scheduler_angular2.app_component;
 
+import 'dart:html';
+
 import 'package:angular2/angular2.dart';
 import 'package:scheduler_angular2/time_slot_component.dart';
 
@@ -8,70 +10,76 @@ import 'package:scheduler/scheduler.dart';
 @Component(
     selector: 'schedule-day',
     template: '''
-<div [ngClass]='day.dayName' [class.today]='isToday'>
-  <h2>{{ day.label }}</h2>
-  <div class="shows">
-    <schedule-time-slot
-              *ngFor="#timeSlot of day.timeSlots"
-              [timeSlot]="timeSlot"
-              [style.flex-grow]='timeSlot.height'
-              [class.current]='isCurrent(timeSlot)'>
-    </schedule-time-slot>
-  </div>
+<h2>{{ day.label }}</h2>
+<div class="shows">
+  <schedule-time-slot
+            *ngFor="#timeSlot of day.timeSlots"
+            [timeSlot]="timeSlot"
+            [style.flex-grow]='timeSlot.height'
+            [class.current]='isCurrent(timeSlot)'>
+  </schedule-time-slot>
 </div>
-    ''',
+''',
+    host: const {
+      '(mouseenter)': r'expand($event.target)',
+      '(mouseleave)': r'shrink($event.target)'
+    },
     styles: const [
       '''
 :host {
   flex-basis: 0;
   flex-grow: 1;
   min-width: 180px;
+  transition: flex-grow 0.25s cubic-bezier(.7, .25, .25, .7);
 }
-:host > div {
+:host.today {
+  flex-grow: 1.5;
+}
+:host {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
-.Mon {
+:host.Mon {
   background-color: hsla(0, 30%, 60%, 0.5);
 }
-.Mon schedule-time-slot:nth-child(2n) {
+:host.Mon schedule-time-slot:nth-child(2n) {
   background-color: hsla(0, 20%, 70%, 0.5);
 }
-.Tue {
+:host.Tue {
   background-color: hsla(50, 30%, 60%, 0.5);
 }
-.Tue schedule-time-slot:nth-child(2n) {
+:host.Tue schedule-time-slot:nth-child(2n) {
   background-color: hsla(50, 20%, 70%, 0.5);
 }
-.Wed {
+:host.Wed {
   background-color: hsla(100, 30%, 60%, 0.5);
 }
-.Wed schedule-time-slot:nth-child(2n) {
+:host.Wed schedule-time-slot:nth-child(2n) {
   background-color: hsla(100, 20%, 70%, 0.5);
 }
-.Thu {
+:host.Thu {
   background-color: hsla(150, 30%, 60%, 0.5);
 }
-.Thu schedule-time-slot:nth-child(2n) {
+:host.Thu schedule-time-slot:nth-child(2n) {
   background-color: hsla(150, 20%, 70%, 0.5);
 }
-.Fri {
+:host.Fri {
   background-color: hsla(200, 30%, 60%, 0.5);
 }
-.Fri schedule-time-slot:nth-child(2n) {
+:host.Fri schedule-time-slot:nth-child(2n) {
   background-color: hsla(200, 20%, 70%, 0.5);
 }
-.Sat {
+:host.Sat {
   background-color: hsla(250, 30%, 60%, 0.5);
 }
-.Sat schedule-time-slot:nth-child(2n) {
+:host.Sat schedule-time-slot:nth-child(2n) {
   background-color: hsla(250, 20%, 70%, 0.5);
 }
-.Sun {
+:host.Sun {
   background-color: hsla(300, 30%, 60%, 0.5);
 }
-.Sun schedule-time-slot:nth-child(2n) {
+:host.Sun schedule-time-slot:nth-child(2n) {
   background-color: hsla(300, 20%, 70%, 0.5);
 }
 h2 {
@@ -94,29 +102,31 @@ schedule-time-slot.current {
   outline: 2px ridge #C2185B;
   outline-offset: -1px;
 }
-.today {
-  outline: 2px ridge #C2185B;
-  outline-offset: -2px;
-}
 '''
     ],
     directives: const [
       TimeSlotComponent,
       NgFor,
-      NgIf,
-      NgClass
+      NgIf
     ])
 class DayComponent {
-  @Input() Day day;
-  DateTime currentDate = new DateTime.now();
-
-  bool get isToday =>
-      currentDate.year == day.date.year &&
-      currentDate.month == day.date.month &&
-      currentDate.day == day.date.day;
+  @Input()
+  Day day;
 
   bool isCurrent(TimeSlot slot) =>
-      isToday &&
-      slot.start.isBefore(currentDate) &&
-      slot.end.isAfter(currentDate);
+      day.isToday &&
+      slot.start.isBefore(new DateTime.now()) &&
+      slot.end.isAfter(new DateTime.now());
+
+  void expand(HtmlElement target) {
+    target.style.flexGrow = '1.5';
+  }
+
+  void shrink(HtmlElement target) {
+    if (target.classes.contains('today')) {
+      target.style.flexGrow = '1.5';
+    } else {
+      target.style.flexGrow = '1';
+    }
+  }
 }

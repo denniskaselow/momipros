@@ -11,7 +11,7 @@ import 'package:scheduler/scheduler.dart';
     template: '''
 <div id="schedule">
   <i class="fa fa-arrow-circle-left" (click)='move(-1)'></i>
-  <schedule-day *ngFor="#day of days" [day]="day"></schedule-day>
+  <schedule-day *ngFor="#day of days" [day]="day" [class.today]='day.isToday' [ngClass]='day.dayName'></schedule-day>
   <i class="fa fa-arrow-circle-right" (click)='move(1)'></i>
 </div>
     ''',
@@ -30,13 +30,15 @@ import 'package:scheduler/scheduler.dart';
 '''
     ],
     directives: const [
+      DayComponent,
       NgFor,
-      DayComponent
+      NgClass
     ])
 class AppComponent {
   int offset = 0;
   List<Day> days;
   RbtvSchedulerService schedulerService;
+  DateTime currentDate = new DateTime.now();
 
   AppComponent(this.schedulerService) {
     schedulerService.getRbtvDays().then((days) {

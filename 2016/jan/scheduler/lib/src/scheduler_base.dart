@@ -5,6 +5,8 @@ import 'dart:math';
 import 'package:intl/intl.dart';
 import 'package:dson/dson.dart';
 
+DateTime _today = new DateTime.now();
+
 @serializable
 class TimeSlot extends Object with HeightMixin {
   String name, description;
@@ -26,11 +28,14 @@ class Day extends Object with HeightMixin {
   Day(this.date, [this.timeSlots = const []]);
   String get label => dateFormat.format(date);
   String get dayName => dayNameFormat.format(date);
+
+  bool get isToday =>
+      _today.year == date.year &&
+      _today.month == date.month &&
+      _today.day == date.day;
 }
 
 class SchedulerService {
-  DateTime _today = new DateTime.now();
-
   List<Day> getDays() {
     var today = new DateTime.now();
     var days = [
