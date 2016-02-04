@@ -34,6 +34,11 @@ import 'dart:async';
   font-size: 14px;
   padding: 0px 5px 0px 5px;
   margin-top: 2px;
+  flex-basis: 0;
+}
+:host.current {
+  outline: 2px ridge #C2185B;
+  outline-offset: -1px;
 }
 .time {
   min-width: 40px;
@@ -45,7 +50,8 @@ import 'dart:async';
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: hsla(0, 0%, 75%, 0.2);
+  background-color: hsla(0, 0%, 75%, 0.3);
+  z-index: -1;
 }
 .content {
   font-weight: bold;
@@ -70,23 +76,39 @@ import 'dart:async';
 class TimeSlotComponent implements AfterViewInit {
   @Input()
   TimeSlot timeSlot;
+  CssStyleDeclaration progressBar;
   ElementRef element;
 
   TimeSlotComponent(this.element);
 
   @override
   void ngAfterViewInit() {
-    var progressStyle = ((element.nativeElement as HtmlElement)
+    progressBar = ((element.nativeElement as HtmlElement)
             .querySelector('.progress') as HtmlElement)
         .style;
     var progress = getProgress();
-    progressStyle.width = '$progress%';
-    new Timer.periodic(new Duration(minutes: 1), (Timer timer) {
+    progressBar.width = '$progress%';
+    if (progress == 0.0) {
+      var timeUntilStart = timeSlot.start.difference(new DateTime.now());
+      new Timer(timeUntilStart, () {
+        _updateProgress();
+      });
+    } else if (progress < 100.0) {
+      _updateProgress();
+    }
+  }
+
+  void _updateProgress() {
+    (element.nativeElement as HtmlElement).classes.add('current');
+    var duration = timeSlot.getDuration();
+    new Timer.periodic(new Duration(milliseconds: duration.inMilliseconds ~/ 3000),
+        (Timer timer) {
       var progress = getProgress();
       if (progress >= 100.0) {
+        (element.nativeElement as HtmlElement).classes.remove('current');
         timer.cancel();
       }
-      progressStyle.width = '$progress%';
+      progressBar.width = '$progress%';
     });
   }
 

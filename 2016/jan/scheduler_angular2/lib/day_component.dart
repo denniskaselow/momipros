@@ -15,8 +15,7 @@ import 'package:scheduler/scheduler.dart';
   <schedule-time-slot
             *ngFor="#timeSlot of day.timeSlots"
             [timeSlot]="timeSlot"
-            [style.flex-grow]='timeSlot.height'
-            [class.current]='isCurrent(timeSlot)'>
+            [style.flex-grow]='timeSlot.height'>
   </schedule-time-slot>
 </div>
 ''',
@@ -95,13 +94,6 @@ h2 {
   flex-direction: column;
   flex-grow: 1;
 }
-schedule-time-slot {
-  flex-basis: 0;
-}
-schedule-time-slot.current {
-  outline: 2px ridge #C2185B;
-  outline-offset: -1px;
-}
 '''
     ],
     directives: const [
@@ -113,13 +105,12 @@ class DayComponent {
   @Input()
   Day day;
 
-  bool isCurrent(TimeSlot slot) =>
-      day.isToday &&
-      slot.start.isBefore(new DateTime.now()) &&
-      slot.end.isAfter(new DateTime.now());
-
   void expand(HtmlElement target) {
-    target.style.flexGrow = '1.5';
+    if (target.classes.contains('today')) {
+      target.style.flexGrow = '2';
+    } else {
+      target.style.flexGrow = '1.5';
+    }
   }
 
   void shrink(HtmlElement target) {
