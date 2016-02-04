@@ -83,6 +83,7 @@ import 'package:scheduler/scheduler.dart';
 }
 h2 {
   text-align: center;
+  font-family: Raleway, sans-serif;
   font-size: 16px;
   flex-grow: 0;
   margin: 0;
