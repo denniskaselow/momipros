@@ -29,7 +29,7 @@ Future<Null> main() async {
 
     var schedule = document.querySelector('#schedule');
     var scheduleDays = schedule.querySelectorAll('.day');
-    TimeSlot show = null;
+    RbtvTimeSlot show = null;
     scheduleDays.forEach((scheduleDay) async {
       var shows = <TimeSlot>[];
       var dayDate = scheduleDay
@@ -45,6 +45,8 @@ Future<Null> main() async {
         var showDetails = scheduleShow.querySelector('.showDetails');
         var name = showDetails.querySelector('h4').text;
         var game = showDetails.querySelector('.game')?.text ?? '';
+        var live = showDetails.querySelector('.live') != null;
+        var premiere = showDetails.querySelector('.premiere') != null;
         var hour = int.parse(time.split(':')[0]);
         var minute = int.parse(time.split(':')[1]);
         var startTime = new DateTime(year, month, day, hour, minute);
@@ -53,7 +55,7 @@ Future<Null> main() async {
         if (null != show) {
           show.end = startTime;
         }
-        show = new TimeSlot(name, startTime, dummyEndTime, game);
+        show = new RbtvTimeSlot(name, startTime, dummyEndTime, game, live, premiere);
         shows.add(show);
       });
       var path = 'lib/assets/rbtv/$year/${month.toString().padLeft(2, '0')}/';

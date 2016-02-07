@@ -18,6 +18,20 @@ class TimeSlot extends Object with HeightMixin {
   String getDurationLabel() => '${getDuration().inMinutes} min';
 }
 
+@serializable
+class RbtvTimeSlot extends TimeSlot {
+  bool live;
+  bool premiere;
+  RbtvTimeSlot(
+      [String name,
+      DateTime start,
+      DateTime end,
+      String description = '',
+      this.live,
+      this.premiere])
+      : super(name, start, end, description);
+}
+
 class EmptyTimeSlot extends TimeSlot {
   EmptyTimeSlot(DateTime start, DateTime end) : super('', start, end);
 }

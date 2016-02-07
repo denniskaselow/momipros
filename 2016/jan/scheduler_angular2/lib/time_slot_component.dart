@@ -8,7 +8,7 @@ import 'dart:async';
 @Component(
     selector: 'schedule-time-slot',
     template: '''
-<div class='time'>{{ timeSlot.getStartLabel() }}</div>
+<div class='time' [class.live]='timeSlot.live' [class.premiere]='timeSlot.premiere'>{{ timeSlot.getStartLabel() }}</div>
 <div class='content'>
   <div class='name'>
     {{ timeSlot.name }}
@@ -32,7 +32,7 @@ import 'dart:async';
   position: relative;
   overflow: hidden;
   font-size: 14px;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 5px 0px 2px;
   margin-top: 2px;
   flex-basis: 0;
 }
@@ -40,8 +40,24 @@ import 'dart:async';
   outline: 2px ridge #C2185B;
   outline-offset: -1px;
 }
+.premiere:after {
+  background-color: hsla(120, 60%, 40%, 0.5);
+  content: 'P';
+  margin-left: 3px;
+}
+.live:after {
+  background-color: hsla(0, 60%, 40%, 0.5);
+  content: 'L';
+}
 .time {
-  min-width: 40px;
+  min-width: 50px;
+  text-align: left;
+}
+.time:after {
+  width: 11px;
+  margin-left: 3px;
+  border-radius: 4px;
+  display: inline-block;
   text-align: center;
 }
 .progress {
@@ -75,7 +91,7 @@ import 'dart:async';
     ])
 class TimeSlotComponent implements AfterViewInit {
   @Input()
-  TimeSlot timeSlot;
+  RbtvTimeSlot timeSlot;
   CssStyleDeclaration progressBar;
   ElementRef element;
 

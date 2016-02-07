@@ -7,7 +7,7 @@ import 'package:scheduler/src/scheduler_base.dart';
 import 'package:dson/dson.dart';
 
 class RbtvSchedulerService extends SchedulerService {
-  Map<String, List<TimeSlot>> showCache = <String, List<TimeSlot>>{};
+  Map<String, List<RbtvTimeSlot>> showCache = <String, List<RbtvTimeSlot>>{};
 
   Future<List<Day>> getRbtvDays([int offset = 0]) async {
     var today = new DateTime.now();
@@ -21,7 +21,7 @@ class RbtvSchedulerService extends SchedulerService {
     return days;
   }
 
-  Future<List<TimeSlot>> getRbtvTimeSlots(DateTime date) async {
+  Future<List<RbtvTimeSlot>> getRbtvTimeSlots(DateTime date) async {
     var dateId =
         '${date.year}/${date.month.toString().padLeft(2, '0')}/${date.day.toString().padLeft(2, '0')}';
     var shows = showCache[dateId];
@@ -30,18 +30,18 @@ class RbtvSchedulerService extends SchedulerService {
         var response = await HttpRequest
             .request('packages/scheduler/assets/rbtv/$dateId.json');
         var content = response.responseText;
-        shows = fromJsonList(content, TimeSlot) as List<TimeSlot>;
+        shows = fromJsonList(content, RbtvTimeSlot) as List<RbtvTimeSlot>;
         if (!(shows.first.start.hour == 0 && shows.first.start.minute == 0)) {
           var previousShows =
               await getRbtvTimeSlots(date.subtract(new Duration(days: 1)));
           var lastShow = previousShows.last;
           shows.insert(
               0,
-              new TimeSlot(
+              new RbtvTimeSlot(
                   lastShow.name,
                   new DateTime(date.year, date.month, date.day),
                   shows.first.start,
-                  lastShow.description));
+                  lastShow.description, lastShow.live, lastShow.premiere));
         }
         shows.last.end = new DateTime(
             shows.last.end.year, shows.last.end.month, shows.last.end.day);
@@ -55,7 +55,7 @@ class RbtvSchedulerService extends SchedulerService {
     return shows;
   }
 
-  void _modifySpecialShows(List<TimeSlot> shows) {
+  void _modifySpecialShows(List<RbtvTimeSlot> shows) {
     shows.forEach((show) {
       if (show.name == "Let’s Play") {
         show.name = show.description;
