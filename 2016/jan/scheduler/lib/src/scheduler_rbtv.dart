@@ -10,11 +10,14 @@ class RbtvSchedulerService extends SchedulerService {
   Map<String, List<RbtvTimeSlot>> showCache = <String, List<RbtvTimeSlot>>{};
 
   Future<List<Day>> getRbtvDays([int offset = 0]) async {
+    print(offset);
     var today = new DateTime.now();
     today = today.add(new Duration(days: offset));
+    print(today);
     var days = <Day>[];
     for (int i = -3; i <= 3; i++) {
       var day = today.add(new Duration(days: i));
+      print('get for $day');
       var timeSlots = await getRbtvTimeSlots(day);
       days.add(new Day(day, timeSlots));
     }
@@ -66,4 +69,11 @@ class RbtvSchedulerService extends SchedulerService {
       }
     });
   }
+
+  @override
+  TimeSlot getEmptyTimeSlot(DateTime start, DateTime end) {
+    return new EmptyRbtvTimeSlot(start, end);
+  }
+
+
 }

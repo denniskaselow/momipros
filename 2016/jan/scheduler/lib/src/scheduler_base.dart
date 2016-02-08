@@ -36,6 +36,10 @@ class EmptyTimeSlot extends TimeSlot {
   EmptyTimeSlot(DateTime start, DateTime end) : super('', start, end);
 }
 
+class EmptyRbtvTimeSlot extends RbtvTimeSlot {
+  EmptyRbtvTimeSlot(DateTime start, DateTime end) : super('', start, end, '', false, false);
+}
+
 class Day extends Object with HeightMixin {
   DateTime date;
   List<TimeSlot> timeSlots;
@@ -76,14 +80,14 @@ class SchedulerService {
   void fillTimeSlots(List<TimeSlot> timeSlots, DateTime date) {
     if (timeSlots.length == 0) {
       var nextDay = date.add(new Duration(days: 1));
-      timeSlots.add(new EmptyTimeSlot(
+      timeSlots.add(getEmptyTimeSlot(
           new DateTime(date.year, date.month, date.day),
           new DateTime(nextDay.year, nextDay.month, nextDay.day)));
       return;
     }
 
     var current = timeSlots.first;
-    var emptySlot = new EmptyTimeSlot(
+    var emptySlot = getEmptyTimeSlot(
         new DateTime(
             current.start.year, current.start.month, current.start.day),
         new DateTime(current.start.year, current.start.month, current.start.day,
@@ -93,7 +97,7 @@ class SchedulerService {
     }
 
     current = timeSlots.last;
-    emptySlot = new EmptyTimeSlot(
+    emptySlot = getEmptyTimeSlot(
         new DateTime(current.end.year, current.end.month, current.end.day,
             current.end.hour, current.end.minute),
         new DateTime(current.start.year, current.start.month, current.start.day)
@@ -101,6 +105,10 @@ class SchedulerService {
     if (emptySlot.getDuration().inMinutes > 0) {
       timeSlots.add(emptySlot);
     }
+  }
+
+  TimeSlot getEmptyTimeSlot(DateTime start, DateTime end) {
+    return new EmptyTimeSlot(start, end);
   }
 
   void optimizeHeights(List<Day> days, int minHeight) {
