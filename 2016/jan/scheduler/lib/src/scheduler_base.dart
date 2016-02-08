@@ -37,7 +37,8 @@ class EmptyTimeSlot extends TimeSlot {
 }
 
 class EmptyRbtvTimeSlot extends RbtvTimeSlot {
-  EmptyRbtvTimeSlot(DateTime start, DateTime end) : super('', start, end, '', false, false);
+  EmptyRbtvTimeSlot(DateTime start, DateTime end)
+      : super('', start, end, '', false, false);
 }
 
 class Day extends Object with HeightMixin {
@@ -54,6 +55,9 @@ class Day extends Object with HeightMixin {
 }
 
 class SchedulerService {
+  int startHour = 0;
+  int startMinute = 0;
+
   List<Day> getDays() {
     var today = new DateTime.now();
     var days = [
@@ -81,8 +85,8 @@ class SchedulerService {
     if (timeSlots.length == 0) {
       var nextDay = date.add(new Duration(days: 1));
       timeSlots.add(getEmptyTimeSlot(
-          new DateTime(date.year, date.month, date.day),
-          new DateTime(nextDay.year, nextDay.month, nextDay.day)));
+          new DateTime(date.year, date.month, date.day, startHour, startMinute),
+          new DateTime(nextDay.year, nextDay.month, nextDay.day, startHour, startMinute)));
       return;
     }
 
@@ -134,9 +138,8 @@ class SchedulerService {
       var endTime = _getEndTime(shortSlot);
       var missingHeight = minHeight - shortSlot.height;
       for (var day in days) {
-        if (shortSlot.start.day == day.date.day &&
-            shortSlot.start.month == day.date.month) continue;
         for (var timeSlot in day.timeSlots) {
+          if (shortSlot == timeSlot) break;
           var otherStartTime = _getStartTime(timeSlot);
           if (otherStartTime.isAfter(endTime)) break;
           var otherEndTime = _getEndTime(timeSlot);
@@ -148,6 +151,10 @@ class SchedulerService {
           var jointDuration = jointEndTime.difference(jointStartTime);
           var share =
               jointDuration.inMinutes / shortSlot.getDuration().inMinutes;
+          if (share > 1.0) {
+            print(
+                '$share = ${jointDuration.inMinutes} / ${shortSlot.getDuration().inMinutes} - von ${jointStartTime} bis $jointEndTime');
+          }
           timeSlot.height += (missingHeight * share).round();
         }
       }
@@ -156,7 +163,7 @@ class SchedulerService {
   }
 
   void compressTimeSlots(List<Day> days, int minHeight) {
-    var startTime = _getStartTimeHM(0, 0);
+    var startTime = _getStartTimeHM(startHour, startMinute);
     var shortestSlot;
     var diffOfShortestSlot;
     var slots = [];
@@ -183,23 +190,40 @@ class SchedulerService {
       startTime = endTime;
       shortestSlot = null;
       slots = [];
-    } while (!(startTime.hour == 0 && startTime.minute == 0));
+    } while (!(startTime.hour == startHour && startTime.minute == startMinute));
   }
 
   DateTime _getEndTime(TimeSlot timeSlot) {
     var baseDate = _today;
-    if (timeSlot.end.hour == 0 && timeSlot.end.minute == 0) {
+    if (timeSlot.end.hour >= 0 && timeSlot.end.hour < startHour ||
+        timeSlot.end.hour == startHour && timeSlot.end.minute <= startMinute) {
       baseDate = baseDate.add(new Duration(days: 1));
     }
     return new DateTime(baseDate.year, baseDate.month, baseDate.day,
         timeSlot.end.hour, timeSlot.end.minute);
   }
 
-  DateTime _getStartTimeHM(hour, minute) =>
-      new DateTime(_today.year, _today.month, _today.day, hour, minute);
+  DateTime _getStartTimeHM(hour, minute) {
+    var baseDate = _today;
+    if (hour >= 0 && hour < startHour ||
+        hour == startHour && minute < startMinute) {
+      baseDate = baseDate.add(new Duration(days: 1));
+    }
+    return new DateTime(
+        baseDate.year, baseDate.month, baseDate.day, hour, minute);
+  }
 
-  DateTime _getStartTime(TimeSlot timeSlot) => new DateTime(_today.year,
-      _today.month, _today.day, timeSlot.start.hour, timeSlot.start.minute);
+  DateTime _getStartTime(TimeSlot timeSlot) {
+    var baseDate = _today;
+    if (timeSlot.start.hour >= 0 && timeSlot.start.hour < startHour ||
+        timeSlot.start.hour == startHour &&
+            timeSlot.start.minute < startMinute) {
+      baseDate = baseDate.add(new Duration(days: 1));
+    }
+    return new DateTime(baseDate.year, baseDate.month, baseDate.day,
+        timeSlot.start.hour, timeSlot.start.minute);
+    ;
+  }
 }
 
 class HeightMixin {

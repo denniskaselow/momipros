@@ -41,7 +41,7 @@ class AppComponent {
   DateTime currentDate = new DateTime.now();
 
   AppComponent(this.schedulerService) {
-    schedulerService.getRbtvDays().then((days) {
+    schedulerService.getRbtvDays(10, 30).then((days) {
       this.days = days;
       schedulerService.optimizeHeights(days, 15);
     });
@@ -49,7 +49,7 @@ class AppComponent {
 
   void move(int change) {
     offset += change;
-    schedulerService.getRbtvDays(offset).then((days) {
+    schedulerService.getRbtvDays(10, 30, offset).then((days) {
       this.days = days;
       schedulerService.optimizeHeights(days, 15);
     });

@@ -33,7 +33,6 @@ import 'dart:async';
   overflow: hidden;
   font-size: 14px;
   padding: 0px 5px 0px 2px;
-  margin-top: 2px;
   flex-basis: 0;
 }
 :host.current {
