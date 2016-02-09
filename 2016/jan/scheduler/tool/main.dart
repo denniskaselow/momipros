@@ -47,15 +47,25 @@ Future<Null> main() async {
         var game = showDetails.querySelector('.game')?.text ?? '';
         var live = showDetails.querySelector('.live') != null;
         var premiere = showDetails.querySelector('.premiere') != null;
+        var showDuration = showDetails.querySelector('.showDuration').text;
+        var hourMinuteRegexp = new RegExp(r'((\d+) Std\. )?(\d+) Min\.');
+        var matches = hourMinuteRegexp.allMatches(showDuration);
+        var duration = 0;
+        matches.forEach((match) {
+          duration = int.parse(match.group(3));
+          if (match.group(2) != null) {
+            duration += 60 * int.parse(match.group(2));
+          }
+        });
         var hour = int.parse(time.split(':')[0]);
         var minute = int.parse(time.split(':')[1]);
         var startTime = new DateTime(year, month, day, hour, minute);
-        var dummyEndTime =
-            new DateTime(year, month, day).add(new Duration(days: 1));
+        var dummyEndTime = startTime.add(new Duration(minutes: duration));
         if (null != show) {
           show.end = startTime;
         }
-        show = new RbtvTimeSlot(name, startTime, dummyEndTime, game, live, premiere);
+        show = new RbtvTimeSlot(
+            name, startTime, dummyEndTime, game, live, premiere);
         shows.add(show);
       });
       var path = 'lib/assets/rbtv/$year/${month.toString().padLeft(2, '0')}/';

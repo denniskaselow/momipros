@@ -36,6 +36,9 @@ class RbtvSchedulerService extends SchedulerService {
           show.start.hour == startHour && show.start.minute < startMinute).toList();
       shows.addAll(tomorrowShows);
     }
+    for (int i = 0; i < shows.length - 1; i++) {
+      shows[i].end = shows[i+1].start;
+    }
     if (goIntoPast && !(shows.first.start.hour == startHour &&
         shows.first.start.minute == startMinute)) {
       var previousShows =
@@ -51,9 +54,13 @@ class RbtvSchedulerService extends SchedulerService {
               lastShow.live,
               lastShow.premiere));
     }
-    shows.last.end = new DateTime(
+    var endOfDay = new DateTime(
         shows.last.end.year, shows.last.end.month, shows.last.end.day, startHour, startMinute);
+    if (shows.last.end.isAfter(endOfDay)) {
+      shows.last.end = endOfDay;
+    }
     _modifySpecialShows(shows);
+    fillTimeSlots(shows, date);
 
     return shows;
   }
@@ -70,10 +77,10 @@ class RbtvSchedulerService extends SchedulerService {
         shows = fromJsonList(content, RbtvTimeSlot) as List<RbtvTimeSlot>;
       } catch (e) {
         shows = [];
+        fillTimeSlots(shows, date);
       }
       showCache[dateId] = shows;
     }
-    fillTimeSlots(shows, date);
     return shows;
   }
 

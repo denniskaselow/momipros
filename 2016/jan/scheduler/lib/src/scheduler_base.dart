@@ -86,14 +86,15 @@ class SchedulerService {
       var nextDay = date.add(new Duration(days: 1));
       timeSlots.add(getEmptyTimeSlot(
           new DateTime(date.year, date.month, date.day, startHour, startMinute),
-          new DateTime(nextDay.year, nextDay.month, nextDay.day, startHour, startMinute)));
+          new DateTime(nextDay.year, nextDay.month, nextDay.day, startHour,
+              startMinute)));
       return;
     }
 
     var current = timeSlots.first;
     var emptySlot = getEmptyTimeSlot(
-        new DateTime(
-            current.start.year, current.start.month, current.start.day),
+        new DateTime(current.start.year, current.start.month, current.start.day,
+            startHour, startMinute),
         new DateTime(current.start.year, current.start.month, current.start.day,
             current.start.hour, current.start.minute));
     if (emptySlot.getDuration().inMinutes > 0) {
@@ -101,11 +102,12 @@ class SchedulerService {
     }
 
     current = timeSlots.last;
+    var tommorow = date.add(new Duration(days: 1));
     emptySlot = getEmptyTimeSlot(
         new DateTime(current.end.year, current.end.month, current.end.day,
             current.end.hour, current.end.minute),
-        new DateTime(current.start.year, current.start.month, current.start.day)
-            .add(new Duration(days: 1)));
+        new DateTime(tommorow.year, tommorow.month, tommorow.day,
+                startHour, startMinute));
     if (emptySlot.getDuration().inMinutes > 0) {
       timeSlots.add(emptySlot);
     }
