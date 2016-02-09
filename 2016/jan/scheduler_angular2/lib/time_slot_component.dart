@@ -81,8 +81,8 @@ import 'dart:async';
 }
 .duration {
   align-self: flex-end;
-  font-size: 12px;
-  min-width: 40px;
+  font-size: 11px;
+  min-width: 42px;
   text-align: right;
   min-height: 20px;
 }
