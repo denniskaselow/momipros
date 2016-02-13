@@ -1,15 +1,26 @@
 <dom-module id="main-app">
-  <style>
-    :host {
-      display: block;
-    }
-  </style>
+    <style>
+        #schedule {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-  <template>
-    <paper-input label="Type something..." value="{{text}}"></paper-input>
-    <p>
-      Text: <span>{{text}}</span><br />
-      Reversed: <span>{{reverseText(text)}}</span>
-    </p>
-  </template>
+        .fa-arrow-circle-right, .fa-arrow-circle-left {
+            font-size: 40px;
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
+
+    <template>
+        <div id="schedule">
+            <i class="fa fa-arrow-circle-left" on-click='moveLeft'></i>
+            <template is="dom-repeat" items="{{days}}" as="day">
+                <schedule-day day="[[day]]" class$="{{day.dayName}}"></schedule-day>
+            </template>
+            <i class="fa fa-arrow-circle-right" on-click='moveRight'></i>
+        </div>
+
+    </template>
 </dom-module>

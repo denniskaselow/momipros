@@ -1,0 +1,78 @@
+<dom-module id="schedule-time-slot">
+    <style>
+        :host {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            font-size: 14px;
+            padding: 0px 5px 0px 2px;
+            flex-basis: 0;
+        }
+        :host.current {
+            outline: 2px ridge #C2185B;
+            outline-offset: -1px;
+        }
+        .premiere > .time:after {
+            background-color: hsla(120, 60%, 40%, 0.5);
+            content: 'P';
+            margin-left: 3px;
+        }
+        .live > .time:after {
+            background-color: hsla(0, 60%, 40%, 0.5);
+            content: 'L';
+        }
+        .time {
+            min-width: 50px;
+            text-align: left;
+        }
+        .time:after {
+            width: 11px;
+            margin-left: 3px;
+            border-radius: 4px;
+            display: inline-block;
+            text-align: center;
+        }
+        .progress {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: hsla(0, 0%, 75%, 0.3);
+            z-index: -1;
+        }
+        .content {
+            font-weight: bold;
+            margin-left: 5px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .content > .description {
+            font-weight: normal;
+            font-size: 12px;
+        }
+        .duration {
+            align-self: flex-end;
+            font-size: 11px;
+            min-width: 42px;
+            text-align: right;
+            min-height: 20px;
+        }
+    </style>
+
+    <template>
+        <div class='time'>{{ startLabel }}</div>
+        <div class='content'>
+            <div class='name'>
+                {{ timeSlot.name }}
+            </div>
+            <div class='description'>
+                {{ timeSlot.description }}
+            </div>
+        </div>
+        <div class='duration'>{{ durationLabel }}</div>
+        <div class='progress' style='width: 0'></div>
+    </template>
+</dom-module>

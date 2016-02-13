@@ -4,17 +4,24 @@ import 'dart:math';
 
 import 'package:intl/intl.dart';
 import 'package:dson/dson.dart';
+import 'package:polymer/polymer.dart';
 
 DateTime _today = new DateTime.now();
 
 @serializable
-class TimeSlot extends Object with HeightMixin {
+class TimeSlot extends JsProxy {
+  @reflectable
   String name, description;
+  @reflectable
   DateTime start, end;
+  @reflectable
+  int height;
   TimeSlot([this.name, this.start, this.end, this.description = '']);
 
   Duration getDuration() => end.difference(start);
+  @reflectable
   String getStartLabel() => timeFormat.format(start);
+  @reflectable
   String getDurationLabel() => '${getDuration().inMinutes} min';
 }
 
@@ -41,11 +48,14 @@ class EmptyRbtvTimeSlot extends RbtvTimeSlot {
       : super('', start, end, '', false, false);
 }
 
-class Day extends Object with HeightMixin {
+class Day extends JsProxy {
   DateTime date;
-  List<TimeSlot> timeSlots;
+  @reflectable
+  List<imeSlot> timeSlots;
   Day(this.date, [this.timeSlots = const []]);
+  @reflectable
   String get label => dateFormat.format(date);
+  @reflectable
   String get dayName => dayNameFormat.format(date);
 
   bool get isToday =>
@@ -226,10 +236,6 @@ class SchedulerService {
         timeSlot.start.hour, timeSlot.start.minute);
     ;
   }
-}
-
-class HeightMixin {
-  int height;
 }
 
 final DateFormat dateFormat = new DateFormat.yMEd();

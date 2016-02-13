@@ -3,44 +3,39 @@ library scheduler_polymer.lib.main_app;
 
 import 'dart:html';
 
-import 'package:polymer_elements/paper_input.dart';
 import 'package:polymer/polymer.dart';
 import 'package:web_components/web_components.dart';
+import 'package:scheduler/scheduler.dart';
 
-/// Uses [PaperInput]
 @PolymerRegister('main-app')
 class MainApp extends PolymerElement {
+  int _offset = 0;
   @property
-  String text;
+  List<Day> days;
+  RbtvSchedulerService schedulerService;
+  DateTime currentDate = new DateTime.now();
 
   /// Constructor used to create instance of MainApp.
   MainApp.created() : super.created();
 
-  @reflectable
-  String reverseText(String text) {
-    return text.split('').reversed.join('');
+  void ready() {
+    schedulerService = new RbtvSchedulerService();
+    schedulerService.getRbtvDays(10, 30).then((days) {
+      schedulerService.optimizeHeights(days, 15);
+      set('days', days);
+    });
   }
 
-  // Optional lifecycle methods - uncomment if needed.
+  @reflectable
+  void moveLeft(event, [_]) => move(-1);
+  @reflectable
+  void moveRight(event, [_]) => move(1);
 
-//  /// Called when an instance of main-app is inserted into the DOM.
-//  attached() {
-//    super.attached();
-//  }
-
-//  /// Called when an instance of main-app is removed from the DOM.
-//  detached() {
-//    super.detached();
-//  }
-
-//  /// Called when an attribute (such as a class) of an instance of
-//  /// main-app is added, changed, or removed.
-//  attributeChanged(String name, String oldValue, String newValue) {
-//    super.attributeChanged(name, oldValue, newValue);
-//  }
-
-//  /// Called when main-app has been fully prepared (Shadow DOM created,
-//  /// property observers set up, event listeners attached).
-//  ready() {
-//  }
+  void move(int change) {
+    _offset += change;
+    schedulerService.getRbtvDays(10, 30, _offset).then((days) {
+      schedulerService.optimizeHeights(days, 15);
+      set('days', days);
+    });
+  }
 }
