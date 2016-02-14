@@ -16,6 +16,17 @@ class TimeSlot extends Object with HeightMixin {
   Duration getDuration() => end.difference(start);
   String getStartLabel() => timeFormat.format(start);
   String getDurationLabel() => '${getDuration().inMinutes} min';
+  double getProgress() {
+    var timepassed = new DateTime.now().difference(start);
+    if (timepassed.inMinutes <= 0) {
+      return 0.0;
+    }
+    var duration = getDuration();
+    if (timepassed.inMinutes > duration.inMinutes) {
+      return 100.0;
+    }
+    return 100.0 * timepassed.inMilliseconds / duration.inMilliseconds;
+  }
 }
 
 @serializable
@@ -235,3 +246,5 @@ class HeightMixin {
 final DateFormat dateFormat = new DateFormat.yMEd();
 final DateFormat timeFormat = new DateFormat.Hm();
 final DateFormat dayNameFormat = new DateFormat.E("en_US");
+final DateFormat dateIdFormat = new DateFormat('yyyyMMdd');
+final DateFormat timeIdFormat = new DateFormat('HHmm');

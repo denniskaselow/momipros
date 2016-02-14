@@ -1,9 +1,172 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 700;
+    src: local("Open Sans Bold"), local("OpenSans-Bold"), url("http://fonts.gstatic.com/s/opensans/v13/k3k702ZOKiLJc3WVjuplzOgdm0LZdjqr5-oayXSOefg.woff2") format("woff2");
+}
 
-html, body {
-    width: 100%;
-    height: 100%;
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans"), local("OpenSans"), url("http://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 800;
+    src: local("Raleway ExtraBold"), local("Raleway-ExtraBold"), url("http://fonts.gstatic.com/s/raleway/v9/1ImRNPx4870-D9a1EBUdPPk_vArhqVIZ0nv9q090hN8.woff2") format("woff2");
+}
+
+body {
     margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("http://www.rocketbeans.tv/wp-content/themes/rocket-beans/assets/img/bg.jpg");
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+#schedule {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fa-arrow-circle-right, .fa-arrow-circle-left {
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+.day {
+    flex-basis: 0;
+    flex-grow: 1;
+    min-width: 180px;
+    transition: flex-grow 0.25s cubic-bezier(.7, .25, .25, .7);
+}
+.day {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.day.Mon {
+    background-color: hsla(0, 30%, 60%, 0.5);
+}
+.day.Mon .timeslot:nth-child(2n) {
+    background-color: hsla(0, 20%, 70%, 0.5);
+}
+.day.Tue {
+    background-color: hsla(50, 30%, 60%, 0.5);
+}
+.day.Tue .timeslot:nth-child(2n) {
+    background-color: hsla(50, 20%, 70%, 0.5);
+}
+.day.Wed {
+    background-color: hsla(100, 30%, 60%, 0.5);
+}
+.day.Wed .timeslot:nth-child(2n) {
+    background-color: hsla(100, 20%, 70%, 0.5);
+}
+.day.Thu {
+    background-color: hsla(150, 30%, 60%, 0.5);
+}
+.day.Thu .timeslot:nth-child(2n) {
+    background-color: hsla(150, 20%, 70%, 0.5);
+}
+.day.Fri {
+    background-color: hsla(200, 30%, 60%, 0.5);
+}
+.day.Fri .timeslot:nth-child(2n) {
+    background-color: hsla(200, 20%, 70%, 0.5);
+}
+.day.Sat {
+    background-color: hsla(250, 30%, 60%, 0.5);
+}
+.day.Sat .timeslot:nth-child(2n) {
+    background-color: hsla(250, 20%, 70%, 0.5);
+}
+.day.Sun {
+    background-color: hsla(300, 30%, 60%, 0.5);
+}
+.day.Sun .timeslot:nth-child(2n) {
+    background-color: hsla(300, 20%, 70%, 0.5);
+}
+h2 {
+    text-align: center;
+    font-family: Raleway, sans-serif;
+    font-size: 16px;
+    flex-grow: 0;
+    margin: 0;
+    padding: 7px 0 2px 0;
+    background-color: hsla(0, 0%, 50%, 0.3);
+}
+.shows {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+
+.timeslot {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    font-size: 14px;
+    padding: 0px 5px 0px 2px;
+    flex-basis: 0;
+}
+.timeslot.current {
+    outline: 2px ridge #C2185B;
+    outline-offset: -1px;
+}
+.premiere:after {
+    background-color: hsla(120, 60%, 40%, 0.5);
+    content: 'P';
+    margin-left: 3px;
+}
+.live:after {
+    background-color: hsla(0, 60%, 40%, 0.5);
+    content: 'L';
+}
+.time {
+    min-width: 50px;
+    text-align: left;
+}
+.time:after {
+    width: 11px;
+    margin-left: 3px;
+    border-radius: 4px;
+    display: inline-block;
+    text-align: center;
+}
+.progress {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: hsla(0, 0%, 75%, 0.3);
+    z-index: -1;
+}
+.content {
+    font-weight: bold;
+    margin-left: 5px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.content > .description {
+    font-weight: normal;
+    font-size: 12px;
+}
+.duration {
+    align-self: flex-end;
+    font-size: 11px;
+    min-width: 42px;
+    text-align: right;
+    min-height: 20px;
 }

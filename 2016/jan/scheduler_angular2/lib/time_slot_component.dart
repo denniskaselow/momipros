@@ -20,10 +20,6 @@ import 'dart:async';
 <div class='duration'>{{ timeSlot.getDurationLabel() }}</div>
 <div class='progress' [style.width]='0'></div>
 ''',
-    host: const {
-      '(mouseenter)': r'expand($event.target)',
-      '(mouseleave)': r'shrink($event.target)'
-    },
     styles: const [
       '''
 :host {
@@ -101,7 +97,7 @@ class TimeSlotComponent implements AfterViewInit {
     progressBar = ((element.nativeElement as HtmlElement)
             .querySelector('.progress') as HtmlElement)
         .style;
-    var progress = getProgress();
+    var progress = timeSlot.getProgress();
     progressBar.width = '$progress%';
     if (progress == 0.0) {
       var timeUntilStart = timeSlot.start.difference(new DateTime.now());
@@ -116,29 +112,15 @@ class TimeSlotComponent implements AfterViewInit {
   void _updateProgress() {
     (element.nativeElement as HtmlElement).classes.add('current');
     var duration = timeSlot.getDuration();
-    new Timer.periodic(new Duration(milliseconds: duration.inMilliseconds ~/ 3000),
+    new Timer.periodic(
+        new Duration(milliseconds: duration.inMilliseconds ~/ 3000),
         (Timer timer) {
-      var progress = getProgress();
+      var progress = timeSlot.getProgress();
       if (progress >= 100.0) {
         (element.nativeElement as HtmlElement).classes.remove('current');
         timer.cancel();
       }
       progressBar.width = '$progress%';
     });
-  }
-
-  void expand(HtmlElement target) {}
-  void shrink(HtmlElement target) {}
-
-  double getProgress() {
-    var timepassed = new DateTime.now().difference(timeSlot.start);
-    if (timepassed.inMinutes <= 0) {
-      return 0.0;
-    }
-    var duration = timeSlot.getDuration();
-    if (timepassed.inMinutes > duration.inMinutes) {
-      return 100.0;
-    }
-    return 100.0 * timepassed.inMinutes / duration.inMinutes;
   }
 }

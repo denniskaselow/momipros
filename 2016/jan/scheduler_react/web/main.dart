@@ -1,10 +1,15 @@
 import 'dart:html';
 import 'package:react/react_client.dart' as reactClient;
 import 'package:react/react.dart';
+import 'package:scheduler_react/app_component.dart';
+import 'package:scheduler/scheduler.dart';
 
 main() {
-  //this should be called once at the begging of application
+  // initialize action, stores, and components
+  AppActions actions = new AppActions();
+  AppStore store = new AppStore(actions, new RbtvSchedulerService());
+
   reactClient.setClientConfiguration();
-  var component = div({}, "Hello world!");
-  render(component, querySelector('#content'));
+
+  render(appComponent({'actions': actions, 'store': store}), querySelector('#content'));
 }
