@@ -50,6 +50,12 @@
       },
       {
         "1": "../src/web_workers/shared/message_bus.dart"
+      },
+      {
+        "1": "../src/web_workers/ui/router_providers.dart",
+        "2": [
+          "WORKER_RENDER_ROUTER"
+        ]
       }
     ],
     "6": "worker_render.dart"

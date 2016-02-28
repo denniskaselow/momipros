@@ -39,11 +39,11 @@
     "6": "test_injector.dart",
     "10": [
       {
-        "1": "package:angular2/core.ng_deps.dart",
+        "1": "package:angular2/core.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/src/facade/exceptions.ng_deps.dart",
+        "1": "package:angular2/src/facade/exceptions.template.dart",
         "4": "i1"
       }
     ]

@@ -89,13 +89,6 @@
         "5": false
       },
       {
-        "1": "view_listener.dart",
-        "2": [
-          "AppViewListener"
-        ],
-        "5": false
-      },
-      {
         "1": "package:angular2/src/core/render/api.dart",
         "2": [
           "RootRenderer",
@@ -151,10 +144,6 @@
           {
             "1": "RootRenderer",
             "4": "_renderer"
-          },
-          {
-            "1": "AppViewListener",
-            "4": "_viewListener"
           },
           {
             "1": "String",

@@ -60,11 +60,10 @@
         "1": "./src/core/linker.dart"
       },
       {
-        "1": "./src/core/debug/debug_element.dart",
+        "1": "./src/core/debug/debug_node.dart",
         "2": [
           "DebugElement",
-          "Scope",
-          "inspectElement",
+          "DebugNode",
           "asNativeElements"
         ]
       },

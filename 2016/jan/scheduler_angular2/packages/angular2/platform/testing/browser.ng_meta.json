@@ -21,11 +21,11 @@
     "6": "browser.dart",
     "10": [
       {
-        "1": "package:angular2/platform/testing/browser_static.ng_deps.dart",
+        "1": "package:angular2/platform/testing/browser_static.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/platform/browser.ng_deps.dart",
+        "1": "package:angular2/platform/browser.template.dart",
         "4": "i1"
       }
     ]

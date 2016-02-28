@@ -53,7 +53,8 @@
           }
         ],
         "6": [
-          "AfterViewInit"
+          "AfterViewInit",
+          "OnDestroy"
         ],
         "7": [
           {
@@ -75,7 +76,7 @@
     "6": "time_slot_component.dart",
     "10": [
       {
-        "1": "package:angular2/angular2.ng_deps.dart",
+        "1": "package:angular2/angular2.template.dart",
         "4": "i0"
       }
     ]
@@ -102,7 +103,8 @@
       "hostProperties": {},
       "hostAttributes": {},
       "lifecycleHooks": [
-        6
+        6,
+        1
       ],
       "template": {
         "encapsulation": 0,

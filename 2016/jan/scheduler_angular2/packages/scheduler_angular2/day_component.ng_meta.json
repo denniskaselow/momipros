@@ -85,11 +85,11 @@
     "6": "day_component.dart",
     "10": [
       {
-        "1": "package:angular2/angular2.ng_deps.dart",
+        "1": "package:angular2/angular2.template.dart",
         "4": "i0"
       },
       {
-        "1": "package:scheduler_angular2/time_slot_component.ng_deps.dart",
+        "1": "package:scheduler_angular2/time_slot_component.template.dart",
         "4": "i1"
       }
     ]
