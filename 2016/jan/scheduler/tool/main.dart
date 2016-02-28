@@ -9,7 +9,7 @@ import 'package:scheduler/src/scheduler_base.dart';
 const Map<String, int> months = const {
   'Jan': 1,
   'Feb': 2,
-  'Mär': 3,
+  'Mar': 3,
   'Apr': 4,
   'Mai': 5,
   'Jun': 6,
