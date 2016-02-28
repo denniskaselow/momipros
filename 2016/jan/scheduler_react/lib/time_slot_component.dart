@@ -16,6 +16,12 @@ class _TimeSlotComponent extends FluxComponent<TimeSlotActions, TimeSlotStore> {
   }
 
   @override
+  componentWillUnmount() {
+    super.componentWillUnmount();
+    actions.stopProgress();
+  }
+
+  @override
   render() {
     return div({
       'style': {'flexGrow': store.timeSlot.height},
@@ -49,6 +55,7 @@ class TimeSlotActions {
   Action startProgress = new Action();
   Action updateProgress = new Action();
   Action initTimeSlot = new Action();
+  Action stopProgress = new Action();
 }
 
 class TimeSlotStore extends Store {
@@ -56,6 +63,7 @@ class TimeSlotStore extends Store {
   double _progress;
   bool _isCurrent = false;
   String _timeSlotId;
+  Timer _progressTimer;
 
   RbtvTimeSlot get timeSlot => _timeSlot;
   double get progress => _progress;
@@ -67,6 +75,7 @@ class TimeSlotStore extends Store {
   TimeSlotStore(this._actions, this._timeSlot) {
     triggerOnAction(_actions.updateProgress, _updateProgress);
     triggerOnAction(_actions.startProgress, _startProgress);
+    triggerOnAction(_actions.stopProgress, _stopProgress);
     _timeSlotId = timeIdFormat.format(_timeSlot.start);
   }
 
@@ -74,8 +83,8 @@ class TimeSlotStore extends Store {
     _progress = timeSlot.getProgress();
     if (_progress == 0.0) {
       var timeUntilStart = timeSlot.start.difference(new DateTime.now());
-      new Timer(timeUntilStart, () {
-        _actions.updateProgress;
+      _progressTimer = new Timer(timeUntilStart, () {
+        _actions.updateProgress();
       });
     } else if (_progress < 100.0) {
       _actions.updateProgress();
@@ -89,10 +98,14 @@ class TimeSlotStore extends Store {
       _isCurrent = false;
     } else {
       _isCurrent = true;
-      new Timer(new Duration(milliseconds: duration.inMilliseconds ~/ 3000),
+      _progressTimer = new Timer(new Duration(milliseconds: duration.inMilliseconds ~/ 3000),
           () {
         _actions.updateProgress();
       });
     }
+  }
+
+  void _stopProgress(_) {
+    _progressTimer?.cancel();
   }
 }

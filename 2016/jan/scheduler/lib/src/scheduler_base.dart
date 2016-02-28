@@ -18,11 +18,11 @@ class TimeSlot extends Object with HeightMixin {
   String getDurationLabel() => '${getDuration().inMinutes} min';
   double getProgress() {
     var timepassed = new DateTime.now().difference(start);
-    if (timepassed.inMinutes <= 0) {
+    if (timepassed.inMilliseconds < 0) {
       return 0.0;
     }
     var duration = getDuration();
-    if (timepassed.inMinutes > duration.inMinutes) {
+    if (timepassed.inMilliseconds > duration.inMilliseconds) {
       return 100.0;
     }
     return 100.0 * timepassed.inMilliseconds / duration.inMilliseconds;

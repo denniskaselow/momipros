@@ -84,11 +84,12 @@ import 'dart:async';
 }
 '''
     ])
-class TimeSlotComponent implements AfterViewInit {
+class TimeSlotComponent implements AfterViewInit, OnDestroy {
   @Input()
   RbtvTimeSlot timeSlot;
   CssStyleDeclaration progressBar;
   ElementRef element;
+  Timer _progressTimer;
 
   TimeSlotComponent(this.element);
 
@@ -101,7 +102,7 @@ class TimeSlotComponent implements AfterViewInit {
     progressBar.width = '$progress%';
     if (progress == 0.0) {
       var timeUntilStart = timeSlot.start.difference(new DateTime.now());
-      new Timer(timeUntilStart, () {
+      _progressTimer = new Timer(timeUntilStart, () {
         _updateProgress();
       });
     } else if (progress < 100.0) {
@@ -109,10 +110,15 @@ class TimeSlotComponent implements AfterViewInit {
     }
   }
 
+  @override
+  void ngOnDestroy() {
+    _progressTimer?.cancel();
+  }
+
   void _updateProgress() {
     (element.nativeElement as HtmlElement).classes.add('current');
     var duration = timeSlot.getDuration();
-    new Timer.periodic(
+    _progressTimer = new Timer.periodic(
         new Duration(milliseconds: duration.inMilliseconds ~/ 3000),
         (Timer timer) {
       var progress = timeSlot.getProgress();
