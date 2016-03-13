@@ -61,13 +61,21 @@ Future<Null> main() async {
         var minute = int.parse(time.split(':')[1]);
         var startTime = new DateTime(year, month, day, hour, minute);
         var dummyEndTime = startTime.add(new Duration(minutes: duration));
-        if (null != show) {
-          show.end = startTime;
-        }
         show = new RbtvTimeSlot(
             name, startTime, dummyEndTime, game, live, premiere);
         shows.add(show);
       });
+      for (int i = 0; i < shows.length - 1; i++) {
+        if (shows[i].start == shows[i + 1].start) {
+          if (shows[i].end.isAfter(shows[i + 1].end)) {
+            var tmp = shows[i];
+            shows[i] = shows[i + 1];
+            shows[i + 1] = tmp;
+          }
+          shows[i + 1].start = shows[i].end;
+        }
+        shows[i].end = shows[i + 1].start;
+      }
       var path = 'lib/assets/rbtv/$year/${month.toString().padLeft(2, '0')}/';
       var file = await new File('$path${day.toString().padLeft(2, '0')}.json')
           .create(recursive: true);

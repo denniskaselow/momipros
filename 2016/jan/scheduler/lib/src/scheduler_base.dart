@@ -164,10 +164,6 @@ class SchedulerService {
           var jointDuration = jointEndTime.difference(jointStartTime);
           var share =
               jointDuration.inMinutes / shortSlot.getDuration().inMinutes;
-          if (share > 1.0) {
-            print(
-                '$share = ${jointDuration.inMinutes} / ${shortSlot.getDuration().inMinutes} - von ${jointStartTime} bis $jointEndTime');
-          }
           timeSlot.height += (missingHeight * share).round();
         }
       }
