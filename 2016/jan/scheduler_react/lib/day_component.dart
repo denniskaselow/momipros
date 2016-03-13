@@ -28,6 +28,7 @@ class _DayComponent extends FluxComponent<DayActions, DayStore> {
       div({'className': 'shows', 'key': 'show'}, timeSlotComponents)
     ]);
   }
+
   String _toTimeId(TimeSlot timeSlot) => timeIdFormat.format(timeSlot.start);
 }
 

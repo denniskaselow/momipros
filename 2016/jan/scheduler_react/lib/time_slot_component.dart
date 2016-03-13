@@ -39,9 +39,11 @@ class _TimeSlotComponent extends FluxComponent<TimeSlotActions, TimeSlotStore> {
         'key': 'content'
       }, [
         div({'className': 'name', 'key': 'name'}, [store.timeSlot.name]),
-        div({'className': 'description', 'key': 'description'}, [store.timeSlot.description]),
+        div({'className': 'description', 'key': 'description'},
+            [store.timeSlot.description]),
       ]),
-      div({'className': 'duration', 'key': 'duration'}, [store.timeSlot.getDurationLabel()]),
+      div({'className': 'duration', 'key': 'duration'},
+          [store.timeSlot.getDurationLabel()]),
       div({
         'className': 'progress',
         'key': 'progress',
@@ -98,8 +100,8 @@ class TimeSlotStore extends Store {
       _isCurrent = false;
     } else {
       _isCurrent = true;
-      _progressTimer = new Timer(new Duration(milliseconds: duration.inMilliseconds ~/ 3000),
-          () {
+      _progressTimer = new Timer(
+          new Duration(milliseconds: duration.inMilliseconds ~/ 3000), () {
         _actions.updateProgress();
       });
     }

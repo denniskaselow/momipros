@@ -9,7 +9,8 @@ import 'package:dson/dson.dart';
 class RbtvSchedulerService extends SchedulerService {
   Map<String, List<RbtvTimeSlot>> showCache = <String, List<RbtvTimeSlot>>{};
 
-  Future<List<Day>> getRbtvDays(int startHour, int startMinute, [int offset = 0]) async {
+  Future<List<Day>> getRbtvDays(int startHour, int startMinute,
+      [int offset = 0]) async {
     this.startHour = startHour;
     this.startMinute = startMinute;
     var today = new DateTime.now();
@@ -23,7 +24,8 @@ class RbtvSchedulerService extends SchedulerService {
     return days;
   }
 
-  Future<List<RbtvTimeSlot>> getRbtvTimeSlots(DateTime date, [bool goIntoPast = true]) async {
+  Future<List<RbtvTimeSlot>> getRbtvTimeSlots(DateTime date,
+      [bool goIntoPast = true]) async {
     var shows = await getRawRbtvTimeSlots(date);
     var tomorrow = date.add(new Duration(days: 1));
     shows = shows
@@ -41,10 +43,11 @@ class RbtvSchedulerService extends SchedulerService {
       shows.addAll(tomorrowShows);
     }
     for (int i = 0; i < shows.length - 1; i++) {
-      shows[i].end = shows[i+1].start;
+      shows[i].end = shows[i + 1].start;
     }
-    if (goIntoPast && !(shows.first.start.hour == startHour &&
-        shows.first.start.minute == startMinute)) {
+    if (goIntoPast &&
+        !(shows.first.start.hour == startHour &&
+            shows.first.start.minute == startMinute)) {
       var previousShows =
           await getRbtvTimeSlots(date.subtract(new Duration(days: 1)), false);
       var lastShow = previousShows.last;
@@ -52,7 +55,8 @@ class RbtvSchedulerService extends SchedulerService {
           0,
           new RbtvTimeSlot(
               lastShow.name,
-              new DateTime(date.year, date.month, date.day, startHour, startMinute),
+              new DateTime(
+                  date.year, date.month, date.day, startHour, startMinute),
               shows.first.start,
               lastShow.description,
               lastShow.live,

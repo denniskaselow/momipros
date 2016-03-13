@@ -117,8 +117,8 @@ class SchedulerService {
     emptySlot = getEmptyTimeSlot(
         new DateTime(current.end.year, current.end.month, current.end.day,
             current.end.hour, current.end.minute),
-        new DateTime(tommorow.year, tommorow.month, tommorow.day,
-                startHour, startMinute));
+        new DateTime(tommorow.year, tommorow.month, tommorow.day, startHour,
+            startMinute));
     if (emptySlot.getDuration().inMinutes > 0) {
       timeSlots.add(emptySlot);
     }
