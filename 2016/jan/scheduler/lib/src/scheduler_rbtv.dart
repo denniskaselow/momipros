@@ -25,15 +25,19 @@ class RbtvSchedulerService extends SchedulerService {
 
   Future<List<RbtvTimeSlot>> getRbtvTimeSlots(DateTime date, [bool goIntoPast = true]) async {
     var shows = await getRawRbtvTimeSlots(date);
+    var tomorrow = date.add(new Duration(days: 1));
     shows = shows
         .where((show) =>
             show.start.hour > startHour ||
             show.start.hour == startHour && show.start.minute >= startMinute)
         .toList();
     if (startHour != 0 || startMinute != 0) {
-      var tomorrowShows = await getRawRbtvTimeSlots(date.add(new Duration(days: 1)));
-      tomorrowShows = tomorrowShows.where((show) => show.start.hour < startHour ||
-          show.start.hour == startHour && show.start.minute < startMinute).toList();
+      var tomorrowShows = await getRawRbtvTimeSlots(tomorrow);
+      tomorrowShows = tomorrowShows
+          .where((show) =>
+              show.start.hour < startHour ||
+              show.start.hour == startHour && show.start.minute < startMinute)
+          .toList();
       shows.addAll(tomorrowShows);
     }
     for (int i = 0; i < shows.length - 1; i++) {
@@ -55,7 +59,7 @@ class RbtvSchedulerService extends SchedulerService {
               lastShow.premiere));
     }
     var endOfDay = new DateTime(
-        shows.last.end.year, shows.last.end.month, shows.last.end.day, startHour, startMinute);
+        tomorrow.year, tomorrow.month, tomorrow.day, startHour, startMinute);
     if (shows.last.end.isAfter(endOfDay)) {
       shows.last.end = endOfDay;
     }
