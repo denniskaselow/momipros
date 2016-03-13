@@ -84,9 +84,24 @@
       "selector": "schedule-time-slot",
       "exportAs": null,
       "type": {
+        "class": "Type",
         "name": "TimeSlotComponent",
         "moduleUrl": "asset:scheduler_angular2/lib/time_slot_component.dart",
-        "isHost": false
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "diDeps": [
+          {
+            "token": null,
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          }
+        ]
       },
       "changeDetection": 5,
       "inputs": {
@@ -109,7 +124,9 @@
         ],
         "styleUrls": [],
         "ngContentSelectors": []
-      }
+      },
+      "providers": []
     }
-  }
+  },
+  "definesAlias": false
 }

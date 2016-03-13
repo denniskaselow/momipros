@@ -86,9 +86,24 @@
       "selector": "my-app",
       "exportAs": null,
       "type": {
+        "class": "Type",
         "name": "AppComponent",
         "moduleUrl": "asset:scheduler_angular2/lib/app_component.dart",
-        "isHost": false
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "diDeps": [
+          {
+            "token": null,
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          }
+        ]
       },
       "changeDetection": 5,
       "inputs": {},
@@ -106,7 +121,9 @@
         ],
         "styleUrls": [],
         "ngContentSelectors": []
-      }
+      },
+      "providers": []
     }
-  }
+  },
+  "definesAlias": false
 }

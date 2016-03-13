@@ -103,9 +103,13 @@
       "selector": "schedule-day",
       "exportAs": null,
       "type": {
+        "class": "Type",
         "name": "DayComponent",
         "moduleUrl": "asset:scheduler_angular2/lib/day_component.dart",
-        "isHost": false
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "diDeps": []
       },
       "changeDetection": 5,
       "inputs": {
@@ -128,7 +132,9 @@
         ],
         "styleUrls": [],
         "ngContentSelectors": []
-      }
+      },
+      "providers": []
     }
-  }
+  },
+  "definesAlias": false
 }
