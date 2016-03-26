@@ -1,6 +1,6 @@
 import 'dart:html';
 import 'package:react/react_client.dart' as reactClient;
-import 'package:react/react.dart';
+import 'package:react/react_dom.dart' as reactDom;
 import 'package:scheduler_react/app_component.dart';
 import 'package:scheduler/scheduler.dart';
 
@@ -11,5 +11,5 @@ main() {
 
   reactClient.setClientConfiguration();
 
-  render(appComponent({'actions': actions, 'store': store}), querySelector('#content'));
+  reactDom.render(appComponent({'actions': actions, 'store': store}), querySelector('#content'));
 }

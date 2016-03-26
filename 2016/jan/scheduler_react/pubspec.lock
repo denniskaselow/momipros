@@ -156,7 +156,7 @@ packages:
       name: react
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.8"
+    version: "0.9.0"
   reflectable:
     description:
       name: reflectable
