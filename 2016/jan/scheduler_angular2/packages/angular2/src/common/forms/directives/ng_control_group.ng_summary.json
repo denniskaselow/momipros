@@ -50,9 +50,16 @@
       {
         "1": "../validators.dart",
         "2": [
-          "Validators",
           "NG_VALIDATORS",
           "NG_ASYNC_VALIDATORS"
+        ],
+        "5": false
+      },
+      {
+        "1": "validators.dart",
+        "2": [
+          "AsyncValidatorFn",
+          "ValidatorFn"
         ],
         "5": false
       }

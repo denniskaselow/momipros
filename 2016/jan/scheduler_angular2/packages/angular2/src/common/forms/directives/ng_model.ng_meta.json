@@ -15,7 +15,6 @@
         "2": [
           "OnChanges",
           "SimpleChange",
-          "Query",
           "Directive",
           "Provider",
           "Inject",
@@ -49,7 +48,6 @@
       {
         "1": "../validators.dart",
         "2": [
-          "Validators",
           "NG_VALIDATORS",
           "NG_ASYNC_VALIDATORS"
         ],
@@ -63,6 +61,14 @@
           "selectValueAccessor",
           "composeValidators",
           "composeAsyncValidators"
+        ],
+        "5": false
+      },
+      {
+        "1": "validators.dart",
+        "2": [
+          "ValidatorFn",
+          "AsyncValidatorFn"
         ],
         "5": false
       }
@@ -168,6 +174,10 @@
       {
         "1": "shared.template.dart",
         "4": "i6"
+      },
+      {
+        "1": "validators.template.dart",
+        "4": "i7"
       }
     ]
   },

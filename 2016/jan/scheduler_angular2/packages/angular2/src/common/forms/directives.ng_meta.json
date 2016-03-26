@@ -1298,6 +1298,26 @@
       "constConstructor": null
     }
   },
+  "ValidatorFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ValidatorFn",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/validators.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "AsyncValidatorFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "AsyncValidatorFn",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/validators.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "MIN_LENGTH_VALIDATOR": {
     "kind": "type",
     "value": {

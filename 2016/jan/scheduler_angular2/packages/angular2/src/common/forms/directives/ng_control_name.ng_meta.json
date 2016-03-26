@@ -70,9 +70,16 @@
       {
         "1": "../validators.dart",
         "2": [
-          "Validators",
           "NG_VALIDATORS",
           "NG_ASYNC_VALIDATORS"
+        ],
+        "5": false
+      },
+      {
+        "1": "validators.dart",
+        "2": [
+          "ValidatorFn",
+          "AsyncValidatorFn"
         ],
         "5": false
       }
@@ -191,6 +198,10 @@
       {
         "1": "../validators.template.dart",
         "4": "i7"
+      },
+      {
+        "1": "validators.template.dart",
+        "4": "i8"
       }
     ]
   },

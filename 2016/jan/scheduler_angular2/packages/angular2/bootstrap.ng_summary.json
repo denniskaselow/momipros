@@ -3,9 +3,9 @@
     "1": "angular2.bootstrap",
     "4": [
       {
-        "1": "package:angular2/platform/browser.dart",
+        "1": "package:angular2/platform/browser_static.dart",
         "2": [
-          "bootstrap"
+          "bootstrapStatic"
         ]
       },
       {

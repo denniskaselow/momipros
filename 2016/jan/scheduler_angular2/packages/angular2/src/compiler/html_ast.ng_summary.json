@@ -59,6 +59,16 @@
       "constConstructor": null
     }
   },
+  "HtmlCommentAst": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "HtmlCommentAst",
+      "moduleUrl": "asset:angular2/lib/src/compiler/html_ast.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "HtmlAstVisitor": {
     "kind": "type",
     "value": {

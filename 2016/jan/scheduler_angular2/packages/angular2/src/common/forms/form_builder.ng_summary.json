@@ -29,6 +29,14 @@
         "1": "model.dart",
         "4": "modelModule",
         "5": false
+      },
+      {
+        "1": "directives/validators.dart",
+        "2": [
+          "ValidatorFn",
+          "AsyncValidatorFn"
+        ],
+        "5": false
       }
     ],
     "5": [

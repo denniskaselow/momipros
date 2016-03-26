@@ -11,7 +11,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/platform/browser.dart",
+        "1": "package:angular2/platform/browser_static.dart",
         "2": [
           "BROWSER_APP_PROVIDERS"
         ],

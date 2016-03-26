@@ -6,7 +6,6 @@
         "1": "package:angular2/core.dart",
         "2": [
           "Provider",
-          "OpaqueToken",
           "Attribute",
           "Directive"
         ],
@@ -23,7 +22,7 @@
       {
         "1": "../model.dart",
         "2": [
-          "Control"
+          "AbstractControl"
         ],
         "5": false
       },
@@ -195,6 +194,26 @@
     "value": {
       "class": "Identifier",
       "name": "REQUIRED_VALIDATOR",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/validators.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ValidatorFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ValidatorFn",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/validators.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "AsyncValidatorFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "AsyncValidatorFn",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/validators.dart",
       "prefix": null,
       "constConstructor": null

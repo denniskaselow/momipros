@@ -72,6 +72,14 @@
           "selectValueAccessor"
         ],
         "5": false
+      },
+      {
+        "1": "validators.dart",
+        "2": [
+          "ValidatorFn",
+          "AsyncValidatorFn"
+        ],
+        "5": false
       }
     ],
     "5": [

@@ -6,8 +6,6 @@
         "1": "zone/ng_zone.dart",
         "2": [
           "NgZone",
-          "ZeroArgFunction",
-          "ErrorHandlingFn",
           "NgZoneError"
         ]
       }
@@ -20,12 +18,22 @@
       }
     ]
   },
+  "NgZone": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZone",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "ZeroArgFunction": {
     "kind": "type",
     "value": {
       "class": "Identifier",
       "name": "ZeroArgFunction",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -35,7 +43,7 @@
     "value": {
       "class": "Identifier",
       "name": "ErrorHandlingFn",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -45,7 +53,7 @@
     "value": {
       "class": "Identifier",
       "name": "WrappedTimer",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -55,17 +63,17 @@
     "value": {
       "class": "Identifier",
       "name": "NgZoneError",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "constConstructor": null
     }
   },
-  "NgZone": {
+  "NgZoneImpl": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "NgZone",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+      "name": "NgZoneImpl",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "constConstructor": null
     }

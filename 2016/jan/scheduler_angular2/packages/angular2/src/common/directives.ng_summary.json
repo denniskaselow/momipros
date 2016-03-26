@@ -35,6 +35,14 @@
         ]
       },
       {
+        "1": "directives/ng_plural.dart",
+        "2": [
+          "NgPlural",
+          "NgPluralCase",
+          "NgLocalization"
+        ]
+      },
+      {
         "1": "directives/observable_list_diff.dart"
       },
       {

@@ -119,6 +119,13 @@
           "pathSegmentsToUrl"
         ],
         "5": false
+      },
+      {
+        "1": "rules/route_paths/route_path.dart",
+        "2": [
+          "GeneratedUrl"
+        ],
+        "5": false
       }
     ],
     "5": [

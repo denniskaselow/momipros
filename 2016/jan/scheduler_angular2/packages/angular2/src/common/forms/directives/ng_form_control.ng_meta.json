@@ -72,6 +72,14 @@
           "selectValueAccessor"
         ],
         "5": false
+      },
+      {
+        "1": "validators.dart",
+        "2": [
+          "ValidatorFn",
+          "AsyncValidatorFn"
+        ],
+        "5": false
       }
     ],
     "5": [
@@ -179,6 +187,10 @@
       {
         "1": "shared.template.dart",
         "4": "i7"
+      },
+      {
+        "1": "validators.template.dart",
+        "4": "i8"
       }
     ]
   },

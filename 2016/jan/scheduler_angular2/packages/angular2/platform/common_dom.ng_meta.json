@@ -156,16 +156,6 @@
       "constConstructor": null
     }
   },
-  "DOCUMENT": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "DOCUMENT",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
   "NAMESPACE_URIS": {
     "kind": "type",
     "value": {
@@ -309,6 +299,16 @@
       "class": "Identifier",
       "name": "DomRenderer",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_renderer.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "DOCUMENT": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "DOCUMENT",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
       "prefix": null,
       "constConstructor": null
     }

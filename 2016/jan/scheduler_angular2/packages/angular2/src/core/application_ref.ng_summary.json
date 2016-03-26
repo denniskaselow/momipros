@@ -9,7 +9,8 @@
       {
         "1": "package:angular2/src/core/zone/ng_zone.dart",
         "2": [
-          "NgZone"
+          "NgZone",
+          "NgZoneError"
         ],
         "5": false
       },

@@ -45,6 +45,14 @@
           "NgSwitchDefault"
         ],
         "5": false
+      },
+      {
+        "1": "ng_plural.dart",
+        "2": [
+          "NgPlural",
+          "NgPluralCase"
+        ],
+        "5": false
       }
     ],
     "6": "core_directives.dart"
@@ -58,7 +66,9 @@
       "NgStyle",
       "NgSwitch",
       "NgSwitchWhen",
-      "NgSwitchDefault"
+      "NgSwitchDefault",
+      "NgPlural",
+      "NgPluralCase"
     ]
   },
   "definesAlias": true

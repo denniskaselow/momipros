@@ -10,6 +10,20 @@
       {
         "1": "package:angular2/platform/testing/browser.dart",
         "5": false
+      },
+      {
+        "1": "package:angular2/src/facade/collection.dart",
+        "2": [
+          "StringMapWrapper"
+        ],
+        "5": false
+      },
+      {
+        "1": "package:angular2/src/core/zone/ng_zone.dart",
+        "2": [
+          "NgZone"
+        ],
+        "5": false
       }
     ],
     "4": [
@@ -46,8 +60,16 @@
         "4": "i1"
       },
       {
-        "1": "test_injector.template.dart",
+        "1": "package:angular2/src/facade/collection.template.dart",
         "4": "i2"
+      },
+      {
+        "1": "package:angular2/src/core/zone/ng_zone.template.dart",
+        "4": "i3"
+      },
+      {
+        "1": "test_injector.template.dart",
+        "4": "i4"
       }
     ]
   },

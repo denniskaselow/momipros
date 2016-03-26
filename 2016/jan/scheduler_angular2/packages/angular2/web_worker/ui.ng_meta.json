@@ -170,56 +170,6 @@
       "constConstructor": null
     }
   },
-  "ZeroArgFunction": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ZeroArgFunction",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ErrorHandlingFn": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ErrorHandlingFn",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "WrappedTimer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "WrappedTimer",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NgZoneError": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NgZoneError",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NgZone": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NgZone",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
   "IS_DART": {
     "kind": "type",
     "value": {
@@ -456,6 +406,66 @@
       "class": "Identifier",
       "name": "PromiseCompleter",
       "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZone": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZone",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ZeroArgFunction": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ZeroArgFunction",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ErrorHandlingFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ErrorHandlingFn",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "WrappedTimer": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "WrappedTimer",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZoneError": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZoneError",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZoneImpl": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZoneImpl",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -1722,13 +1732,7 @@
       "constConstructor": null,
       "diDeps": [
         {
-          "token": {
-            "class": "Identifier",
-            "name": "NgZone",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null
-          },
+          "token": null,
           "query": null,
           "viewQuery": null,
           "isAttribute": false,

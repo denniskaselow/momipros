@@ -676,6 +676,140 @@
       "providers": []
     }
   },
+  "_CATEGORY_DEFAULT": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "_CATEGORY_DEFAULT",
+      "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgLocalization": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgLocalization",
+      "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgPluralCase": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[ngPluralCase]",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "NgPluralCase",
+        "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "diDeps": [
+          {
+            "token": null,
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": true,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          },
+          {
+            "token": {
+              "class": "Identifier",
+              "name": "TemplateRef",
+              "moduleUrl": null,
+              "prefix": null,
+              "constConstructor": null
+            },
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          },
+          {
+            "token": {
+              "class": "Identifier",
+              "name": "ViewContainerRef",
+              "moduleUrl": null,
+              "prefix": null,
+              "constConstructor": null
+            },
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          }
+        ]
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null,
+      "providers": []
+    }
+  },
+  "NgPlural": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[ngPlural]",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "NgPlural",
+        "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "diDeps": [
+          {
+            "token": null,
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          }
+        ]
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "ngPlural": "ngPlural"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        4
+      ],
+      "template": null,
+      "providers": []
+    }
+  },
   "ObservableListDiff": {
     "kind": "type",
     "value": {
@@ -1942,6 +2076,26 @@
     "value": {
       "class": "Identifier",
       "name": "REQUIRED_VALIDATOR",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/validators.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ValidatorFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ValidatorFn",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/validators.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "AsyncValidatorFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "AsyncValidatorFn",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/validators.dart",
       "prefix": null,
       "constConstructor": null
@@ -4778,13 +4932,7 @@
       "constConstructor": null,
       "diDeps": [
         {
-          "token": {
-            "class": "Identifier",
-            "name": "NgZone",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null
-          },
+          "token": null,
           "query": null,
           "viewQuery": null,
           "isAttribute": false,
@@ -5014,126 +5162,6 @@
       "class": "Identifier",
       "name": "RootRenderer",
       "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NoReflectionCapabilities": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NoReflectionCapabilities",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ReflectionInfo": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ReflectionInfo",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "Reflector": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "Reflector",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "SetterFn": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "SetterFn",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "GetterFn": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "GetterFn",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "MethodFn": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "MethodFn",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "PlatformReflectionCapabilities": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "PlatformReflectionCapabilities",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ZeroArgFunction": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ZeroArgFunction",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ErrorHandlingFn": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ErrorHandlingFn",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "WrappedTimer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "WrappedTimer",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NgZoneError": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NgZoneError",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NgZone": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NgZone",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -5708,6 +5736,136 @@
       "constConstructor": null
     }
   },
+  "NoReflectionCapabilities": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NoReflectionCapabilities",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ReflectionInfo": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ReflectionInfo",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "Reflector": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "Reflector",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "SetterFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "SetterFn",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "GetterFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "GetterFn",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "MethodFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "MethodFn",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "PlatformReflectionCapabilities": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "PlatformReflectionCapabilities",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZone": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZone",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ZeroArgFunction": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ZeroArgFunction",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ErrorHandlingFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ErrorHandlingFn",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "WrappedTimer": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "WrappedTimer",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZoneError": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZoneError",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZoneImpl": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZoneImpl",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "TimerWrapper": {
     "kind": "type",
     "value": {
@@ -5784,7 +5942,9 @@
       "NgStyle",
       "NgSwitch",
       "NgSwitchWhen",
-      "NgSwitchDefault"
+      "NgSwitchDefault",
+      "NgPlural",
+      "NgPluralCase"
     ]
   },
   "COMMON_PIPES": {

@@ -116,7 +116,16 @@
       {
         "1": "normalize_validator.dart",
         "2": [
-          "normalizeValidator"
+          "normalizeValidator",
+          "normalizeAsyncValidator"
+        ],
+        "5": false
+      },
+      {
+        "1": "validators.dart",
+        "2": [
+          "ValidatorFn",
+          "AsyncValidatorFn"
         ],
         "5": false
       }

@@ -260,6 +260,49 @@
       "constConstructor": null
     }
   },
+  "PRIMITIVE": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "PRIMITIVE",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "Serializer": {
+    "kind": "type",
+    "value": {
+      "class": "Type",
+      "name": "Serializer",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "diDeps": [
+        {
+          "token": null,
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "RenderStoreObject": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "RenderStoreObject",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "ServiceMessageBrokerFactory": {
     "kind": "type",
     "value": {
@@ -335,49 +378,6 @@
       "class": "Identifier",
       "name": "ReceivedMessage",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/service_message_broker.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "PRIMITIVE": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "PRIMITIVE",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "Serializer": {
-    "kind": "type",
-    "value": {
-      "class": "Type",
-      "name": "Serializer",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-      "prefix": null,
-      "isHost": false,
-      "constConstructor": null,
-      "diDeps": [
-        {
-          "token": null,
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        }
-      ]
-    }
-  },
-  "RenderStoreObject": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "RenderStoreObject",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -1848,6 +1848,140 @@
       "providers": []
     }
   },
+  "_CATEGORY_DEFAULT": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "_CATEGORY_DEFAULT",
+      "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgLocalization": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgLocalization",
+      "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgPluralCase": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[ngPluralCase]",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "NgPluralCase",
+        "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "diDeps": [
+          {
+            "token": null,
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": true,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          },
+          {
+            "token": {
+              "class": "Identifier",
+              "name": "TemplateRef",
+              "moduleUrl": null,
+              "prefix": null,
+              "constConstructor": null
+            },
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          },
+          {
+            "token": {
+              "class": "Identifier",
+              "name": "ViewContainerRef",
+              "moduleUrl": null,
+              "prefix": null,
+              "constConstructor": null
+            },
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          }
+        ]
+      },
+      "changeDetection": 5,
+      "inputs": {},
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [],
+      "template": null,
+      "providers": []
+    }
+  },
+  "NgPlural": {
+    "kind": "type",
+    "value": {
+      "class": "Directive",
+      "isComponent": false,
+      "dynamicLoadable": true,
+      "selector": "[ngPlural]",
+      "exportAs": null,
+      "type": {
+        "class": "Type",
+        "name": "NgPlural",
+        "moduleUrl": "asset:angular2/lib/src/common/directives/ng_plural.dart",
+        "prefix": null,
+        "isHost": false,
+        "constConstructor": null,
+        "diDeps": [
+          {
+            "token": null,
+            "query": null,
+            "viewQuery": null,
+            "isAttribute": false,
+            "isSelf": false,
+            "isHost": false,
+            "isSkipSelf": false,
+            "isOptional": false
+          }
+        ]
+      },
+      "changeDetection": 5,
+      "inputs": {
+        "ngPlural": "ngPlural"
+      },
+      "outputs": {},
+      "hostListeners": {},
+      "hostProperties": {},
+      "hostAttributes": {},
+      "lifecycleHooks": [
+        4
+      ],
+      "template": null,
+      "providers": []
+    }
+  },
   "ObservableListDiff": {
     "kind": "type",
     "value": {
@@ -2883,6 +3017,26 @@
       "constConstructor": null
     }
   },
+  "ValidatorFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ValidatorFn",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/validators.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "AsyncValidatorFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "AsyncValidatorFn",
+      "moduleUrl": "asset:angular2/lib/src/common/forms/directives/validators.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "MIN_LENGTH_VALIDATOR": {
     "kind": "type",
     "value": {
@@ -3325,6 +3479,123 @@
       "providers": []
     }
   },
+  "ON_WEB_WORKER": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ON_WEB_WORKER",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/api.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "RenderStore": {
+    "kind": "type",
+    "value": {
+      "class": "Type",
+      "name": "RenderStore",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "diDeps": []
+    }
+  },
+  "WebWorkerRootRenderer": {
+    "kind": "type",
+    "value": {
+      "class": "Type",
+      "name": "WebWorkerRootRenderer",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/worker/renderer.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "ClientMessageBrokerFactory",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "MessageBus",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": null,
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": null,
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "WebWorkerRenderer": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "WebWorkerRenderer",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/worker/renderer.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NamedEventEmitter": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NamedEventEmitter",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/worker/renderer.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "WebWorkerRenderNode": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "WebWorkerRenderNode",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/worker/renderer.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "PlatformRef": {
     "kind": "type",
     "value": {
@@ -3476,13 +3747,7 @@
       "constConstructor": null,
       "diDeps": [
         {
-          "token": {
-            "class": "Identifier",
-            "name": "NgZone",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null
-          },
+          "token": null,
           "query": null,
           "viewQuery": null,
           "isAttribute": false,
@@ -3872,56 +4137,6 @@
       "class": "Identifier",
       "name": "ViewMetadata",
       "moduleUrl": "asset:angular2/lib/src/core/metadata/view.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ZeroArgFunction": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ZeroArgFunction",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ErrorHandlingFn": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ErrorHandlingFn",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "WrappedTimer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "WrappedTimer",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NgZoneError": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NgZoneError",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NgZone": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NgZone",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -4400,6 +4615,66 @@
       "class": "Identifier",
       "name": "PromiseCompleter",
       "moduleUrl": "asset:angular2/lib/src/facade/promise.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZone": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZone",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ZeroArgFunction": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ZeroArgFunction",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ErrorHandlingFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ErrorHandlingFn",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "WrappedTimer": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "WrappedTimer",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZoneError": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZoneError",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZoneImpl": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZoneImpl",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -5965,123 +6240,6 @@
       "constConstructor": null
     }
   },
-  "ON_WEB_WORKER": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ON_WEB_WORKER",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RenderStore": {
-    "kind": "type",
-    "value": {
-      "class": "Type",
-      "name": "RenderStore",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-      "prefix": null,
-      "isHost": false,
-      "constConstructor": null,
-      "diDeps": []
-    }
-  },
-  "WebWorkerRootRenderer": {
-    "kind": "type",
-    "value": {
-      "class": "Type",
-      "name": "WebWorkerRootRenderer",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/worker/renderer.dart",
-      "prefix": null,
-      "isHost": false,
-      "constConstructor": null,
-      "diDeps": [
-        {
-          "token": {
-            "class": "Identifier",
-            "name": "ClientMessageBrokerFactory",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null
-          },
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        },
-        {
-          "token": {
-            "class": "Identifier",
-            "name": "MessageBus",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null
-          },
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        },
-        {
-          "token": null,
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        },
-        {
-          "token": null,
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        }
-      ]
-    }
-  },
-  "WebWorkerRenderer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "WebWorkerRenderer",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/worker/renderer.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NamedEventEmitter": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NamedEventEmitter",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/worker/renderer.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "WebWorkerRenderNode": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "WebWorkerRenderNode",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/worker/renderer.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
   "WebWorkerXHRImpl": {
     "kind": "type",
     "value": {
@@ -6154,7 +6312,9 @@
       "NgStyle",
       "NgSwitch",
       "NgSwitchWhen",
-      "NgSwitchDefault"
+      "NgSwitchDefault",
+      "NgPlural",
+      "NgPluralCase"
     ]
   },
   "FORM_PROVIDERS": {

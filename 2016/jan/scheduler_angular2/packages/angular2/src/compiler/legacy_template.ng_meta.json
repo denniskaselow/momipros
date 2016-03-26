@@ -28,6 +28,7 @@
           "HtmlAttrAst",
           "HtmlElementAst",
           "HtmlTextAst",
+          "HtmlCommentAst",
           "HtmlAst"
         ],
         "5": false

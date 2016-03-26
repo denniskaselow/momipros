@@ -771,6 +771,55 @@
       "constConstructor": null
     }
   },
+  "RouteDefinition": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "RouteDefinition",
+      "moduleUrl": "asset:angular2/lib/src/router/route_definition.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ROUTER_PRIMARY_COMPONENT": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ROUTER_PRIMARY_COMPONENT",
+      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "RouteRegistry": {
+    "kind": "type",
+    "value": {
+      "class": "Type",
+      "name": "RouteRegistry",
+      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "diDeps": [
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "ROUTER_PRIMARY_COMPONENT",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
   "routerCanReuse": {
     "kind": "type",
     "value": {
@@ -839,55 +888,6 @@
       "moduleUrl": "asset:angular2/lib/src/router/lifecycle/lifecycle_annotations_impl.dart",
       "prefix": null,
       "constConstructor": null
-    }
-  },
-  "RouteDefinition": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "RouteDefinition",
-      "moduleUrl": "asset:angular2/lib/src/router/route_definition.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ROUTER_PRIMARY_COMPONENT": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ROUTER_PRIMARY_COMPONENT",
-      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RouteRegistry": {
-    "kind": "type",
-    "value": {
-      "class": "Type",
-      "name": "RouteRegistry",
-      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
-      "prefix": null,
-      "isHost": false,
-      "constConstructor": null,
-      "diDeps": [
-        {
-          "token": {
-            "class": "Identifier",
-            "name": "ROUTER_PRIMARY_COMPONENT",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null
-          },
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        }
-      ]
     }
   },
   "RouteConfig": {
@@ -3330,13 +3330,7 @@
       "constConstructor": null,
       "diDeps": [
         {
-          "token": {
-            "class": "Identifier",
-            "name": "NgZone",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null
-          },
+          "token": null,
           "query": null,
           "viewQuery": null,
           "isAttribute": false,
@@ -3566,126 +3560,6 @@
       "class": "Identifier",
       "name": "RootRenderer",
       "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NoReflectionCapabilities": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NoReflectionCapabilities",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ReflectionInfo": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ReflectionInfo",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "Reflector": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "Reflector",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "SetterFn": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "SetterFn",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "GetterFn": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "GetterFn",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "MethodFn": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "MethodFn",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "PlatformReflectionCapabilities": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "PlatformReflectionCapabilities",
-      "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ZeroArgFunction": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ZeroArgFunction",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ErrorHandlingFn": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ErrorHandlingFn",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "WrappedTimer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "WrappedTimer",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NgZoneError": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NgZoneError",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NgZone": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "NgZone",
-      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -4256,6 +4130,136 @@
       "class": "Identifier",
       "name": "ExceptionHandler",
       "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NoReflectionCapabilities": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NoReflectionCapabilities",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflection.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ReflectionInfo": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ReflectionInfo",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "Reflector": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "Reflector",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/reflector.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "SetterFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "SetterFn",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "GetterFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "GetterFn",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "MethodFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "MethodFn",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/types.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "PlatformReflectionCapabilities": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "PlatformReflectionCapabilities",
+      "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZone": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZone",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ZeroArgFunction": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ZeroArgFunction",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ErrorHandlingFn": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ErrorHandlingFn",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "WrappedTimer": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "WrappedTimer",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZoneError": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZoneError",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "NgZoneImpl": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "NgZoneImpl",
+      "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
       "prefix": null,
       "constConstructor": null
     }

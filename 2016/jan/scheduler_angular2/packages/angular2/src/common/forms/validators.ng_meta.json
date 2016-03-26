@@ -44,6 +44,14 @@
         "1": "model.dart",
         "4": "modelModule",
         "5": false
+      },
+      {
+        "1": "directives/validators.dart",
+        "2": [
+          "ValidatorFn",
+          "AsyncValidatorFn"
+        ],
+        "5": false
       }
     ],
     "6": "validators.dart",
@@ -71,6 +79,10 @@
       {
         "1": "model.template.dart",
         "4": "i5"
+      },
+      {
+        "1": "directives/validators.template.dart",
+        "4": "i6"
       }
     ]
   },

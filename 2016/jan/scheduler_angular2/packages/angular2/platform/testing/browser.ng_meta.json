@@ -11,7 +11,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/platform/browser.dart",
+        "1": "package:angular2/platform/browser_static.dart",
         "2": [
           "BROWSER_APP_PROVIDERS"
         ],
@@ -25,7 +25,7 @@
         "4": "i0"
       },
       {
-        "1": "package:angular2/platform/browser.template.dart",
+        "1": "package:angular2/platform/browser_static.template.dart",
         "4": "i1"
       }
     ]
@@ -65,7 +65,7 @@
     "value": {
       "class": "Identifier",
       "name": "BROWSER_APP_PROVIDERS",
-      "moduleUrl": "asset:angular2/lib/platform/browser.dart",
+      "moduleUrl": "asset:angular2/lib/platform/browser_static.dart",
       "prefix": null,
       "constConstructor": null
     }
