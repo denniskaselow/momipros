@@ -100,6 +100,9 @@ class RbtvSchedulerService extends SchedulerService {
       } else if (show.name == "Knallhart Durchgenommen") {
         show.name = show.description;
         show.description = "Knallhart Durchgenommen";
+      } else if (show.name == "Zocken mit Bohnen") {
+        show.name = show.description;
+        show.description = "Zocken mit Bohnen";
       }
     });
   }
