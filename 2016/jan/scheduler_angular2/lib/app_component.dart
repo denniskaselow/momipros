@@ -11,7 +11,7 @@ import 'package:scheduler/scheduler.dart';
     template: '''
 <div id="schedule">
   <i class="fa fa-arrow-circle-left" (click)='move(-1)'></i>
-  <schedule-day *ngFor="#day of days" [day]="day" [class.today]='day.isToday' [ngClass]='day.dayName'></schedule-day>
+  <schedule-day *ngFor="#day of days; trackBy:dateId" [day]="day" [class.today]='day.isToday' [ngClass]='day.dayName'></schedule-day>
   <i class="fa fa-arrow-circle-right" (click)='move(1)'></i>
 </div>
     ''',
@@ -54,4 +54,6 @@ class AppComponent {
       schedulerService.optimizeHeights(days, 15);
     });
   }
+
+  String dateId(int index, Day day) => dateIdFormat.format(day.date);
 }
