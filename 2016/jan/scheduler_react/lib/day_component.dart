@@ -25,7 +25,7 @@ class _DayComponent extends FluxComponent<DayActions, DayStore> {
       'onMouseLeave': actions.shrink
     }, [
       h2({'key': 'dayName'}, [store.day.label]),
-      div({'className': 'shows', 'key': 'show'}, timeSlotComponents)
+      div({'className': 'shows', 'key': 'show'}, section({}, timeSlotComponents))
     ]);
   }
 

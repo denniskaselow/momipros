@@ -25,6 +25,7 @@ class _AppComponent extends FluxComponent<AppActions, AppStore> {
             }))
         .toList();
 
+
     return div({
       'id': 'schedule'
     }, [
@@ -33,7 +34,7 @@ class _AppComponent extends FluxComponent<AppActions, AppStore> {
         'key': 'left',
         'onClick': (_) => actions.move(-1)
       }),
-      dayComponents,
+      section({}, dayComponents),
       i({
         'className': 'fa fa-arrow-circle-right',
         'key': 'right',
