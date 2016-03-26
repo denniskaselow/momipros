@@ -28,18 +28,17 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-
-#schedule {
+#schedule, #schedule > section {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .fa-arrow-circle-right, .fa-arrow-circle-left {
     font-size: 40px;
     text-align: center;
     cursor: pointer;
 }
-
 
 .day {
     flex-basis: 0;
@@ -103,13 +102,11 @@ h2 {
     padding: 7px 0 2px 0;
     background-color: hsla(0, 0%, 50%, 0.3);
 }
-.shows {
+.shows, .shows > section {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
-
-
 .timeslot {
     display: flex;
     justify-content: space-between;
