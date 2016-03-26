@@ -30,9 +30,7 @@ import 'package:scheduler/scheduler.dart';
 '''
     ],
     directives: const [
-      DayComponent,
-      NgFor,
-      NgClass
+      DayComponent
     ])
 class AppComponent {
   int offset = 0;

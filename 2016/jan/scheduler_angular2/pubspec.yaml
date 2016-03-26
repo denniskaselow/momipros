@@ -1,7 +1,7 @@
 name: scheduler_angular2
 version: 0.0.1
 dependencies:
-  angular2: ^2.0.0-beta.7
+  angular2: ^2.0.0-beta.12
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
   scheduler:
@@ -10,6 +10,7 @@ dependencies:
 transformers:
 - dart_to_js_script_rewriter
 - angular2:
+    platform_directives: 'package:angular2/src/common/directives.dart#CORE_DIRECTIVES'
     entry_points: web/main.dart
 - reflectable:
     entry_points: web/main.dart

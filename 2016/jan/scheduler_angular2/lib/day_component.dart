@@ -98,9 +98,7 @@ h2 {
 '''
     ],
     directives: const [
-      TimeSlotComponent,
-      NgFor,
-      NgIf
+      TimeSlotComponent
     ])
 class DayComponent {
   @Input()
