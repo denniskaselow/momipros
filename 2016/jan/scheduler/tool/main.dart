@@ -65,17 +65,24 @@ Future<Null> main() async {
             name, startTime, dummyEndTime, game, live, premiere);
         shows.add(show);
       });
+      var duplicates = [];
       for (int i = 0; i < shows.length - 1; i++) {
         if (shows[i].start == shows[i + 1].start) {
-          if (shows[i].end.isAfter(shows[i + 1].end)) {
-            var tmp = shows[i];
-            shows[i] = shows[i + 1];
-            shows[i + 1] = tmp;
+          if (shows[i].end == shows[i + 1].end) {
+            duplicates.add(i);
+          } else {
+            if (shows[i].end.isAfter(shows[i + 1].end)) {
+              var tmp = shows[i];
+              shows[i] = shows[i + 1];
+              shows[i + 1] = tmp;
+            } else
+              shows[i + 1].start = shows[i].end;
           }
-          shows[i + 1].start = shows[i].end;
         }
         shows[i].end = shows[i + 1].start;
       }
+      duplicates.reversed
+          .forEach((duplicateIndex) => shows.removeAt(duplicateIndex));
       var path = 'lib/assets/rbtv/$year/${month.toString().padLeft(2, '0')}/';
       var file = await new File('$path${day.toString().padLeft(2, '0')}.json')
           .create(recursive: true);
