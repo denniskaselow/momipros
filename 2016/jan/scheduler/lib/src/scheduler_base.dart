@@ -231,7 +231,6 @@ class SchedulerService {
     }
     return new DateTime(baseDate.year, baseDate.month, baseDate.day,
         timeSlot.start.hour, timeSlot.start.minute);
-    ;
   }
 }
 
