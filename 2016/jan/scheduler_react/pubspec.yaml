@@ -25,3 +25,6 @@ transformers:
     commandLineOptions:
     - --trust-type-annotations
     - --trust-primitives
+
+analyzer:
+  strong-mode: true

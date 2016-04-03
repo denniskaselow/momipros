@@ -10,19 +10,19 @@ final timeSlotComponent = registerComponent(() => new _TimeSlotComponent());
 
 class _TimeSlotComponent extends FluxComponent<TimeSlotActions, TimeSlotStore> {
   @override
-  componentWillMount() {
+  void componentWillMount() {
     super.componentWillMount();
     actions.startProgress();
   }
 
   @override
-  componentWillUnmount() {
+  void componentWillUnmount() {
     super.componentWillUnmount();
     actions.stopProgress();
   }
 
   @override
-  render() {
+  dynamic render() {
     return div({
       'style': {'flexGrow': store.timeSlot.height},
       'className': 'timeslot ${store.isCurrent ? 'current' : ''}'
@@ -67,11 +67,6 @@ class TimeSlotStore extends Store {
   String _timeSlotId;
   Timer _progressTimer;
 
-  RbtvTimeSlot get timeSlot => _timeSlot;
-  double get progress => _progress;
-  bool get isCurrent => _isCurrent;
-  String get timeSlotId => _timeSlotId;
-
   TimeSlotActions _actions;
 
   TimeSlotStore(this._actions, this._timeSlot) {
@@ -80,6 +75,11 @@ class TimeSlotStore extends Store {
     triggerOnAction(_actions.stopProgress, _stopProgress);
     _timeSlotId = timeIdFormat.format(_timeSlot.start);
   }
+
+  RbtvTimeSlot get timeSlot => _timeSlot;
+  double get progress => _progress;
+  bool get isCurrent => _isCurrent;
+  String get timeSlotId => _timeSlotId;
 
   void _startProgress(_) {
     _progress = timeSlot.getProgress();

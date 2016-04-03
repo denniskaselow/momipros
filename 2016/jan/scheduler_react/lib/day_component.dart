@@ -9,7 +9,7 @@ final dayComponent = registerComponent(() => new _DayComponent());
 
 class _DayComponent extends FluxComponent<DayActions, DayStore> {
   @override
-  render() {
+  dynamic render() {
     var timeSlotComponents = store.day.timeSlots
         .map((timeSlot) => timeSlotComponent({
               'actions': store.getTimeSlotActions(_toTimeId(timeSlot)),
@@ -45,10 +45,6 @@ class DayStore extends Store {
   String _dayId;
   double _width;
 
-  Day get day => _day;
-  String get dayId => _dayId;
-  double get width => _width;
-
   DayActions _dayActions;
 
   DayStore(this._dayActions, this._day) {
@@ -64,6 +60,10 @@ class DayStore extends Store {
           () => new TimeSlotStore(actions, timeSlot));
     });
   }
+
+  Day get day => _day;
+  String get dayId => _dayId;
+  double get width => _width;
 
   TimeSlotStore getTimeSlotStore(String timeSlotId) =>
       _timeSlotStores[timeSlotId];

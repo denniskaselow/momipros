@@ -12,7 +12,7 @@ packages:
       name: angular2
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0-beta.12"
+    version: "2.0.0-beta.13.1"
   args:
     description:
       name: args
@@ -60,13 +60,13 @@ packages:
       name: code_transformers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.2"
+    version: "0.4.2+1"
   collection:
     description:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.1"
+    version: "1.5.1"
   convert:
     description:
       name: convert
@@ -126,7 +126,7 @@ packages:
       name: glob
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.1"
+    version: "1.1.2"
   html:
     description:
       name: html
@@ -192,7 +192,7 @@ packages:
       name: pool
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.1"
+    version: "1.2.2"
   protobuf:
     description:
       name: protobuf
@@ -204,7 +204,7 @@ packages:
       name: reflectable
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.3"
+    version: "0.5.4"
   scheduler:
     description:
       path: "..\\scheduler"
@@ -228,7 +228,7 @@ packages:
       name: smoke
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.6+1"
+    version: "0.3.6+2"
   source_maps:
     description:
       name: source_maps
@@ -246,7 +246,7 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.6.2"
+    version: "1.6.4"
   stream_channel:
     description:
       name: stream_channel

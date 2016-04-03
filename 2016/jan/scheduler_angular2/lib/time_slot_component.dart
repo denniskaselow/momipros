@@ -95,8 +95,8 @@ class TimeSlotComponent implements AfterViewInit, OnDestroy {
 
   @override
   void ngAfterViewInit() {
-    progressBar = ((element.nativeElement as HtmlElement)
-            .querySelector('.progress') as HtmlElement)
+    progressBar = ((element.nativeElement)
+            .querySelector('.progress'))
         .style;
     var progress = timeSlot.getProgress();
     progressBar.width = '$progress%';
@@ -116,14 +116,14 @@ class TimeSlotComponent implements AfterViewInit, OnDestroy {
   }
 
   void _updateProgress() {
-    (element.nativeElement as HtmlElement).classes.add('current');
+    element.nativeElement.classes.add('current');
     var duration = timeSlot.getDuration();
     _progressTimer = new Timer.periodic(
         new Duration(milliseconds: duration.inMilliseconds ~/ 3000),
         (Timer timer) {
       var progress = timeSlot.getProgress();
       if (progress >= 100.0) {
-        (element.nativeElement as HtmlElement).classes.remove('current');
+        element.nativeElement.classes.remove('current');
         timer.cancel();
       }
       progressBar.width = '$progress%';

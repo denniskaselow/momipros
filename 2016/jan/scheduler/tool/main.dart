@@ -29,7 +29,7 @@ Future<Null> main() async {
 
     var schedule = document.querySelector('#schedule');
     var scheduleDays = schedule.querySelectorAll('.day');
-    RbtvTimeSlot show = null;
+    RbtvTimeSlot show;
     scheduleDays.forEach((scheduleDay) async {
       var shows = <TimeSlot>[];
       var dayDate = scheduleDay

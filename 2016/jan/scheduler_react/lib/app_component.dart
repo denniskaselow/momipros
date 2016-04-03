@@ -9,13 +9,14 @@ import 'package:scheduler_react/day_component.dart';
 final appComponent = registerComponent(() => new _AppComponent());
 
 class _AppComponent extends FluxComponent<AppActions, AppStore> {
-  componentWillMount() {
+  @override
+  void componentWillMount() {
     super.componentWillMount();
     actions.updateDays();
   }
 
   @override
-  render() {
+  void render() {
     var dayComponents = store.days
         .map((day) => dayComponent({
               'className': day.dayName,
@@ -24,7 +25,6 @@ class _AppComponent extends FluxComponent<AppActions, AppStore> {
               'store': store.getDayStore(_toDateId(day))
             }))
         .toList();
-
 
     return div({
       'id': 'schedule'
@@ -61,8 +61,6 @@ class AppStore extends Store {
   int _dayOffset = 0;
   List<Day> _days = [];
 
-  List<Day> get days => _days;
-
   AppActions _appActions;
 
   AppStore(this._appActions, this._schedulerService) {
@@ -84,6 +82,8 @@ class AppStore extends Store {
       _appActions.updateDays();
     });
   }
+
+  List<Day> get days => _days;
 
   DayStore getDayStore(String dateId) => _dayStores[dateId];
   DayActions getDayActions(String dateId) => _dayActions[dateId];

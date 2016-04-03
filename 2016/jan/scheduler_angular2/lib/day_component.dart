@@ -120,5 +120,6 @@ class DayComponent {
     }
   }
 
-  String timeSlotId(int index, TimeSlot timeSlot) => timeIdFormat.format(timeSlot.start);
+  String timeSlotId(int index, TimeSlot timeSlot) =>
+      timeIdFormat.format(timeSlot.start);
 }

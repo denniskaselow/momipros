@@ -82,7 +82,7 @@ class RbtvSchedulerService extends SchedulerService {
         var response = await HttpRequest
             .request('packages/scheduler/assets/rbtv/$dateId.json');
         var content = response.responseText;
-        shows = fromJsonList(content, RbtvTimeSlot) as List<RbtvTimeSlot>;
+        shows = fromJsonList(content, RbtvTimeSlot);
       } catch (e) {
         shows = [];
         fillTimeSlots(shows, date);
