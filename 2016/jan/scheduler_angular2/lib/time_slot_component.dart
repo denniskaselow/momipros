@@ -18,7 +18,7 @@ import 'dart:async';
   </div>
 </div>
 <div class='duration'>{{ timeSlot.getDurationLabel() }}</div>
-<div class='progress' [style.width]='0'></div>
+<div class='progress' [style.width]='progressWidth'></div>
 ''',
     styles: const [
       '''
@@ -84,28 +84,23 @@ import 'dart:async';
 }
 '''
     ])
-class TimeSlotComponent implements AfterViewInit, OnDestroy {
+class TimeSlotComponent implements OnInit, OnDestroy {
   @Input()
   RbtvTimeSlot timeSlot;
-  CssStyleDeclaration progressBar;
-  ElementRef element;
+  @HostBinding('class.current')
+  bool current = false;
   Timer _progressTimer;
-
-  TimeSlotComponent(this.element);
+  double progressWidth = 0.0;
 
   @override
-  void ngAfterViewInit() {
-    progressBar = ((element.nativeElement)
-            .querySelector('.progress'))
-        .style;
-    var progress = timeSlot.getProgress();
-    progressBar.width = '$progress%';
-    if (progress == 0.0) {
+  void ngOnInit() {
+    var progressWidth = timeSlot.getProgress();
+    if (progressWidth == 0.0) {
       var timeUntilStart = timeSlot.start.difference(new DateTime.now());
       _progressTimer = new Timer(timeUntilStart, () {
         _updateProgress();
       });
-    } else if (progress < 100.0) {
+    } else if (progressWidth < 100.0) {
       _updateProgress();
     }
   }
@@ -116,17 +111,17 @@ class TimeSlotComponent implements AfterViewInit, OnDestroy {
   }
 
   void _updateProgress() {
-    element.nativeElement.classes.add('current');
+    current = true;
     var duration = timeSlot.getDuration();
     _progressTimer = new Timer.periodic(
         new Duration(milliseconds: duration.inMilliseconds ~/ 3000),
         (Timer timer) {
       var progress = timeSlot.getProgress();
       if (progress >= 100.0) {
-        element.nativeElement.classes.remove('current');
+        current = false;
         timer.cancel();
       }
-      progressBar.width = '$progress%';
+      progressWidth = progress;
     });
   }
 }
