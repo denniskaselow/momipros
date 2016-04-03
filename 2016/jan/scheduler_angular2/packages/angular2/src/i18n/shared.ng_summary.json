@@ -1,14 +1,7 @@
 {
   "ngDeps": {
-    "1": "angular2.src.i18n.message_extractor",
+    "1": "angular2.src.i18n.shared",
     "3": [
-      {
-        "1": "package:angular2/src/compiler/html_parser.dart",
-        "2": [
-          "HtmlParser"
-        ],
-        "5": false
-      },
       {
         "1": "package:angular2/src/compiler/parse_util.dart",
         "2": [
@@ -39,9 +32,9 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/facade/collection.dart",
+        "1": "message.dart",
         "2": [
-          "StringMapWrapper"
+          "Message"
         ],
         "5": false
       },
@@ -51,48 +44,56 @@
           "Parser"
         ],
         "5": false
-      },
-      {
-        "1": "message.dart",
-        "2": [
-          "Message",
-          "id"
-        ],
-        "5": false
-      },
-      {
-        "1": "shared.dart",
-        "2": [
-          "I18nError",
-          "Part",
-          "I18N_ATTR_PREFIX",
-          "partition",
-          "meaning",
-          "description",
-          "stringifyNodes",
-          "messageFromAttribute"
-        ],
-        "5": false
       }
     ],
-    "6": "message_extractor.dart"
+    "6": "shared.dart"
   },
-  "ExtractionResult": {
+  "I18N_ATTR": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "ExtractionResult",
-      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
+      "name": "I18N_ATTR",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
       "prefix": null,
       "constConstructor": null
     }
   },
-  "MessageExtractor": {
+  "I18N_ATTR_PREFIX": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "MessageExtractor",
-      "moduleUrl": "asset:angular2/lib/src/i18n/message_extractor.dart",
+      "name": "I18N_ATTR_PREFIX",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "I18nError": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "I18nError",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "Part": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "Part",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "_StringifyVisitor": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "_StringifyVisitor",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
       "prefix": null,
       "constConstructor": null
     }

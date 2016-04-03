@@ -2522,6 +2522,13 @@
       "constConstructor": null
     }
   },
+  "COMMON_DIRECTIVES": {
+    "kind": "alias",
+    "value": [
+      "CORE_DIRECTIVES",
+      "FORM_DIRECTIVES"
+    ]
+  },
   "CORE_DIRECTIVES": {
     "kind": "alias",
     "value": [
@@ -2580,13 +2587,6 @@
       "MinLengthValidator",
       "MaxLengthValidator",
       "PatternValidator"
-    ]
-  },
-  "COMMON_DIRECTIVES": {
-    "kind": "alias",
-    "value": [
-      "CORE_DIRECTIVES",
-      "FORM_DIRECTIVES"
     ]
   },
   "definesAlias": false
