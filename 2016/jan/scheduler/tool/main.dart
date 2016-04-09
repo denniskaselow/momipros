@@ -75,8 +75,8 @@ Future<Null> main() async {
               var tmp = shows[i];
               shows[i] = shows[i + 1];
               shows[i + 1] = tmp;
-            } else
-              shows[i + 1].start = shows[i].end;
+            }
+            shows[i + 1].start = shows[i].end;
           }
         }
         shows[i].end = shows[i + 1].start;

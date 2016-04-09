@@ -42,32 +42,34 @@ class RbtvSchedulerService extends SchedulerService {
           .toList();
       shows.addAll(tomorrowShows);
     }
-    for (int i = 0; i < shows.length - 1; i++) {
-      shows[i].end = shows[i + 1].start;
+    if (shows.isNotEmpty) {
+      for (int i = 0; i < shows.length - 1; i++) {
+        shows[i].end = shows[i + 1].start;
+      }
+      if (goIntoPast &&
+          !(shows.first.start.hour == startHour &&
+              shows.first.start.minute == startMinute)) {
+        var previousShows =
+            await getRbtvTimeSlots(date.subtract(new Duration(days: 1)), false);
+        var lastShow = previousShows.last;
+        shows.insert(
+            0,
+            new RbtvTimeSlot(
+                lastShow.name,
+                new DateTime(
+                    date.year, date.month, date.day, startHour, startMinute),
+                shows.first.start,
+                lastShow.description,
+                lastShow.live,
+                lastShow.premiere));
+      }
+      var endOfDay = new DateTime(
+          tomorrow.year, tomorrow.month, tomorrow.day, startHour, startMinute);
+      if (shows.last.end.isAfter(endOfDay)) {
+        shows.last.end = endOfDay;
+      }
+      _modifySpecialShows(shows);
     }
-    if (goIntoPast &&
-        !(shows.first.start.hour == startHour &&
-            shows.first.start.minute == startMinute)) {
-      var previousShows =
-          await getRbtvTimeSlots(date.subtract(new Duration(days: 1)), false);
-      var lastShow = previousShows.last;
-      shows.insert(
-          0,
-          new RbtvTimeSlot(
-              lastShow.name,
-              new DateTime(
-                  date.year, date.month, date.day, startHour, startMinute),
-              shows.first.start,
-              lastShow.description,
-              lastShow.live,
-              lastShow.premiere));
-    }
-    var endOfDay = new DateTime(
-        tomorrow.year, tomorrow.month, tomorrow.day, startHour, startMinute);
-    if (shows.last.end.isAfter(endOfDay)) {
-      shows.last.end = endOfDay;
-    }
-    _modifySpecialShows(shows);
     fillTimeSlots(shows, date);
 
     return shows;
