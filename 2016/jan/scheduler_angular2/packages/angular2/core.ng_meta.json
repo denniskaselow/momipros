@@ -2754,56 +2754,6 @@
       "constConstructor": null
     }
   },
-  "RenderComponentType": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "RenderComponentType",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RenderDebugInfo": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "RenderDebugInfo",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ParentRenderer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ParentRenderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "Renderer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "Renderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RootRenderer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "RootRenderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
   "InjectMetadata": {
     "kind": "type",
     "value": {
@@ -3264,6 +3214,26 @@
       "constConstructor": null
     }
   },
+  "BaseException": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "BaseException",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "WrappedException": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "WrappedException",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "Predicate": {
     "kind": "type",
     "value": {
@@ -3334,42 +3304,52 @@
       "constConstructor": null
     }
   },
-  "BaseException": {
+  "RenderComponentType": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "BaseException",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "name": "RenderComponentType",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
       "constConstructor": null
     }
   },
-  "WrappedException": {
+  "RenderDebugInfo": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "WrappedException",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "name": "RenderDebugInfo",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
       "constConstructor": null
     }
   },
-  "_ArrayLogger": {
+  "ParentRenderer": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "_ArrayLogger",
-      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
+      "name": "ParentRenderer",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
       "constConstructor": null
     }
   },
-  "ExceptionHandler": {
+  "Renderer": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "ExceptionHandler",
-      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
+      "name": "Renderer",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "RootRenderer": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "RootRenderer",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -3500,6 +3480,26 @@
       "class": "Identifier",
       "name": "NgZoneImpl",
       "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "_ArrayLogger": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "_ArrayLogger",
+      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ExceptionHandler": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ExceptionHandler",
+      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
       "prefix": null,
       "constConstructor": null
     }

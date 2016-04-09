@@ -466,68 +466,6 @@
       "constConstructor": null
     }
   },
-  "HashLocationStrategy": {
-    "kind": "type",
-    "value": {
-      "class": "Type",
-      "name": "HashLocationStrategy",
-      "moduleUrl": "asset:angular2/lib/src/router/location/hash_location_strategy.dart",
-      "prefix": null,
-      "isHost": false,
-      "constConstructor": null,
-      "diDeps": [
-        {
-          "token": null,
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        },
-        {
-          "token": {
-            "class": "Identifier",
-            "name": "APP_BASE_HREF",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null
-          },
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": true
-        }
-      ]
-    }
-  },
-  "Location": {
-    "kind": "type",
-    "value": {
-      "class": "Type",
-      "name": "Location",
-      "moduleUrl": "asset:angular2/lib/src/router/location/location.dart",
-      "prefix": null,
-      "isHost": false,
-      "constConstructor": null,
-      "diDeps": [
-        {
-          "token": null,
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        }
-      ]
-    }
-  },
   "APP_BASE_HREF": {
     "kind": "type",
     "value": {
@@ -587,6 +525,68 @@
       ]
     }
   },
+  "Location": {
+    "kind": "type",
+    "value": {
+      "class": "Type",
+      "name": "Location",
+      "moduleUrl": "asset:angular2/lib/src/router/location/location.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "diDeps": [
+        {
+          "token": null,
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "HashLocationStrategy": {
+    "kind": "type",
+    "value": {
+      "class": "Type",
+      "name": "HashLocationStrategy",
+      "moduleUrl": "asset:angular2/lib/src/router/location/hash_location_strategy.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "diDeps": [
+        {
+          "token": null,
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "APP_BASE_HREF",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": true
+        }
+      ]
+    }
+  },
   "UrlChangeListener": {
     "kind": "type",
     "value": {
@@ -613,6 +613,16 @@
       "class": "Identifier",
       "name": "UrlChangeEvent",
       "moduleUrl": "asset:angular2/lib/src/router/location/platform_location.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ROUTER_PROVIDERS_COMMON": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ROUTER_PROVIDERS_COMMON",
+      "moduleUrl": "asset:angular2/lib/src/router/router_providers_common.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -741,6 +751,16 @@
       "constConstructor": null
     }
   },
+  "RouteDefinition": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "RouteDefinition",
+      "moduleUrl": "asset:angular2/lib/src/router/route_definition.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "ROUTER_PROVIDERS": {
     "kind": "type",
     "value": {
@@ -757,26 +777,6 @@
       "class": "Identifier",
       "name": "ROUTER_BINDINGS",
       "moduleUrl": "asset:angular2/lib/src/router/router_providers.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ROUTER_PROVIDERS_COMMON": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ROUTER_PROVIDERS_COMMON",
-      "moduleUrl": "asset:angular2/lib/src/router/router_providers_common.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RouteDefinition": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "RouteDefinition",
-      "moduleUrl": "asset:angular2/lib/src/router/route_definition.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -3546,56 +3546,6 @@
       "constConstructor": null
     }
   },
-  "RenderComponentType": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "RenderComponentType",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RenderDebugInfo": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "RenderDebugInfo",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ParentRenderer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ParentRenderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "Renderer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "Renderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RootRenderer": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "RootRenderer",
-      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
   "InjectMetadata": {
     "kind": "type",
     "value": {
@@ -4056,6 +4006,26 @@
       "constConstructor": null
     }
   },
+  "BaseException": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "BaseException",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "WrappedException": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "WrappedException",
+      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "Predicate": {
     "kind": "type",
     "value": {
@@ -4126,42 +4096,52 @@
       "constConstructor": null
     }
   },
-  "BaseException": {
+  "RenderComponentType": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "BaseException",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "name": "RenderComponentType",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
       "constConstructor": null
     }
   },
-  "WrappedException": {
+  "RenderDebugInfo": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "WrappedException",
-      "moduleUrl": "asset:angular2/lib/src/facade/exceptions.dart",
+      "name": "RenderDebugInfo",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
       "constConstructor": null
     }
   },
-  "_ArrayLogger": {
+  "ParentRenderer": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "_ArrayLogger",
-      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
+      "name": "ParentRenderer",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
       "constConstructor": null
     }
   },
-  "ExceptionHandler": {
+  "Renderer": {
     "kind": "type",
     "value": {
       "class": "Identifier",
-      "name": "ExceptionHandler",
-      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
+      "name": "Renderer",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "RootRenderer": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "RootRenderer",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -4292,6 +4272,26 @@
       "class": "Identifier",
       "name": "NgZoneImpl",
       "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone_impl.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "_ArrayLogger": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "_ArrayLogger",
+      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ExceptionHandler": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ExceptionHandler",
+      "moduleUrl": "asset:angular2/lib/src/facade/exception_handler.dart",
       "prefix": null,
       "constConstructor": null
     }

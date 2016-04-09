@@ -1138,6 +1138,127 @@
       "constConstructor": null
     }
   },
+  "ON_WEB_WORKER": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ON_WEB_WORKER",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/api.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "RenderStore": {
+    "kind": "type",
+    "value": {
+      "class": "Type",
+      "name": "RenderStore",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "diDeps": []
+    }
+  },
+  "ClientMessageBrokerFactory": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ClientMessageBrokerFactory",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ClientMessageBrokerFactory_": {
+    "kind": "type",
+    "value": {
+      "class": "Type",
+      "name": "ClientMessageBrokerFactory_",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "diDeps": [
+        {
+          "token": null,
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": {
+            "class": "Identifier",
+            "name": "Serializer",
+            "moduleUrl": null,
+            "prefix": null,
+            "constConstructor": null
+          },
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "ClientMessageBroker": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ClientMessageBroker",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "ClientMessageBroker_": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "ClientMessageBroker_",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "MessageData": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "MessageData",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "FnArg": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "FnArg",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "UiArguments": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "UiArguments",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "InjectMetadata": {
     "kind": "type",
     "value": {
@@ -2359,115 +2480,6 @@
       "constConstructor": null
     }
   },
-  "ON_WEB_WORKER": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ON_WEB_WORKER",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/api.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ClientMessageBrokerFactory": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ClientMessageBrokerFactory",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ClientMessageBrokerFactory_": {
-    "kind": "type",
-    "value": {
-      "class": "Type",
-      "name": "ClientMessageBrokerFactory_",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
-      "prefix": null,
-      "isHost": false,
-      "constConstructor": null,
-      "diDeps": [
-        {
-          "token": null,
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        },
-        {
-          "token": {
-            "class": "Identifier",
-            "name": "Serializer",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null
-          },
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        }
-      ]
-    }
-  },
-  "ClientMessageBroker": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ClientMessageBroker",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ClientMessageBroker_": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "ClientMessageBroker_",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "MessageData": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "MessageData",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "FnArg": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "FnArg",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "UiArguments": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "UiArguments",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/client_message_broker.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
   "MessageBus": {
     "kind": "type",
     "value": {
@@ -2494,61 +2506,6 @@
       "class": "Identifier",
       "name": "MessageBusSink",
       "moduleUrl": "asset:angular2/lib/src/web_workers/shared/message_bus.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RenderStore": {
-    "kind": "type",
-    "value": {
-      "class": "Type",
-      "name": "RenderStore",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/render_store.dart",
-      "prefix": null,
-      "isHost": false,
-      "constConstructor": null,
-      "diDeps": []
-    }
-  },
-  "PRIMITIVE": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "PRIMITIVE",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "Serializer": {
-    "kind": "type",
-    "value": {
-      "class": "Type",
-      "name": "Serializer",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
-      "prefix": null,
-      "isHost": false,
-      "constConstructor": null,
-      "diDeps": [
-        {
-          "token": null,
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        }
-      ]
-    }
-  },
-  "RenderStoreObject": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "RenderStoreObject",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -2632,6 +2589,49 @@
       "constConstructor": null
     }
   },
+  "PRIMITIVE": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "PRIMITIVE",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "Serializer": {
+    "kind": "type",
+    "value": {
+      "class": "Type",
+      "name": "Serializer",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "diDeps": [
+        {
+          "token": null,
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
+    }
+  },
+  "RenderStoreObject": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "RenderStoreObject",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/shared/serializer.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
   "MessageBasedRenderer": {
     "kind": "type",
     "value": {
@@ -2672,39 +2672,6 @@
           "isSkipSelf": false,
           "isOptional": false
         },
-        {
-          "token": null,
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        },
-        {
-          "token": null,
-          "query": null,
-          "viewQuery": null,
-          "isAttribute": false,
-          "isSelf": false,
-          "isHost": false,
-          "isSkipSelf": false,
-          "isOptional": false
-        }
-      ]
-    }
-  },
-  "MessageBasedXHRImpl": {
-    "kind": "type",
-    "value": {
-      "class": "Type",
-      "name": "MessageBasedXHRImpl",
-      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
-      "prefix": null,
-      "isHost": false,
-      "constConstructor": null,
-      "diDeps": [
         {
           "token": null,
           "query": null,
@@ -5337,6 +5304,39 @@
       "moduleUrl": "asset:angular2/lib/src/core/reflection/platform_reflection_capabilities.dart",
       "prefix": null,
       "constConstructor": null
+    }
+  },
+  "MessageBasedXHRImpl": {
+    "kind": "type",
+    "value": {
+      "class": "Type",
+      "name": "MessageBasedXHRImpl",
+      "moduleUrl": "asset:angular2/lib/src/web_workers/ui/xhr_impl.dart",
+      "prefix": null,
+      "isHost": false,
+      "constConstructor": null,
+      "diDeps": [
+        {
+          "token": null,
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        },
+        {
+          "token": null,
+          "query": null,
+          "viewQuery": null,
+          "isAttribute": false,
+          "isSelf": false,
+          "isHost": false,
+          "isSkipSelf": false,
+          "isOptional": false
+        }
+      ]
     }
   },
   "WORKER_RENDER_MESSAGING_PROVIDERS": {

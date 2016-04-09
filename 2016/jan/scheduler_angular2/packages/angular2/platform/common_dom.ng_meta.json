@@ -86,16 +86,6 @@
       }
     ]
   },
-  "By": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "By",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/by.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
   "CORE_TOKENS": {
     "kind": "type",
     "value": {
@@ -152,6 +142,16 @@
       "class": "Identifier",
       "name": "DomAdapter",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_adapter.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "By": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "By",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/debug/by.dart",
       "prefix": null,
       "constConstructor": null
     }
@@ -303,16 +303,6 @@
       "constConstructor": null
     }
   },
-  "DOCUMENT": {
-    "kind": "type",
-    "value": {
-      "class": "Identifier",
-      "name": "DOCUMENT",
-      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
-      "prefix": null,
-      "constConstructor": null
-    }
-  },
   "DomEventsPlugin": {
     "kind": "type",
     "value": {
@@ -380,6 +370,16 @@
       "class": "Identifier",
       "name": "EventManagerPlugin",
       "moduleUrl": "asset:angular2/lib/src/platform/dom/events/event_manager.dart",
+      "prefix": null,
+      "constConstructor": null
+    }
+  },
+  "DOCUMENT": {
+    "kind": "type",
+    "value": {
+      "class": "Identifier",
+      "name": "DOCUMENT",
+      "moduleUrl": "asset:angular2/lib/src/platform/dom/dom_tokens.dart",
       "prefix": null,
       "constConstructor": null
     }
