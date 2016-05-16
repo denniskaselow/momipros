@@ -134,11 +134,7 @@
         "4": [
           {
             "1": "Injectable",
-            "4": false,
-            "5": false,
-            "6": false,
-            "7": true,
-            "8": false
+            "4": false
           }
         ],
         "5": [
@@ -154,44 +150,74 @@
     ],
     "6": "route_registry.dart"
   },
-  "ROUTER_PRIMARY_COMPONENT": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "ROUTER_PRIMARY_COMPONENT": {
       "class": "Identifier",
       "name": "ROUTER_PRIMARY_COMPONENT",
       "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RouteRegistry": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "RouteRegistry": {
       "class": "Type",
       "name": "RouteRegistry",
       "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
       "prefix": null,
       "isHost": false,
-      "constConstructor": null,
+      "value": null,
       "diDeps": [
         {
           "token": {
-            "class": "Identifier",
-            "name": "ROUTER_PRIMARY_COMPONENT",
-            "moduleUrl": null,
-            "prefix": null,
-            "constConstructor": null
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "ROUTER_PRIMARY_COMPONENT",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
           },
           "query": null,
           "viewQuery": null,
+          "value": null,
           "isAttribute": false,
           "isSelf": false,
           "isHost": false,
           "isSkipSelf": false,
-          "isOptional": false
+          "isOptional": false,
+          "isValue": false
         }
       ]
+    },
+    "splitAndFlattenLinkParams": {
+      "class": "Identifier",
+      "name": "splitAndFlattenLinkParams",
+      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+      "prefix": null,
+      "value": null
+    },
+    "mostSpecific": {
+      "class": "Identifier",
+      "name": "mostSpecific",
+      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+      "prefix": null,
+      "value": null
+    },
+    "compareSpecificityStrings": {
+      "class": "Identifier",
+      "name": "compareSpecificityStrings",
+      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+      "prefix": null,
+      "value": null
+    },
+    "assertTerminalComponent": {
+      "class": "Identifier",
+      "name": "assertTerminalComponent",
+      "moduleUrl": "asset:angular2/lib/src/router/route_registry.dart",
+      "prefix": null,
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

@@ -31,25 +31,21 @@
     ],
     "6": "regex_route_path.dart"
   },
-  "RegexSerializer": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "RegexSerializer": {
       "class": "Identifier",
       "name": "RegexSerializer",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/regex_route_path.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RegexRoutePath": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "RegexRoutePath": {
       "class": "Identifier",
       "name": "RegexRoutePath",
       "moduleUrl": "asset:angular2/lib/src/router/rules/route_paths/regex_route_path.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

@@ -23,15 +23,11 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/parser.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/lexer.dart",
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/core/reflection/reflector.dart",
+        "1": "package:angular2/src/compiler/expression_parser/lexer.dart",
         "5": false
       },
       {
@@ -41,25 +37,28 @@
     ],
     "6": "extract_messages.dart"
   },
-  "I18nMessageExtractorBuilder": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "main": {
+      "class": "Identifier",
+      "name": "main",
+      "moduleUrl": "asset:angular2/lib/extract_messages.dart",
+      "prefix": null,
+      "value": null
+    },
+    "I18nMessageExtractorBuilder": {
       "class": "Identifier",
       "name": "I18nMessageExtractorBuilder",
       "moduleUrl": "asset:angular2/lib/extract_messages.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "I18nMessageExtractor": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "I18nMessageExtractor": {
       "class": "Identifier",
       "name": "I18nMessageExtractor",
       "moduleUrl": "asset:angular2/lib/extract_messages.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

@@ -58,285 +58,231 @@
     ],
     "6": "parser.dart"
   },
-  "BlockType": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "BlockType": {
       "class": "Identifier",
       "name": "BlockType",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "EOF_DELIM": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "EOF_DELIM": {
       "class": "Identifier",
       "name": "EOF_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RBRACE_DELIM": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "RBRACE_DELIM": {
       "class": "Identifier",
       "name": "RBRACE_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "LBRACE_DELIM": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "LBRACE_DELIM": {
       "class": "Identifier",
       "name": "LBRACE_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "COMMA_DELIM": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "COMMA_DELIM": {
       "class": "Identifier",
       "name": "COMMA_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "COLON_DELIM": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "COLON_DELIM": {
       "class": "Identifier",
       "name": "COLON_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "SEMICOLON_DELIM": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "SEMICOLON_DELIM": {
       "class": "Identifier",
       "name": "SEMICOLON_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "NEWLINE_DELIM": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "NEWLINE_DELIM": {
       "class": "Identifier",
       "name": "NEWLINE_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RPAREN_DELIM": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "RPAREN_DELIM": {
       "class": "Identifier",
       "name": "RPAREN_DELIM",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "mergeTokens": {
+      "class": "Identifier",
+      "name": "mergeTokens",
+      "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getDelimFromToken": {
+      "class": "Identifier",
+      "name": "getDelimFromToken",
+      "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getDelimFromCharacter": {
+      "class": "Identifier",
+      "name": "getDelimFromCharacter",
+      "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "characterContainsDelimiter": {
+      "class": "Identifier",
+      "name": "characterContainsDelimiter",
+      "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
+      "prefix": null,
+      "value": null
+    },
+    "CssAST": {
       "class": "Identifier",
       "name": "CssAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssASTVisitor": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssASTVisitor": {
       "class": "Identifier",
       "name": "CssASTVisitor",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "ParsedCssResult": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "ParsedCssResult": {
       "class": "Identifier",
       "name": "ParsedCssResult",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssParser": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssParser": {
       "class": "Identifier",
       "name": "CssParser",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssStyleValueAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssStyleValueAST": {
       "class": "Identifier",
       "name": "CssStyleValueAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssRuleAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssRuleAST": {
       "class": "Identifier",
       "name": "CssRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssBlockRuleAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssBlockRuleAST": {
       "class": "Identifier",
       "name": "CssBlockRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssKeyframeRuleAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssKeyframeRuleAST": {
       "class": "Identifier",
       "name": "CssKeyframeRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssKeyframeDefinitionAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssKeyframeDefinitionAST": {
       "class": "Identifier",
       "name": "CssKeyframeDefinitionAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssBlockDefinitionRuleAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssBlockDefinitionRuleAST": {
       "class": "Identifier",
       "name": "CssBlockDefinitionRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssMediaQueryRuleAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssMediaQueryRuleAST": {
       "class": "Identifier",
       "name": "CssMediaQueryRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssInlineRuleAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssInlineRuleAST": {
       "class": "Identifier",
       "name": "CssInlineRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssSelectorRuleAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssSelectorRuleAST": {
       "class": "Identifier",
       "name": "CssSelectorRuleAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssDefinitionAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssDefinitionAST": {
       "class": "Identifier",
       "name": "CssDefinitionAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssSelectorAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssSelectorAST": {
       "class": "Identifier",
       "name": "CssSelectorAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssBlockAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssBlockAST": {
       "class": "Identifier",
       "name": "CssBlockAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssStyleSheetAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssStyleSheetAST": {
       "class": "Identifier",
       "name": "CssStyleSheetAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssParseError": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssParseError": {
       "class": "Identifier",
       "name": "CssParseError",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "CssUnknownTokenListAST": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "CssUnknownTokenListAST": {
       "class": "Identifier",
       "name": "CssUnknownTokenListAST",
       "moduleUrl": "asset:angular2/lib/src/compiler/css/parser.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

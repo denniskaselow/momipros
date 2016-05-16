@@ -12,22 +12,28 @@
       }
     ],
     "6": "message.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       }
     ]
   },
-  "Message": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "Message": {
       "class": "Identifier",
       "name": "Message",
       "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
+    },
+    "id": {
+      "class": "Identifier",
+      "name": "id",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
+      "prefix": null,
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

@@ -19,6 +19,8 @@
           "HtmlAttrAst",
           "HtmlTextAst",
           "HtmlCommentAst",
+          "HtmlExpansionAst",
+          "HtmlExpansionCaseAst",
           "htmlVisitAll"
         ],
         "5": false
@@ -27,7 +29,8 @@
         "1": "package:angular2/src/facade/lang.dart",
         "2": [
           "isPresent",
-          "isBlank"
+          "isBlank",
+          "StringWrapper"
         ],
         "5": false
       },
@@ -39,7 +42,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/parser.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "2": [
           "Parser"
         ],
@@ -48,55 +51,119 @@
     ],
     "6": "shared.dart"
   },
-  "I18N_ATTR": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "I18N_ATTR": {
       "class": "Identifier",
       "name": "I18N_ATTR",
       "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "I18N_ATTR_PREFIX": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "I18N_ATTR_PREFIX": {
       "class": "Identifier",
       "name": "I18N_ATTR_PREFIX",
       "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "I18nError": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "I18nError": {
       "class": "Identifier",
       "name": "I18nError",
       "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "Part": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "partition": {
+      "class": "Identifier",
+      "name": "partition",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "Part": {
       "class": "Identifier",
       "name": "Part",
       "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "_StringifyVisitor": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "_isOpeningComment": {
+      "class": "Identifier",
+      "name": "_isOpeningComment",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_isClosingComment": {
+      "class": "Identifier",
+      "name": "_isClosingComment",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_findI18nAttr": {
+      "class": "Identifier",
+      "name": "_findI18nAttr",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "meaning": {
+      "class": "Identifier",
+      "name": "meaning",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "description": {
+      "class": "Identifier",
+      "name": "description",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "messageFromAttribute": {
+      "class": "Identifier",
+      "name": "messageFromAttribute",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "removeInterpolation": {
+      "class": "Identifier",
+      "name": "removeInterpolation",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "getPhNameFromBinding": {
+      "class": "Identifier",
+      "name": "getPhNameFromBinding",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "dedupePhName": {
+      "class": "Identifier",
+      "name": "dedupePhName",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "stringifyNodes": {
+      "class": "Identifier",
+      "name": "stringifyNodes",
+      "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_StringifyVisitor": {
       "class": "Identifier",
       "name": "_StringifyVisitor",
       "moduleUrl": "asset:angular2/lib/src/i18n/shared.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

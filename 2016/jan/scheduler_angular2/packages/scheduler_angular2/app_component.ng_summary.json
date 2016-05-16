@@ -18,41 +18,13 @@
     "5": [
       {
         "1": "AppComponent",
-        "4": [
-          {
-            "1": "Component",
-            "3": [
-              {
-                "1": "selector",
-                "2": "'my-app'"
-              },
-              {
-                "1": "template",
-                "2": "'''\n<div id=\"schedule\">\n  <i class=\"fa fa-arrow-circle-left\" (click)='move(-1)'></i>\n  <schedule-day *ngFor=\"#day of days; trackBy:dateId\" [day]=\"day\" [class.today]='day.isToday' [ngClass]='day.dayName'></schedule-day>\n  <i class=\"fa fa-arrow-circle-right\" (click)='move(1)'></i>\n</div>\n    '''"
-              },
-              {
-                "1": "styles",
-                "2": "const ['''\n      #schedule {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n      }\n      .fa-arrow-circle-right, .fa-arrow-circle-left {\n        font-size: 40px;\n        text-align: center;\n        cursor: pointer;\n      }\n''']"
-              },
-              {
-                "1": "directives",
-                "2": "const [DayComponent]"
-              }
-            ],
-            "4": false,
-            "5": true,
-            "6": true,
-            "7": true,
-            "8": false
-          }
-        ],
         "5": [
           {
             "1": "RbtvSchedulerService",
             "4": "schedulerService"
           }
         ],
-        "8": [
+        "7": [
           {
             "2": "DayComponent"
           }
@@ -61,12 +33,10 @@
     ],
     "6": "app_component.dart"
   },
-  "AppComponent": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "AppComponent": {
       "class": "Directive",
       "isComponent": true,
-      "dynamicLoadable": true,
       "selector": "my-app",
       "exportAs": null,
       "type": {
@@ -75,17 +45,29 @@
         "moduleUrl": "asset:scheduler_angular2/lib/app_component.dart",
         "prefix": null,
         "isHost": false,
-        "constConstructor": null,
+        "value": null,
         "diDeps": [
           {
-            "token": null,
+            "token": {
+              "value": null,
+              "identifier": {
+                "class": "Identifier",
+                "name": "RbtvSchedulerService",
+                "moduleUrl": null,
+                "prefix": null,
+                "value": null
+              },
+              "identifierIsInstance": false
+            },
             "query": null,
             "viewQuery": null,
+            "value": null,
             "isAttribute": false,
             "isSelf": false,
             "isHost": false,
             "isSkipSelf": false,
-            "isOptional": false
+            "isOptional": false,
+            "isValue": false
           }
         ]
       },
@@ -98,7 +80,7 @@
       "lifecycleHooks": [],
       "template": {
         "encapsulation": 0,
-        "template": "<div id=\"schedule\">\n  <i class=\"fa fa-arrow-circle-left\" (click)='move(-1)'></i>\n  <schedule-day *ngFor=\"#day of days; trackBy:dateId\" [day]=\"day\" [class.today]='day.isToday' [ngClass]='day.dayName'></schedule-day>\n  <i class=\"fa fa-arrow-circle-right\" (click)='move(1)'></i>\n</div>\n    ",
+        "template": "<div id=\"schedule\">\n  <i class=\"fa fa-arrow-circle-left\" (click)='move(-1)'></i>\n  <schedule-day *ngFor=\"let day of days; trackBy:dateId\" [day]=\"day\" [class.today]='day.isToday' [ngClass]='day.dayName'></schedule-day>\n  <i class=\"fa fa-arrow-circle-right\" (click)='move(1)'></i>\n</div>\n    ",
         "templateUrl": "asset:scheduler_angular2/lib/app_component.dart",
         "styles": [
           "      #schedule {\n          display: flex;\n          justify-content: center;\n          align-items: center;\n      }\n      .fa-arrow-circle-right, .fa-arrow-circle-left {\n        font-size: 40px;\n        text-align: center;\n        cursor: pointer;\n      }\n"
@@ -106,8 +88,11 @@
         "styleUrls": [],
         "ngContentSelectors": []
       },
-      "providers": []
+      "providers": [],
+      "viewProviders": [],
+      "queries": [],
+      "viewQueries": []
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

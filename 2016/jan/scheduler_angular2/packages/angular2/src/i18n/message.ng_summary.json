@@ -13,15 +13,21 @@
     ],
     "6": "message.dart"
   },
-  "Message": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "Message": {
       "class": "Identifier",
       "name": "Message",
       "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
+    },
+    "id": {
+      "class": "Identifier",
+      "name": "id",
+      "moduleUrl": "asset:angular2/lib/src/i18n/message.dart",
+      "prefix": null,
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

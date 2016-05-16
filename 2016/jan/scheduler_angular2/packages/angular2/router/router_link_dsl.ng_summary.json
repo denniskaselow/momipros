@@ -34,15 +34,41 @@
     ],
     "6": "router_link_dsl.dart"
   },
-  "ROUTER_LINK_DSL_PROVIDER": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "ROUTER_LINK_DSL_PROVIDER": {
       "class": "Identifier",
       "name": "ROUTER_LINK_DSL_PROVIDER",
       "moduleUrl": "asset:angular2/lib/router/router_link_dsl.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": {
+        "class": "Provider",
+        "token": {
+          "value": null,
+          "identifier": {
+            "class": "Identifier",
+            "name": "TEMPLATE_TRANSFORMS",
+            "moduleUrl": null,
+            "prefix": null,
+            "value": null
+          },
+          "identifierIsInstance": false
+        },
+        "useClass": {
+          "class": "Type",
+          "name": "RouterLinkTransform",
+          "moduleUrl": null,
+          "prefix": null,
+          "isHost": false,
+          "value": null,
+          "diDeps": []
+        },
+        "useExisting": null,
+        "useValue": null,
+        "useFactory": null,
+        "multi": true,
+        "deps": null
+      }
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

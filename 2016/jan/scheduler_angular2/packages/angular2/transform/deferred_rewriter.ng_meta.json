@@ -20,22 +20,21 @@
       }
     ],
     "6": "deferred_rewriter.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/transform/deferred_rewriter/transformer.template.dart",
+        "1": "package:angular2/src/transform/deferred_rewriter/transformer.ngfactory.dart",
         "4": "i0"
       }
     ]
   },
-  "DeferredRewriter": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "DeferredRewriter": {
       "class": "Identifier",
       "name": "DeferredRewriter",
       "moduleUrl": "asset:angular2/lib/transform/deferred_rewriter.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

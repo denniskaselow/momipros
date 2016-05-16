@@ -27,6 +27,8 @@
           "HtmlAttrAst",
           "HtmlTextAst",
           "HtmlCommentAst",
+          "HtmlExpansionAst",
+          "HtmlExpansionCaseAst",
           "htmlVisitAll"
         ],
         "5": false
@@ -56,7 +58,7 @@
         "5": false
       },
       {
-        "1": "package:angular2/src/core/change_detection/parser/parser.dart",
+        "1": "package:angular2/src/compiler/expression_parser/parser.dart",
         "2": [
           "Parser"
         ],
@@ -71,6 +73,13 @@
         "5": false
       },
       {
+        "1": "expander.dart",
+        "2": [
+          "expandNodes"
+        ],
+        "5": false
+      },
+      {
         "1": "shared.dart",
         "2": [
           "messageFromAttribute",
@@ -80,72 +89,58 @@
           "partition",
           "Part",
           "stringifyNodes",
-          "meaning"
+          "meaning",
+          "getPhNameFromBinding",
+          "dedupePhName"
         ],
         "5": false
       }
     ],
     "6": "i18n_html_parser.dart"
   },
-  "_I18N_ATTR": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "_I18N_ATTR": {
       "class": "Identifier",
       "name": "_I18N_ATTR",
       "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "_PLACEHOLDER_ELEMENT": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "_PLACEHOLDER_ELEMENT": {
       "class": "Identifier",
       "name": "_PLACEHOLDER_ELEMENT",
       "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "_NAME_ATTR": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "_NAME_ATTR": {
       "class": "Identifier",
       "name": "_NAME_ATTR",
       "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "_I18N_ATTR_PREFIX": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "_I18N_ATTR_PREFIX": {
       "class": "Identifier",
       "name": "_I18N_ATTR_PREFIX",
       "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "I18nHtmlParser": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "I18nHtmlParser": {
       "class": "Identifier",
       "name": "I18nHtmlParser",
       "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "_CreateNodeMapping": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "_CreateNodeMapping": {
       "class": "Identifier",
       "name": "_CreateNodeMapping",
       "moduleUrl": "asset:angular2/lib/src/i18n/i18n_html_parser.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

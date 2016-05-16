@@ -34,15 +34,14 @@
     ],
     "6": "ng_control.dart"
   },
-  "NgControl": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "NgControl": {
       "class": "Identifier",
       "name": "NgControl",
       "moduleUrl": "asset:angular2/lib/src/common/forms/directives/ng_control.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

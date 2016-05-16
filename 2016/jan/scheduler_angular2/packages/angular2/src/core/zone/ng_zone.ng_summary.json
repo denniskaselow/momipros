@@ -35,15 +35,14 @@
     ],
     "6": "ng_zone.dart"
   },
-  "NgZone": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "NgZone": {
       "class": "Identifier",
       "name": "NgZone",
       "moduleUrl": "asset:angular2/lib/src/core/zone/ng_zone.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

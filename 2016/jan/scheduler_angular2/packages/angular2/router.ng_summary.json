@@ -44,41 +44,10 @@
         ]
       },
       {
-        "1": "src/router/location/platform_location.dart",
-        "2": [
-          "PlatformLocation"
-        ]
-      },
-      {
         "1": "src/router/route_registry.dart",
         "2": [
           "RouteRegistry",
           "ROUTER_PRIMARY_COMPONENT"
-        ]
-      },
-      {
-        "1": "src/router/location/location_strategy.dart",
-        "2": [
-          "LocationStrategy",
-          "APP_BASE_HREF"
-        ]
-      },
-      {
-        "1": "src/router/location/hash_location_strategy.dart",
-        "2": [
-          "HashLocationStrategy"
-        ]
-      },
-      {
-        "1": "src/router/location/path_location_strategy.dart",
-        "2": [
-          "PathLocationStrategy"
-        ]
-      },
-      {
-        "1": "src/router/location/location.dart",
-        "2": [
-          "Location"
         ]
       },
       {
@@ -132,12 +101,34 @@
     ],
     "6": "router.dart"
   },
-  "ROUTER_DIRECTIVES": {
-    "kind": "alias",
-    "value": [
+  "type": {
+    "ROUTER_DIRECTIVES": {
+      "class": "Identifier",
+      "name": "ROUTER_DIRECTIVES",
+      "moduleUrl": "asset:angular2/lib/router.dart",
+      "prefix": null,
+      "value": [
+        {
+          "class": "Identifier",
+          "name": "RouterOutlet",
+          "moduleUrl": null,
+          "prefix": null,
+          "value": null
+        },
+        {
+          "class": "Identifier",
+          "name": "RouterLink",
+          "moduleUrl": null,
+          "prefix": null,
+          "value": null
+        }
+      ]
+    }
+  },
+  "alias": {
+    "ROUTER_DIRECTIVES": [
       "RouterOutlet",
       "RouterLink"
     ]
-  },
-  "definesAlias": true
+  }
 }

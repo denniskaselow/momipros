@@ -20,20 +20,29 @@
       }
     ],
     "6": "main.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/platform/browser_static.template.dart",
+        "1": "package:angular2/platform/browser_static.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "package:angular2/angular2.template.dart",
+        "1": "package:angular2/angular2.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "package:scheduler_angular2/app_component.template.dart",
+        "1": "package:scheduler_angular2/app_component.ngfactory.dart",
         "4": "i2"
       }
     ]
   },
-  "definesAlias": false
+  "type": {
+    "main": {
+      "class": "Identifier",
+      "name": "main",
+      "moduleUrl": "asset:scheduler_angular2/web/main.dart",
+      "prefix": null,
+      "value": null
+    }
+  },
+  "alias": {}
 }

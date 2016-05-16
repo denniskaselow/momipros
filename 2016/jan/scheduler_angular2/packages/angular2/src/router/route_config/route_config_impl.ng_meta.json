@@ -38,90 +38,71 @@
       }
     ],
     "6": "route_config_impl.dart",
-    "10": [
+    "7": [
       {
-        "1": "package:angular2/src/facade/lang.template.dart",
+        "1": "package:angular2/src/facade/lang.ngfactory.dart",
         "4": "i0"
       },
       {
-        "1": "../route_definition.template.dart",
+        "1": "../route_definition.ngfactory.dart",
         "4": "i1"
       },
       {
-        "1": "../rules/route_paths/regex_route_path.template.dart",
+        "1": "../rules/route_paths/regex_route_path.ngfactory.dart",
         "4": "i2"
       }
     ]
   },
-  "RouteConfig": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "RouteConfig": {
       "class": "Identifier",
       "name": "RouteConfig",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "AbstractRoute": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "AbstractRoute": {
       "class": "Identifier",
       "name": "AbstractRoute",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "Route": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "Route": {
       "class": "Identifier",
       "name": "Route",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "AuxRoute": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "AuxRoute": {
       "class": "Identifier",
       "name": "AuxRoute",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "AsyncRoute": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "AsyncRoute": {
       "class": "Identifier",
       "name": "AsyncRoute",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "Redirect": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "Redirect": {
       "class": "Identifier",
       "name": "Redirect",
       "moduleUrl": "asset:angular2/lib/src/router/route_config/route_config_impl.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "RouteDefinition": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "RouteDefinition": {
       "class": "Identifier",
       "name": "RouteDefinition",
       "moduleUrl": "asset:angular2/lib/src/router/route_definition.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
     }
   },
-  "definesAlias": false
+  "alias": {}
 }

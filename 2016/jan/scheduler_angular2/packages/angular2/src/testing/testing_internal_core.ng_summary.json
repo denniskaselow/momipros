@@ -30,6 +30,10 @@
         "5": false
       },
       {
+        "1": "async_test_completer.dart",
+        "5": false
+      },
+      {
         "1": "test_injector.dart",
         "5": false
       }
@@ -61,6 +65,12 @@
         ]
       },
       {
+        "1": "async_test_completer.dart",
+        "2": [
+          "AsyncTestCompleter"
+        ]
+      },
+      {
         "1": "test_injector.dart",
         "2": [
           "inject"
@@ -69,43 +79,115 @@
     ],
     "6": "testing_internal_core.dart"
   },
-  "AsyncTestCompleter": {
-    "kind": "type",
-    "value": {
+  "type": {
+    "setDartBaseTestProviders": {
       "class": "Identifier",
-      "name": "AsyncTestCompleter",
+      "name": "setDartBaseTestProviders",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "SpyFunction": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "testSetup": {
+      "class": "Identifier",
+      "name": "testSetup",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "beforeEachProviders": {
+      "class": "Identifier",
+      "name": "beforeEachProviders",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "beforeEachBindings": {
+      "class": "Identifier",
+      "name": "beforeEachBindings",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "beforeEach": {
+      "class": "Identifier",
+      "name": "beforeEach",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "_it": {
+      "class": "Identifier",
+      "name": "_it",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "it": {
+      "class": "Identifier",
+      "name": "it",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "iit": {
+      "class": "Identifier",
+      "name": "iit",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "xit": {
+      "class": "Identifier",
+      "name": "xit",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "describe": {
+      "class": "Identifier",
+      "name": "describe",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "ddescribe": {
+      "class": "Identifier",
+      "name": "ddescribe",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "xdescribe": {
+      "class": "Identifier",
+      "name": "xdescribe",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
+    },
+    "SpyFunction": {
       "class": "Identifier",
       "name": "SpyFunction",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
       "prefix": null,
-      "constConstructor": null
-    }
-  },
-  "SpyObject": {
-    "kind": "type",
-    "value": {
+      "value": null
+    },
+    "SpyObject": {
       "class": "Identifier",
       "name": "SpyObject",
       "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
       "prefix": null,
-      "constConstructor": null
+      "value": null
+    },
+    "isInInnerZone": {
+      "class": "Identifier",
+      "name": "isInInnerZone",
+      "moduleUrl": "asset:angular2/lib/src/testing/testing_internal_core.dart",
+      "prefix": null,
+      "value": null
     }
   },
-  "_platformProviders": {
-    "kind": "alias",
-    "value": []
-  },
-  "_applicationProviders": {
-    "kind": "alias",
-    "value": []
-  },
-  "definesAlias": true
+  "alias": {
+    "_platformProviders": [],
+    "_applicationProviders": []
+  }
 }
