@@ -8,12 +8,13 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 
 dependencies:
-  intl: any
-  dson: any
+  intl: ^0.12.7
+  dson: ^0.3.1
 
 dev_dependencies:
-  test: '>=0.12.0 <0.13.0'
-  http: any
+  test: ^0.12.13
+  http: ^0.11.3
+  html: ^0.12.2
 
 analyzer:
   strong-mode: true

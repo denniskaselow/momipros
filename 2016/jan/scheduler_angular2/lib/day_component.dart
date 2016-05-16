@@ -13,7 +13,7 @@ import 'package:scheduler/scheduler.dart';
 <h2>{{ day.label }}</h2>
 <div class="shows">
   <schedule-time-slot
-            *ngFor="#timeSlot of day.timeSlots; trackBy:timeSlotId"
+            *ngFor="let timeSlot of day.timeSlots; trackBy:timeSlotId"
             [timeSlot]="timeSlot"
             [style.flex-grow]='timeSlot.height'>
   </schedule-time-slot>
