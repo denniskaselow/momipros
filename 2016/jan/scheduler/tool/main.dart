@@ -50,7 +50,7 @@ Future<Null> main() async {
         var showDuration = showDetails.querySelector('.showDuration').text;
         var hourMinuteRegexp = new RegExp(r'((\d+) Std\. )?(\d+) Min\.');
         var matches = hourMinuteRegexp.allMatches(showDuration);
-        var duration = 0;
+        var duration = 1;
         matches.forEach((match) {
           duration = int.parse(match.group(3));
           if (match.group(2) != null) {
