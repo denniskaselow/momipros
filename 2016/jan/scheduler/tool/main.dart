@@ -22,7 +22,12 @@ const Map<String, int> months = const {
 };
 
 Future<Null> main() async {
-  var response = await http.get('http://www.rocketbeans.tv/wochenplan/');
+  await downloadSchedule('https://www.rocketbeans.tv/wochenplan/');
+  await downloadSchedule('https://www.rocketbeans.tv/wochenplan/?nextWeek=1');
+}
+
+Future downloadSchedule(String url) async {
+  var response = await http.get(url);
   if (response.statusCode == HttpStatus.OK) {
     var content = response.body;
     var document = parser.parse(content);
