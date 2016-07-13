@@ -46,6 +46,12 @@ body {
     min-width: 180px;
     transition: flex-grow 0.25s cubic-bezier(.7, .25, .25, .7);
 }
+.day.today, .day:hover {
+    flex-grow: 1.5;
+}
+.day.today:hover {
+    flex-grow: 2.0;
+}
 .day {
     display: flex;
     flex-direction: column;
