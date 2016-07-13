@@ -71,7 +71,7 @@ class AppStore extends Store {
       days.forEach((day) {
         var actions = new DayActions();
         var dateId = dateIdFormat.format(day.date);
-        _dayStores.putIfAbsent(dateId, () => new DayStore(actions, day));
+        _dayStores.putIfAbsent(dateId, () => new DayStore(day));
         _dayActions.putIfAbsent(dateId, () => actions);
       });
       _days = days;

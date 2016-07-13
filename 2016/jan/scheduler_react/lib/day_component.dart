@@ -19,10 +19,7 @@ class _DayComponent extends FluxComponent<DayActions, DayStore> {
         .toList();
 
     return div({
-      'className': 'day ${props['className']}',
-      'style': {'flexGrow': store.width},
-      'onMouseEnter': actions.expand,
-      'onMouseLeave': actions.shrink
+      'className': 'day ${props['className']} ${store.day.isToday ? 'today' : ''}'
     }, [
       h2({'key': 'dayName'}, [store.day.label]),
       div({'className': 'shows', 'key': 'show'}, section({}, timeSlotComponents))
@@ -32,10 +29,7 @@ class _DayComponent extends FluxComponent<DayActions, DayStore> {
   String _toTimeId(TimeSlot timeSlot) => timeIdFormat.format(timeSlot.start);
 }
 
-class DayActions {
-  Action expand = new Action();
-  Action shrink = new Action();
-}
+class DayActions {}
 
 class DayStore extends Store {
   Map<String, TimeSlotStore> _timeSlotStores = {};
@@ -43,14 +37,8 @@ class DayStore extends Store {
 
   Day _day;
   String _dayId;
-  double _width;
 
-  DayActions _dayActions;
-
-  DayStore(this._dayActions, this._day) {
-    triggerOnAction(_dayActions.expand, (_) => _width += 0.5);
-    triggerOnAction(_dayActions.shrink, (_) => _width -= 0.5);
-    _width = day.isToday ? 1.5 : 1.0;
+  DayStore(this._day) {
     _dayId = dateIdFormat.format(day.date);
     _day.timeSlots.forEach((timeSlot) {
       var actions = new TimeSlotActions();
@@ -63,7 +51,6 @@ class DayStore extends Store {
 
   Day get day => _day;
   String get dayId => _dayId;
-  double get width => _width;
 
   TimeSlotStore getTimeSlotStore(String timeSlotId) =>
       _timeSlotStores[timeSlotId];
