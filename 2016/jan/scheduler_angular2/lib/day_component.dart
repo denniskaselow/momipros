@@ -19,10 +19,6 @@ import 'package:scheduler/scheduler.dart';
   </schedule-time-slot>
 </div>
 ''',
-    host: const {
-      '(mouseenter)': r'expand($event.target)',
-      '(mouseleave)': r'shrink($event.target)'
-    },
     styles: const [
       '''
 :host {
@@ -31,8 +27,11 @@ import 'package:scheduler/scheduler.dart';
   min-width: 180px;
   transition: flex-grow 0.25s cubic-bezier(.7, .25, .25, .7);
 }
-:host.today {
+:host:hover, :host.today {
   flex-grow: 1.5;
+}
+:host.today:hover {
+  flex-grow: 2.0;
 }
 :host {
   display: flex;
@@ -103,22 +102,6 @@ h2 {
 class DayComponent {
   @Input()
   Day day;
-
-  void expand(HtmlElement target) {
-    if (target.classes.contains('today')) {
-      target.style.flexGrow = '2';
-    } else {
-      target.style.flexGrow = '1.5';
-    }
-  }
-
-  void shrink(HtmlElement target) {
-    if (target.classes.contains('today')) {
-      target.style.flexGrow = '1.5';
-    } else {
-      target.style.flexGrow = '1';
-    }
-  }
 
   String timeSlotId(int index, TimeSlot timeSlot) =>
       timeIdFormat.format(timeSlot.start);
