@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.common.pipes.common_pipes",
+    "1": "",
     "3": [
       {
         "1": "async_pipe.dart",
@@ -13,20 +13,6 @@
         "1": "date_pipe.dart",
         "2": [
           "DatePipe"
-        ],
-        "5": false
-      },
-      {
-        "1": "i18n_plural_pipe.dart",
-        "2": [
-          "I18nPluralPipe"
-        ],
-        "5": false
-      },
-      {
-        "1": "i18n_select_pipe.dart",
-        "2": [
-          "I18nSelectPipe"
         ],
         "5": false
       },
@@ -153,20 +139,6 @@
           "moduleUrl": null,
           "prefix": null,
           "value": null
-        },
-        {
-          "class": "Identifier",
-          "name": "I18nPluralPipe",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
-        },
-        {
-          "class": "Identifier",
-          "name": "I18nSelectPipe",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
         }
       ]
     }
@@ -182,9 +154,7 @@
       "PercentPipe",
       "CurrencyPipe",
       "DatePipe",
-      "ReplacePipe",
-      "I18nPluralPipe",
-      "I18nSelectPipe"
+      "ReplacePipe"
     ]
   }
 }

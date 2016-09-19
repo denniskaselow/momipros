@@ -36,23 +36,16 @@
         "5": false
       },
       {
-        "1": "package:angular2/platform/common_dom.dart",
+        "1": "package:angular2/src/core/render/api.dart",
         "2": [
-          "ELEMENT_PROBE_PROVIDERS"
+          "RootRenderer"
         ],
         "5": false
       },
       {
-        "1": "package:angular2/src/animate/animation_builder.dart",
+        "1": "package:angular2/src/debug/debug_renderer.dart",
         "2": [
-          "AnimationBuilder"
-        ],
-        "5": false
-      },
-      {
-        "1": "package:angular2/src/mock/animation_builder_mock.dart",
-        "2": [
-          "MockAnimationBuilder"
+          "DebugDomRootRenderer"
         ],
         "5": false
       },
@@ -200,11 +193,33 @@
           "deps": null
         },
         {
-          "class": "Identifier",
-          "name": "ELEMENT_PROBE_PROVIDERS",
-          "moduleUrl": null,
-          "prefix": null,
-          "value": null
+          "class": "Provider",
+          "token": {
+            "value": null,
+            "identifier": {
+              "class": "Identifier",
+              "name": "RootRenderer",
+              "moduleUrl": null,
+              "prefix": null,
+              "value": null
+            },
+            "identifierIsInstance": false
+          },
+          "useClass": {
+            "class": "Type",
+            "name": "DebugDomRootRenderer",
+            "moduleUrl": null,
+            "prefix": null,
+            "isHost": false,
+            "value": null,
+            "diDeps": []
+          },
+          "useExisting": null,
+          "useValue": null,
+          "useFactory": null,
+          "useProperty": null,
+          "multi": false,
+          "deps": null
         },
         {
           "class": "Provider",
@@ -323,35 +338,6 @@
           "useClass": {
             "class": "Type",
             "name": "MockLocationStrategy",
-            "moduleUrl": null,
-            "prefix": null,
-            "isHost": false,
-            "value": null,
-            "diDeps": []
-          },
-          "useExisting": null,
-          "useValue": null,
-          "useFactory": null,
-          "useProperty": null,
-          "multi": false,
-          "deps": null
-        },
-        {
-          "class": "Provider",
-          "token": {
-            "value": null,
-            "identifier": {
-              "class": "Identifier",
-              "name": "AnimationBuilder",
-              "moduleUrl": null,
-              "prefix": null,
-              "value": null
-            },
-            "identifierIsInstance": false
-          },
-          "useClass": {
-            "class": "Type",
-            "name": "MockAnimationBuilder",
             "moduleUrl": null,
             "prefix": null,
             "isHost": false,

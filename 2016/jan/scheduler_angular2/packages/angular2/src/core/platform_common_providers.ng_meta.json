@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.core.platform_common_providers",
+    "1": "",
     "3": [
       {
         "1": "package:angular2/src/core/console.dart",
@@ -87,7 +87,7 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "PlatformRef_",
+              "name": "PlatformRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "isHost": false,
@@ -98,7 +98,7 @@
           },
           "useClass": {
             "class": "Type",
-            "name": "PlatformRef_",
+            "name": "PlatformRefImpl",
             "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
             "prefix": null,
             "isHost": false,
@@ -130,7 +130,7 @@
             "value": null,
             "identifier": {
               "class": "Type",
-              "name": "PlatformRef_",
+              "name": "PlatformRefImpl",
               "moduleUrl": "asset:angular2/lib/src/core/application_ref.dart",
               "prefix": null,
               "isHost": false,

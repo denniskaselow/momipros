@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.core.di",
+    "1": "",
     "4": [
       {
         "1": "di/metadata.dart",
@@ -18,14 +18,6 @@
         "1": "di/decorators.dart"
       },
       {
-        "1": "di/forward_ref.dart",
-        "2": [
-          "forwardRef",
-          "resolveForwardRef",
-          "ForwardRefFn"
-        ]
-      },
-      {
         "1": "di/injector.dart",
         "2": [
           "Injector",
@@ -41,9 +33,6 @@
       {
         "1": "di/provider.dart",
         "2": [
-          "Binding",
-          "ProviderBuilder",
-          "bind",
           "Provider",
           "provide",
           "noValueProvided"

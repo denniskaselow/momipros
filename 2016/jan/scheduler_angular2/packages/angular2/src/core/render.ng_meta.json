@@ -1,6 +1,6 @@
 {
   "ngDeps": {
-    "1": "angular2.src.core.render",
+    "1": "",
     "4": [
       {
         "1": "render/api.dart",
@@ -20,6 +20,13 @@
     ]
   },
   "type": {
+    "SharedStylesHost": {
+      "class": "Identifier",
+      "name": "SharedStylesHost",
+      "moduleUrl": "asset:angular2/lib/src/core/render/api.dart",
+      "prefix": null,
+      "value": null
+    },
     "RenderComponentType": {
       "class": "Identifier",
       "name": "RenderComponentType",
