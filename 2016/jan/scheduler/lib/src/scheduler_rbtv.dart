@@ -81,8 +81,8 @@ class RbtvSchedulerService extends SchedulerService {
     var shows = showCache[dateId];
     if (null == shows) {
       try {
-        var response = await HttpRequest
-            .request('packages/scheduler/assets/rbtv/$dateId.json');
+        var response = await HttpRequest.request(
+            'https://raw.githubusercontent.com/denniskaselow/momipros/master/2016/jan/scheduler/lib/assets/rbtv/$dateId.json');
         var content = response.responseText;
         shows = fromJsonList(content, RbtvTimeSlot);
       } catch (e) {
