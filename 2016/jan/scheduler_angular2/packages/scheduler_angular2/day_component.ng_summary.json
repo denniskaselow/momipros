@@ -46,9 +46,12 @@
         "value": null,
         "diDeps": []
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "day": "day"
+      },
+      "inputTypes": {
+        "day": " Day"
       },
       "outputs": {},
       "hostListeners": {},

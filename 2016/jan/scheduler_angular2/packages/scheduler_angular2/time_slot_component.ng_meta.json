@@ -51,9 +51,12 @@
         "value": null,
         "diDeps": []
       },
-      "changeDetection": 5,
+      "changeDetection": 6,
       "inputs": {
         "timeSlot": "timeSlot"
+      },
+      "inputTypes": {
+        "timeSlot": " RbtvTimeSlot"
       },
       "outputs": {},
       "hostListeners": {},
