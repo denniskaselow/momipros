@@ -2,53 +2,56 @@ library scheduler_angular2.time_slot_component;
 
 import 'dart:async';
 
+import 'package:over_react/over_react.dart';
 import 'package:w_flux/w_flux.dart';
-import 'package:react/react.dart';
 import 'package:scheduler/scheduler.dart';
 
-final timeSlotComponent = registerComponent(() => new _TimeSlotComponent());
+@Factory()
+UiFactory<TimeSlotProps> TimeSlotComponentFactory;
 
-class _TimeSlotComponent extends FluxComponent<TimeSlotActions, TimeSlotStore> {
+@Props()
+class TimeSlotProps extends FluxUiProps<TimeSlotActions, TimeSlotStore> {}
+
+@Component()
+class TimeSlotComponent extends FluxUiComponent<TimeSlotProps> {
   @override
   void componentWillMount() {
     super.componentWillMount();
-    actions.startProgress();
+    props.actions.startProgress();
   }
 
   @override
   void componentWillUnmount() {
     super.componentWillUnmount();
-    actions.stopProgress();
+    props.actions.stopProgress();
   }
 
   @override
   dynamic render() {
-    return div({
-      'style': {'flexGrow': store.timeSlot.height},
-      'className': 'timeslot ${store.isCurrent ? 'current' : ''}'
-    }, [
-      div({
-        'className':
-            'time ${store.timeSlot.live ? 'live' : ''} ${store.timeSlot.premiere ? 'premiere' : ''}',
-        'key': 'time'
-      }, [
-        store.timeSlot.getStartLabel()
+    return (Dom.div()
+      ..style = {'flexGrow': props.store.timeSlot.height}
+      ..className = 'timeslot ${props.store.isCurrent ? 'current' : ''}')([
+      (Dom.div()
+        ..className =
+            'time ${props.store.timeSlot.live ? 'live' : ''} ${props.store.timeSlot.premiere ? 'premiere' : ''}'
+        ..key = 'time')([props.store.timeSlot.getStartLabel()]),
+      (Dom.div()
+        ..className = 'content'
+        ..key = 'content')([
+        (Dom.div()
+          ..className = 'name'
+          ..key = 'name')([props.store.timeSlot.name]),
+        (Dom.div()
+          ..className = 'description'
+          ..key = 'description')([props.store.timeSlot.description]),
       ]),
-      div({
-        'className': 'content',
-        'key': 'content'
-      }, [
-        div({'className': 'name', 'key': 'name'}, [store.timeSlot.name]),
-        div({'className': 'description', 'key': 'description'},
-            [store.timeSlot.description]),
-      ]),
-      div({'className': 'duration', 'key': 'duration'},
-          [store.timeSlot.getDurationLabel()]),
-      div({
-        'className': 'progress',
-        'key': 'progress',
-        'style': {'width': '${store.progress}%'}
-      })
+      (Dom.div()
+        ..className = 'duration'
+        ..key = 'duration')([props.store.timeSlot.getDurationLabel()]),
+      (Dom.div()
+        ..className = 'progress'
+        ..key = 'progress'
+        ..style = {'width': '${props.store.progress}%'})()
     ]);
   }
 }

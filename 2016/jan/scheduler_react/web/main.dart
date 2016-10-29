@@ -11,5 +11,9 @@ void main() {
 
   react_client.setClientConfiguration();
 
-  react_dom.render(appComponent({'actions': actions, 'store': store}), querySelector('#content'));
+  react_dom.render(
+      (App()
+        ..actions = actions
+        ..store = store)(),
+      querySelector('#content'));
 }

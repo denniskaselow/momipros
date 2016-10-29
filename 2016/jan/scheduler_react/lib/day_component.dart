@@ -1,28 +1,34 @@
 library scheduler_angular2.app_component;
 
+import 'package:over_react/over_react.dart';
 import 'package:w_flux/w_flux.dart';
-import 'package:react/react.dart';
 import 'package:scheduler_react/time_slot_component.dart';
 import 'package:scheduler/scheduler.dart';
 
-final dayComponent = registerComponent(() => new _DayComponent());
+@Factory()
+UiFactory<DayProps> DayFactory;
 
-class _DayComponent extends FluxComponent<DayActions, DayStore> {
+@Props()
+class DayProps extends FluxUiProps<DayActions, DayStore> {}
+
+@Component()
+class DayComponent extends FluxUiComponent<DayProps> {
   @override
   dynamic render() {
-    var timeSlotComponents = store.day.timeSlots
-        .map((timeSlot) => timeSlotComponent({
-              'actions': store.getTimeSlotActions(_toTimeId(timeSlot)),
-              'store': store.getTimeSlotStore(_toTimeId(timeSlot)),
-              'key': _toTimeId(timeSlot)
-            }))
+    var timeSlotComponents = props.store.day.timeSlots
+        .map((timeSlot) => (TimeSlotComponentFactory()
+          ..actions = props.store.getTimeSlotActions(_toTimeId(timeSlot))
+          ..store = props.store.getTimeSlotStore(_toTimeId(timeSlot))
+          ..key = _toTimeId(timeSlot))())
         .toList();
 
-    return div({
-      'className': 'day ${props['className']} ${store.day.isToday ? 'today' : ''}'
-    }, [
-      h2({'key': 'dayName'}, [store.day.label]),
-      div({'className': 'shows', 'key': 'show'}, section({}, timeSlotComponents))
+    return (Dom.div()
+      ..className =
+          'day ${props.className} ${props.store.day.isToday ? 'today' : ''}')([
+      (Dom.h2()..key = 'dayName')([props.store.day.label]),
+      (Dom.div()
+        ..className = 'shows'
+        ..key = 'show')(Dom.section()(timeSlotComponents))
     ]);
   }
 

@@ -1,45 +1,46 @@
 library scheduler_react.app_component;
 
-import 'package:w_flux/w_flux.dart';
-import 'package:react/react.dart';
-
+import 'package:react/react_client.dart';
 import 'package:scheduler/scheduler.dart';
+import 'package:w_flux/w_flux.dart';
+
 import 'package:scheduler_react/day_component.dart';
+import 'package:over_react/over_react.dart';
 
-final appComponent = registerComponent(() => new _AppComponent());
+@Factory()
+UiFactory<AppProps> App;
 
-class _AppComponent extends FluxComponent<AppActions, AppStore> {
+@Props()
+class AppProps extends FluxUiProps<AppActions, AppStore> {}
+
+@Component()
+class AppComponent extends FluxUiComponent<AppProps> {
   @override
   void componentWillMount() {
     super.componentWillMount();
-    actions.updateDays();
+    props.actions.updateDays();
   }
 
   @override
-  void render() {
-    var dayComponents = store.days
-        .map((day) => dayComponent({
-              'className': day.dayName,
-              'key': _toDateId(day),
-              'actions': store.getDayActions(_toDateId(day)),
-              'store': store.getDayStore(_toDateId(day))
-            }))
+  ReactElement render() {
+    var dayComponents = props.store.days
+        .map((day) => (DayFactory()
+          ..className = day.dayName
+          ..key = _toDateId(day)
+          ..actions = props.store.getDayActions(_toDateId(day))
+          ..store = props.store.getDayStore(_toDateId(day)))())
         .toList();
 
-    return div({
-      'id': 'schedule'
-    }, [
-      i({
-        'className': 'fa fa-arrow-circle-left',
-        'key': 'left',
-        'onClick': (_) => actions.move(-1)
-      }),
-      section({}, dayComponents),
-      i({
-        'className': 'fa fa-arrow-circle-right',
-        'key': 'right',
-        'onClick': (_) => actions.move(1)
-      })
+    return (Dom.div()..id = 'schedule')([
+      (Dom.i()
+        ..className = 'fa fa-arrow-circle-left'
+        ..key = 'left'
+        ..onClick = (_) => props.actions.move(-1))(),
+      (Dom.section()..key = 'days')(dayComponents),
+      (Dom.i()
+        ..className = 'fa fa-arrow-circle-right'
+        ..key = 'right'
+        ..onClick = (_) => props.actions.move(1))()
     ]);
   }
 
