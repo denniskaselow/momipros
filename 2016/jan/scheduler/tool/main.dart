@@ -22,8 +22,8 @@ const Map<String, int> months = const {
 };
 
 Future<Null> main() async {
-  await downloadSchedule('https://www.rocketbeans.tv/wochenplan/');
-  await downloadSchedule('https://www.rocketbeans.tv/wochenplan/?nextWeek=1');
+  await downloadSchedule('https://www.rocketbeans.tv/wochenplan/?details=1');
+  await downloadSchedule('https://www.rocketbeans.tv/wochenplan/?details=1&nextWeek=1');
 }
 
 Future downloadSchedule(String url) async {
