@@ -24,7 +24,7 @@ packages:
       name: barback
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.2+10"
+    version: "0.15.2+11"
   browser:
     description:
       name: browser
@@ -144,7 +144,7 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.0+2"
+    version: "0.12.1"
   meta:
     description:
       name: meta
@@ -156,13 +156,13 @@ packages:
       name: over_react
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.0"
+    version: "1.9.1"
   package_config:
     description:
       name: package_config
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.0.1"
   path:
     description:
       name: path
@@ -216,6 +216,13 @@ packages:
       path: "..\\scheduler"
       relative: true
     source: path
+    version: "0.0.1"
+  scheduler_base:
+    description:
+      ref: HEAD
+      resolved-ref: "09203408fbdd31ef8a5c995c1eda78f7c83a25eb"
+      url: "https://github.com/denniskaselow/scheduler_base.git"
+    source: git
     version: "0.0.1"
   source_maps:
     description:

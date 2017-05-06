@@ -3,5 +3,5 @@
 /// This is an awesome library. More dartdocs go here.
 library scheduler;
 
-export 'src/scheduler_base.dart';
+export 'package:scheduler_base/scheduler_base.dart';
 export 'src/scheduler_rbtv.dart';

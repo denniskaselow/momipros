@@ -3,7 +3,7 @@ library scheduler.rbtv;
 import 'dart:async';
 import 'dart:html';
 
-import 'package:scheduler/src/scheduler_base.dart';
+import 'package:scheduler_base/scheduler_base.dart';
 import 'package:dson/dson.dart';
 
 class RbtvSchedulerService extends SchedulerService {
@@ -82,7 +82,7 @@ class RbtvSchedulerService extends SchedulerService {
     if (null == shows) {
       try {
         var response = await HttpRequest.request(
-            'https://raw.githubusercontent.com/denniskaselow/momipros/master/2016/jan/scheduler/lib/assets/rbtv/$dateId.json');
+            'https://scheduler-40abf.firebaseio.com/rbtv/$dateId.json');
         var content = response.responseText;
         shows = fromJsonList(content, RbtvTimeSlot);
       } catch (e) {

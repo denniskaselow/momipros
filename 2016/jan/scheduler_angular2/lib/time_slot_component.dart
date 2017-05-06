@@ -30,10 +30,15 @@ import 'dart:async';
   font-size: 14px;
   padding: 0px 5px 0px 2px;
   flex-basis: 0;
+  transition: min-height 0.25s cubic-bezier(.7, .25, .25, .7);
 }
 :host.current {
   outline: 2px ridge #C2185B;
   outline-offset: -1px;
+  min-height: 60px;
+}
+:host:hover {
+  min-height: 60px;
 }
 .premiere:after {
   background-color: hsla(120, 60%, 40%, 0.5);
