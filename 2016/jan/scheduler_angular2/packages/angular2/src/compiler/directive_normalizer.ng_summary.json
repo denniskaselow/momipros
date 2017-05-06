@@ -52,16 +52,6 @@
       },
       {
         "1": "html_ast.dart",
-        "2": [
-          "HtmlAstVisitor",
-          "HtmlElementAst",
-          "HtmlTextAst",
-          "HtmlAttrAst",
-          "HtmlCommentAst",
-          "HtmlExpansionAst",
-          "HtmlExpansionCaseAst",
-          "htmlVisitAll"
-        ],
         "5": false
       },
       {
@@ -136,8 +126,6 @@
             },
             "identifierIsInstance": false
           },
-          "query": null,
-          "viewQuery": null,
           "value": null,
           "isAttribute": false,
           "isSelf": false,
@@ -158,8 +146,6 @@
             },
             "identifierIsInstance": false
           },
-          "query": null,
-          "viewQuery": null,
           "value": null,
           "isAttribute": false,
           "isSelf": false,
@@ -180,8 +166,6 @@
             },
             "identifierIsInstance": false
           },
-          "query": null,
-          "viewQuery": null,
           "value": null,
           "isAttribute": false,
           "isSelf": false,

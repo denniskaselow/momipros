@@ -27,6 +27,15 @@
     "5": [
       {
         "1": "NgPluralCase",
+        "4": [
+          {
+            "1": "Deprecated",
+            "2": [
+              "'Copy into your own project if needed, no longer supported'"
+            ],
+            "4": false
+          }
+        ],
         "5": [
           {
             "1": "String",
@@ -47,6 +56,15 @@
       },
       {
         "1": "NgPlural",
+        "4": [
+          {
+            "1": "Deprecated",
+            "2": [
+              "'Copy into your own project if needed, no longer supported'"
+            ],
+            "4": false
+          }
+        ],
         "5": [
           {
             "1": "NgLocalization",
@@ -104,8 +122,6 @@
               "identifier": null,
               "identifierIsInstance": false
             },
-            "query": null,
-            "viewQuery": null,
             "value": null,
             "isAttribute": true,
             "isSelf": false,
@@ -126,8 +142,6 @@
               },
               "identifierIsInstance": false
             },
-            "query": null,
-            "viewQuery": null,
             "value": null,
             "isAttribute": false,
             "isSelf": false,
@@ -148,8 +162,6 @@
               },
               "identifierIsInstance": false
             },
-            "query": null,
-            "viewQuery": null,
             "value": null,
             "isAttribute": false,
             "isSelf": false,
@@ -199,8 +211,6 @@
               },
               "identifierIsInstance": false
             },
-            "query": null,
-            "viewQuery": null,
             "value": null,
             "isAttribute": false,
             "isSelf": false,
@@ -247,8 +257,6 @@
                       "identifier": null,
                       "identifierIsInstance": false
                     },
-                    "query": null,
-                    "viewQuery": null,
                     "value": null,
                     "isAttribute": true,
                     "isSelf": false,
@@ -269,8 +277,6 @@
                       },
                       "identifierIsInstance": false
                     },
-                    "query": null,
-                    "viewQuery": null,
                     "value": null,
                     "isAttribute": false,
                     "isSelf": false,
@@ -291,8 +297,6 @@
                       },
                       "identifierIsInstance": false
                     },
-                    "query": null,
-                    "viewQuery": null,
                     "value": null,
                     "isAttribute": false,
                     "isSelf": false,

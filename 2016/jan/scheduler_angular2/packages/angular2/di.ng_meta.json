@@ -485,13 +485,6 @@
       "prefix": null,
       "value": null
     },
-    "getInjectorModuleProviders": {
-      "class": "Identifier",
-      "name": "getInjectorModuleProviders",
-      "moduleUrl": "asset:angular2/lib/src/core/di/reflective_provider.dart",
-      "prefix": null,
-      "value": null
-    },
     "ReflectiveKey": {
       "class": "Identifier",
       "name": "ReflectiveKey",
@@ -610,8 +603,6 @@
             },
             "identifierIsInstance": false
           },
-          "query": null,
-          "viewQuery": null,
           "value": null,
           "isAttribute": false,
           "isSelf": false,
@@ -813,13 +804,6 @@
       "prefix": null,
       "value": null
     },
-    "InjectorModule": {
-      "class": "Identifier",
-      "name": "InjectorModule",
-      "moduleUrl": "asset:angular2/lib/src/core/metadata.dart",
-      "prefix": null,
-      "value": null
-    },
     "Provides": {
       "class": "Identifier",
       "name": "Provides",
@@ -1009,8 +993,6 @@
             },
             "identifierIsInstance": false
           },
-          "query": null,
-          "viewQuery": null,
           "value": null,
           "isAttribute": false,
           "isSelf": false,

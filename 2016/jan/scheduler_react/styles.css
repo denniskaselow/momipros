@@ -141,6 +141,7 @@ h2 {
   font-size: 14px;
   padding: 0px 5px 0px 2px;
   flex-basis: 0;
+  transition: min-height 0.25s cubic-bezier(.7, .25, .25, .7);
 }
 
 .timeslot.current {

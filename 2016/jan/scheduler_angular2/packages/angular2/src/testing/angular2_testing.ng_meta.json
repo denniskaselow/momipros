@@ -219,9 +219,9 @@
       "prefix": null,
       "value": null
     },
-    "EventListener": {
+    "DebugEventListener": {
       "class": "Identifier",
-      "name": "EventListener",
+      "name": "DebugEventListener",
       "moduleUrl": "asset:angular2/lib/src/debug/debug_node.dart",
       "prefix": null,
       "value": null
@@ -393,8 +393,6 @@
             },
             "identifierIsInstance": false
           },
-          "query": null,
-          "viewQuery": null,
           "value": null,
           "isAttribute": false,
           "isSelf": false,
