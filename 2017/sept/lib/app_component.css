@@ -1,0 +1,6 @@
+:host {
+  display: grid;
+  grid-template-rows: 20vw calc(100vh - 20vw);
+  justify-items: stretch;
+  align-items: stretch;
+}
