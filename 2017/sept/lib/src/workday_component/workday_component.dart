@@ -66,12 +66,13 @@ class WorkdayComponent {
   bool get isDayOver =>
       service.getTimeUntilNextDay(weekday).inMicroseconds == 0;
 
-  Map<String, String> get countdownFontSize => {
-        'font-size':
-            '${1 + 3 * service.getDayProgress(weekday)*service.getDayProgress(weekday)}vw'
-      };
-  Map<String, String> get dayNameFontSize => {
-        'font-size':
-            '${4 - 3 * service.getDayProgress(weekday)*service.getDayProgress(weekday)}vw'
-      };
+  Map<String, String> get countdownFontSize {
+    var dayProgress = service.getDayProgress(weekday);
+    return {'font-size': '${1 + 2.2 * dayProgress*dayProgress}vw'};
+  }
+
+  Map<String, String> get dayNameFontSize {
+    var dayProgress = service.getDayProgress(weekday);
+    return {'font-size': '${4 - 3.5 * dayProgress*dayProgress}vw'};
+  }
 }
