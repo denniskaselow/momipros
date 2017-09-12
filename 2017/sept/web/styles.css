@@ -1,9 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #A0FE65;
   font-size: 5vw;
   text-align: center;
+  display: grid;
+}
+
+is-it-weekend-yet {
+  margin: auto;
 }
