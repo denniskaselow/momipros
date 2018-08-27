@@ -23,7 +23,7 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  background-image: url("http://www.rocketbeans.tv/wp-content/themes/rocket-beans/assets/img/bg.jpg");
+  background-color: #000;
   background-size: cover;
   font-family: 'Open Sans', sans-serif;
 }
@@ -38,6 +38,7 @@ body {
   font-size: 40px;
   text-align: center;
   cursor: pointer;
+  color: #444;
 }
 
 .day {
