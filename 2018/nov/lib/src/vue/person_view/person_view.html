@@ -1,6 +1,10 @@
 <template vuedart>
   <div>
     Person: {{person.name}}
-    <button v-on:click='deletePerson'>Delete</button>
+
+    <item-view :key="item.uuid" :item="item" v-for="item in items"></item-view>
+    <input placeholder='New Item' v-model="newItem">
+    <button v-on:click='addItem' class='button-primary'>Add Item</button>
+    <button v-on:click='deletePerson'>Delete person "{{person.name}}"</button>
   </div>
 </template>

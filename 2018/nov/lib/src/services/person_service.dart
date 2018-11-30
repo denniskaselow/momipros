@@ -1,7 +1,7 @@
 import 'package:nov/src/data_objects.dart';
 import 'package:uuid/uuid.dart';
 
-class PersonService {
+class StuffManagerService {
   Uuid uuid = Uuid();
   List<Person> persons = [];
 
@@ -14,5 +14,13 @@ class PersonService {
 
   void deletePerson(Person person) {
     persons.remove(person);
+  }
+
+  addItem(Person person, String newItem) {
+    person.addItem(Item(person, uuid.v4(), newItem));
+  }
+
+  deleteItem(Item item) {
+    item.owner.items.remove(item);
   }
 }

@@ -12,10 +12,10 @@ class App extends VueAppBase {
   @data
   String name = '';
   @data
-  List<Person> persons = personService.persons;
+  List<Person> persons = stuffManagerService.persons;
   @method
   void addPerson() {
-    personService.addPerson(name);
+    stuffManagerService.addPerson(name);
   }
 }
 
