@@ -6,7 +6,7 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="https://github.com/google/stagehand" name="scaffolded-by">
-  <title>nov</title>
+  <title>Stuffmanager</title>
   <link href="styles.css" rel="stylesheet">
   <script src="https://unpkg.com/vue"></script>
   <script defer src="main.vue.dart.js"></script>
@@ -15,8 +15,10 @@
 <body>
 
 <div id="app">
-  <p>My first Vue app! Hello {{name}}</p>
-  <person-view :person="person" v-for="person in persons"></person-view>
+  <h1>The Stuffmanager</h1>
+  <input v-model="name">
+  <button v-on:click='addPerson'>Add person</button>
+  <person-view :person="person" v-for="person in persons" :key="person.uuid"></person-view>
 </div>
 
 </body>

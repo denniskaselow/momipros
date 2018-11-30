@@ -5,4 +5,6 @@ import 'package:vue/vue.dart';
 class PersonView extends VueComponentBase {
   @prop
   Person person;
+  @method
+  void deletePerson() => personService.deletePerson(person);
 }

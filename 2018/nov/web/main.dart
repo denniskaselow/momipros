@@ -1,3 +1,4 @@
+import 'package:nov/src/services/person_service.dart';
 import 'package:vue/vue.dart';
 import 'package:nov/nov.dart';
 
@@ -9,9 +10,13 @@ import 'package:nov/nov.dart';
 )
 class App extends VueAppBase {
   @data
-  String name = 'World';
+  String name = '';
   @data
-  List<Person> persons = [Person('Foo'), Person('Bar')];
+  List<Person> persons = personService.persons;
+  @method
+  void addPerson() {
+    personService.addPerson(name);
+  }
 }
 
 App app;
