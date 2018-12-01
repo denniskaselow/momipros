@@ -6,7 +6,7 @@
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="https://github.com/google/stagehand" name="scaffolded-by">
-  <title>Stuffmanager</title>
+  <title>Zeugsverwalter</title>
   <link href="css/normalize.css" rel="stylesheet">
   <link href="css/skeleton.css" rel="stylesheet">
   <link href="styles.css" rel="stylesheet">
@@ -17,9 +17,9 @@
 <body>
 <div class="container">
   <div id="app">
-    <h1>The Stuffmanager</h1>
-    <input v-model="name">
-    <button v-on:click="addPerson" class='button-primary'>Add person</button>
+    <h1>Der Zeugsverwalter</h1>
+    <input v-model="name" placeholder='Name der Person'>
+    <button v-on:click="addPerson" class='button-primary'>Person hinzufügen</button>
     <person-view :key="person.uuid" :person="person" v-for="person in persons"></person-view>
   </div>
 </div>
