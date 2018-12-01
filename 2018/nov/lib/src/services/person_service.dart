@@ -18,14 +18,30 @@ class StuffManagerService {
   }
 
   void deletePerson(Person person) {
+    person
+      ..rentedItems.forEach(returnItem)
+      ..items.where((item) => item.rented).forEach(returnItem);
     persons.remove(person);
   }
 
-  addItem(Person person, String newItem, String newItemState) {
-    person.addItem(Item(person, uuid.v4(), newItem, newItemState));
+  void addItem(Person person, String newItem, String newItemState) {
+    person.addItem(Item(uuid.v4(), newItem, newItemState));
   }
 
-  deleteItem(Item item) {
+  void deleteItem(Item item) {
     item.owner.items.remove(item);
+  }
+
+  void doAction(String action, Person target, Item item) {
+    if (action == 'sell' || action == 'gift') {
+      deleteItem(item);
+      target.addItem(item);
+    } else if (action == 'rent') {
+      target.rentItem(item);
+    }
+  }
+
+  returnItem(Item item) {
+    item.renter.returnItem(item);
   }
 }

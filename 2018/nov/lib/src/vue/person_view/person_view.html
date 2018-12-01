@@ -5,6 +5,10 @@
       <legend>Eigentum</legend>
       <item-view :item="item" :key="item.uuid" v-for="item in items"></item-view>
     </fieldset>
+    <fieldset v-if="rentedItems.length > 0">
+      <legend>Geliehenes</legend>
+      <item-view :item="item" :key="item.uuid" v-for="item in rentedItems"></item-view>
+    </fieldset>
     <input placeholder="Bezeichnung des neuen Gegenstands" v-model="newItem">
     <div>
       <label v-for="itemState in itemStates">
@@ -13,6 +17,6 @@
       </label>
     </div>
     <button class="button-primary" v-on:click="addItem">Gegenstand hinzufügen</button>
-    <button v-on:click="deletePerson">Person "{{person.name}}" löschen</button>
+    <button v-on:click="deletePerson">{{person.name}} löschen</button>
   </fieldset>
 </template>

@@ -1,12 +1,20 @@
 <template vuedart>
   <div>
     {{item.name}}
-    <div>
-      <label v-for="itemState in itemStates">
-        <input name="itemState" type="radio" v-bind:value="itemState.key" v-model="item.itemState">
+    <div v-for="itemState in itemStates" v-if="!item.rented">
+      <label>
+        <input name="itemState" type="radio" v-bind:value="itemState.key" v-model="currentState">
         {{itemState.value}}
       </label>
+      <span v-if="item.itemState == itemState.key">
+        <select v-model="target">
+          <option v-bind:value="person" v-for="person in persons">{{person.name}}</option>
+        </select>
+        <button class="button-primary" v-on:click="doAction">{{itemState.value}}</button>
+      </span>
     </div>
-    <button v-on:click='deleteItem'>Gegenstand "{{item.name}}" löschen</button>
+    <button v-if="!item.rented" v-on:click="deleteItem">{{item.name}} löschen</button>
+    <button class="button-primary" v-if="item.rented" v-on:click="returnItem()">{{item.name}} an {{item.owner.name}} zurück geben
+    </button>
   </div>
 </template>

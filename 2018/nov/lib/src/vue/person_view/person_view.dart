@@ -16,6 +16,8 @@ class PersonView extends VueComponentBase {
   String newItemState;
   @data
   List<Item> items;
+  @data
+  List<Item> rentedItems;
   @prop
   Person person;
   @computed
@@ -23,7 +25,10 @@ class PersonView extends VueComponentBase {
       StuffManagerService.itemStates.entries.toList();
 
   @override
-  void lifecycleCreated() => items = person.items;
+  void lifecycleCreated() {
+    items = person.items;
+    rentedItems = person.rentedItems;
+  }
 
   @method
   void deletePerson() => stuffManagerService.deletePerson(person);
