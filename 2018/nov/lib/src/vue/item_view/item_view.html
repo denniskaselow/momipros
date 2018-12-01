@@ -1,6 +1,12 @@
 <template vuedart>
   <div>
     {{item.name}}
+    <div>
+      <label v-for="itemState in itemStates">
+        <input name="itemState" type="radio" v-bind:value="itemState.key" v-model="item.itemState">
+        {{itemState.value}}
+      </label>
+    </div>
     <button v-on:click='deleteItem'>Gegenstand "{{item.name}}" löschen</button>
   </div>
 </template>

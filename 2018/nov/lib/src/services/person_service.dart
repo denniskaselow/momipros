@@ -4,6 +4,11 @@ import 'package:uuid/uuid.dart';
 class StuffManagerService {
   Uuid uuid = Uuid();
   List<Person> persons = [];
+  static const Map<String, String> itemStates = {
+    'sell': 'verkaufen',
+    'rent': 'verleihen',
+    'gift': 'verschenken'
+  };
 
   void addPerson(String name) {
     if (name.isNotEmpty) {
@@ -16,8 +21,8 @@ class StuffManagerService {
     persons.remove(person);
   }
 
-  addItem(Person person, String newItem) {
-    person.addItem(Item(person, uuid.v4(), newItem));
+  addItem(Person person, String newItem, String newItemState) {
+    person.addItem(Item(person, uuid.v4(), newItem, newItemState));
   }
 
   deleteItem(Item item) {

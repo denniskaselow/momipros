@@ -13,5 +13,6 @@ class Item {
   String uuid;
   Person owner;
   String name;
-  Item(this.owner, this.uuid, this.name);
+  String itemState;
+  Item(this.owner, this.uuid, this.name, this.itemState);
 }
