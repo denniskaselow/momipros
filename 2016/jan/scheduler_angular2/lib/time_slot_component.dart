@@ -1,13 +1,13 @@
 library scheduler_angular2.time_slot_component;
 
-import 'package:angular2/angular2.dart';
-import 'package:scheduler/scheduler.dart';
-import 'dart:html';
 import 'dart:async';
 
+import 'package:angular/angular.dart';
+import 'package:scheduler/scheduler.dart';
+
 @Component(
-    selector: 'schedule-time-slot',
-    template: '''
+  selector: 'schedule-time-slot',
+  template: '''
 <div class='time' [class.live]='timeSlot.live' [class.premiere]='timeSlot.premiere'>{{ timeSlot.getStartLabel() }}</div>
 <div class='content'>
   <div class='name'>
@@ -20,8 +20,8 @@ import 'dart:async';
 <div class='duration'>{{ timeSlot.getDurationLabel() }}</div>
 <div class='progress' [style.width]='progressWidth'></div>
 ''',
-    styles: const [
-      '''
+  styles: [
+    '''
 :host {
   display: flex;
   justify-content: space-between;
@@ -88,24 +88,26 @@ import 'dart:async';
   min-height: 20px;
 }
 '''
-    ])
+  ],
+)
 class TimeSlotComponent implements OnInit, OnDestroy {
   @Input()
   RbtvTimeSlot timeSlot;
   @HostBinding('class.current')
   bool current = false;
   Timer _progressTimer;
-  double progressWidth = 0.0;
+  double progress = 0.0;
+  String get progressWidth => '$progress%';
 
   @override
   void ngOnInit() {
-    var progressWidth = timeSlot.getProgress();
-    if (progressWidth == 0.0) {
-      var timeUntilStart = timeSlot.start.difference(new DateTime.now());
-      _progressTimer = new Timer(timeUntilStart, () {
+    progress = timeSlot.getProgress();
+    if (progress == 0.0) {
+      var timeUntilStart = timeSlot.start.difference(DateTime.now());
+      _progressTimer = Timer(timeUntilStart, () {
         _updateProgress();
       });
-    } else if (progressWidth < 100.0) {
+    } else if (progress < 100.0) {
       _updateProgress();
     }
   }
@@ -118,15 +120,14 @@ class TimeSlotComponent implements OnInit, OnDestroy {
   void _updateProgress() {
     current = true;
     var duration = timeSlot.getDuration();
-    _progressTimer = new Timer.periodic(
-        new Duration(milliseconds: duration.inMilliseconds ~/ 3000),
-        (Timer timer) {
-      var progress = timeSlot.getProgress();
+    _progressTimer = Timer.periodic(
+        Duration(milliseconds: duration.inMilliseconds ~/ 3000), (Timer timer) {
+      progress = timeSlot.getProgress();
       if (progress >= 100.0) {
+        progress = 100.0;
         current = false;
         timer.cancel();
       }
-      progressWidth = progress;
     });
   }
 }

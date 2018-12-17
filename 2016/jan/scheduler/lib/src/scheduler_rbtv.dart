@@ -1,10 +1,9 @@
 library scheduler.rbtv;
 
-import 'dart:async';
+import 'dart:convert';
 import 'dart:html';
 
 import 'package:scheduler_base/scheduler_base.dart';
-import 'package:dson/dson.dart';
 
 class RbtvSchedulerService extends SchedulerService {
   Map<String, List<RbtvTimeSlot>> showCache = <String, List<RbtvTimeSlot>>{};
@@ -13,13 +12,13 @@ class RbtvSchedulerService extends SchedulerService {
       [int offset = 0]) async {
     this.startHour = startHour;
     this.startMinute = startMinute;
-    var today = new DateTime.now();
-    today = today.add(new Duration(days: offset));
+    var today = DateTime.now();
+    today = today.add(Duration(days: offset));
     var days = <Day>[];
     for (int i = -3; i <= 3; i++) {
-      var day = today.add(new Duration(days: i));
+      var day = today.add(Duration(days: i));
       var timeSlots = await getRbtvTimeSlots(day);
-      days.add(new Day(day, timeSlots));
+      days.add(Day(day, timeSlots));
     }
     return days;
   }
@@ -27,7 +26,7 @@ class RbtvSchedulerService extends SchedulerService {
   Future<List<RbtvTimeSlot>> getRbtvTimeSlots(DateTime date,
       [bool goIntoPast = true]) async {
     var shows = await getRawRbtvTimeSlots(date);
-    var tomorrow = date.add(new Duration(days: 1));
+    var tomorrow = date.add(Duration(days: 1));
     shows = shows
         .where((show) =>
             show.start.hour > startHour ||
@@ -50,20 +49,20 @@ class RbtvSchedulerService extends SchedulerService {
           !(shows.first.start.hour == startHour &&
               shows.first.start.minute == startMinute)) {
         var previousShows =
-            await getRbtvTimeSlots(date.subtract(new Duration(days: 1)), false);
+            await getRbtvTimeSlots(date.subtract(Duration(days: 1)), false);
         var lastShow = previousShows.last;
         shows.insert(
             0,
-            new RbtvTimeSlot(
+            RbtvTimeSlot(
                 lastShow.name,
-                new DateTime(
+                DateTime(
                     date.year, date.month, date.day, startHour, startMinute),
                 shows.first.start,
                 lastShow.description,
                 lastShow.live,
                 lastShow.premiere));
       }
-      var endOfDay = new DateTime(
+      var endOfDay = DateTime(
           tomorrow.year, tomorrow.month, tomorrow.day, startHour, startMinute);
       if (shows.last.end.isAfter(endOfDay)) {
         shows.last.end = endOfDay;
@@ -83,8 +82,7 @@ class RbtvSchedulerService extends SchedulerService {
       try {
         var response = await HttpRequest.request(
             'https://scheduler-40abf.firebaseio.com/rbtv/$dateId.json');
-        var content = response.responseText;
-        shows = fromJsonList(content, RbtvTimeSlot);
+        shows = _fromJsonList(response.responseText);
       } catch (e) {
         shows = [];
         fillTimeSlots(shows, date);
@@ -111,6 +109,11 @@ class RbtvSchedulerService extends SchedulerService {
 
   @override
   TimeSlot getEmptyTimeSlot(DateTime start, DateTime end) {
-    return new EmptyRbtvTimeSlot(start, end);
+    return EmptyRbtvTimeSlot(start, end);
+  }
+
+  List<RbtvTimeSlot> _fromJsonList(String content) {
+    List<dynamic> decoded = jsonDecode(content);
+    return decoded.map((entry) => RbtvTimeSlot.decode(entry)).toList();
   }
 }

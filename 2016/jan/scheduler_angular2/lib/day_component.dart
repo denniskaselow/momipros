@@ -1,15 +1,11 @@
-library scheduler_angular2.app_component;
+library scheduler_angular2.day_component;
 
-import 'dart:html';
-
-import 'package:angular2/angular2.dart';
+import 'package:angular/angular.dart';
 import 'package:scheduler_angular2/time_slot_component.dart';
 
 import 'package:scheduler/scheduler.dart';
 
-@Component(
-    selector: 'schedule-day',
-    template: '''
+@Component(selector: 'schedule-day', template: '''
 <h2>{{ day.label }}</h2>
 <div class="shows">
   <schedule-time-slot
@@ -18,9 +14,8 @@ import 'package:scheduler/scheduler.dart';
             [style.flex-grow]='timeSlot.height'>
   </schedule-time-slot>
 </div>
-''',
-    styles: const [
-      '''
+''', styles: [
+  '''
 :host {
   flex-basis: 0;
   flex-grow: 1;
@@ -95,14 +90,14 @@ h2 {
   flex-grow: 1;
 }
 '''
-    ],
-    directives: const [
-      TimeSlotComponent
-    ])
+], directives: [
+  TimeSlotComponent,
+  NgFor,
+])
 class DayComponent {
   @Input()
   Day day;
 
-  String timeSlotId(int index, TimeSlot timeSlot) =>
-      timeIdFormat.format(timeSlot.start);
+  Object timeSlotId(int index, dynamic timeSlot) =>
+      timeSlot is TimeSlot ? timeIdFormat.format(timeSlot.start) : timeSlot;
 }

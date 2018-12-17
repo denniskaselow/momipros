@@ -1,22 +1,19 @@
 library scheduler_angular2.app_component;
 
-import 'package:angular2/angular2.dart';
+import 'package:angular/angular.dart';
 
 import 'package:scheduler_angular2/day_component.dart';
 
 import 'package:scheduler/scheduler.dart';
 
-@Component(
-    selector: 'my-app',
-    template: '''
+@Component(selector: 'my-app', template: '''
 <div id="schedule">
   <i class="fa fa-arrow-circle-left" (click)='move(-1)'></i>
   <schedule-day *ngFor="let day of days; trackBy:dateId" [day]="day" [class.today]='day.isToday' [ngClass]='day.dayName'></schedule-day>
   <i class="fa fa-arrow-circle-right" (click)='move(1)'></i>
 </div>
-    ''',
-    styles: const [
-      '''
+    ''', styles: [
+  '''
       #schedule {
           display: flex;
           justify-content: center;
@@ -26,17 +23,21 @@ import 'package:scheduler/scheduler.dart';
         font-size: 40px;
         text-align: center;
         cursor: pointer;
+        color: #444;
       }
 '''
-    ],
-    directives: const [
-      DayComponent
-    ])
+], directives: [
+  DayComponent,
+  NgFor,
+  NgClass,
+], providers: [
+  RbtvSchedulerService,
+])
 class AppComponent {
   int offset = 0;
   List<Day> days;
   RbtvSchedulerService schedulerService;
-  DateTime currentDate = new DateTime.now();
+  DateTime currentDate = DateTime.now();
 
   AppComponent(this.schedulerService) {
     schedulerService.getRbtvDays(10, 30).then((days) {
@@ -53,5 +54,5 @@ class AppComponent {
     });
   }
 
-  String dateId(int index, Day day) => dateIdFormat.format(day.date);
+  Object dateId(int index, dynamic day) => day is Day ? dateIdFormat.format(day.date) : day;
 }
