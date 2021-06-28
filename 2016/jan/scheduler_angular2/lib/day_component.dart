@@ -1,9 +1,9 @@
 library scheduler_angular2.day_component;
 
 import 'package:angular/angular.dart';
-import 'package:scheduler_angular2/time_slot_component.dart';
-
 import 'package:scheduler/scheduler.dart';
+
+import 'time_slot_component.dart';
 
 @Component(selector: 'schedule-day', template: '''
 <h2>{{ day.label }}</h2>
@@ -98,6 +98,6 @@ class DayComponent {
   @Input()
   Day day;
 
-  Object timeSlotId(int index, dynamic timeSlot) =>
+  Object timeSlotId(int index, Object timeSlot) =>
       timeSlot is TimeSlot ? timeIdFormat.format(timeSlot.start) : timeSlot;
 }

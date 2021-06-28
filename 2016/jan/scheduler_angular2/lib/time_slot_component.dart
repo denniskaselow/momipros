@@ -96,17 +96,15 @@ class TimeSlotComponent implements OnInit, OnDestroy {
   @HostBinding('class.current')
   bool current = false;
   Timer _progressTimer;
-  double progress = 0.0;
+  double progress = 0;
   String get progressWidth => '$progress%';
 
   @override
   void ngOnInit() {
     progress = timeSlot.getProgress();
     if (progress == 0.0) {
-      var timeUntilStart = timeSlot.start.difference(DateTime.now());
-      _progressTimer = Timer(timeUntilStart, () {
-        _updateProgress();
-      });
+      final timeUntilStart = timeSlot.start.difference(DateTime.now());
+      _progressTimer = Timer(timeUntilStart, _updateProgress);
     } else if (progress < 100.0) {
       _updateProgress();
     }
@@ -119,9 +117,9 @@ class TimeSlotComponent implements OnInit, OnDestroy {
 
   void _updateProgress() {
     current = true;
-    var duration = timeSlot.getDuration();
+    final duration = timeSlot.getDuration();
     _progressTimer = Timer.periodic(
-        Duration(milliseconds: duration.inMilliseconds ~/ 3000), (Timer timer) {
+        Duration(milliseconds: duration.inMilliseconds ~/ 3000), (timer) {
       progress = timeSlot.getProgress();
       if (progress >= 100.0) {
         progress = 100.0;

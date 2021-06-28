@@ -1,10 +1,9 @@
 library scheduler_angular2.app_component;
 
 import 'package:angular/angular.dart';
-
-import 'package:scheduler_angular2/day_component.dart';
-
 import 'package:scheduler/scheduler.dart';
+
+import 'day_component.dart';
 
 @Component(selector: 'my-app', template: '''
 <div id="schedule">
@@ -54,5 +53,6 @@ class AppComponent {
     });
   }
 
-  Object dateId(int index, dynamic day) => day is Day ? dateIdFormat.format(day.date) : day;
+  Object dateId(int index, Object day) =>
+      day is Day ? dateIdFormat.format(day.date) : day;
 }
